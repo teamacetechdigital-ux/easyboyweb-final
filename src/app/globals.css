@@ -697,7 +697,6 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.12);
 }
 
 .partner-logo {
@@ -707,7 +706,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(0.7) contrast(1.05);
+  /* filter: brightness(0.7) contrast(1.05); */
 }
 
 @keyframes partnerScroll {
@@ -748,6 +747,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   line-height: 1.5;
   color: #000;
   width: 85%;
+  margin: 0 auto;
 }
 
 .prnt-thrd-box {

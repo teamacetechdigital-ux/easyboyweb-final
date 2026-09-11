@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <GsapAnimations>{children}</GsapAnimations>
       </body>
+      <script src="tilt.jquery.js"></script>
     </html>
   );
 }

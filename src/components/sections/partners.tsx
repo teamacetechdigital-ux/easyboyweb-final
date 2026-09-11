@@ -1,15 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
-
-declare global {
-  interface Window {
-    $?: (selector: string) => {
-      tilt: (options: { axis: "y" }) => void;
-    };
-  }
-}
-
 const partners = [
   "/imgs/partner1.svg",
   "/imgs/partner2.svg",
@@ -30,19 +18,11 @@ const partners = [
 ];
 
 export default function Partners() {
-  useEffect(() => {
-    const jquery = window.$;
-
-    if (jquery) {
-      jquery(".js-tilt").tilt({ axis: "y" });
-    }
-  }, []);
-
   return (
     <section className="partners-section">
       <div className="partners-track" aria-label="Partner logos">
         {partners.map((partner, index) => (
-          <div key={`${partner}-${index}`} className="partner-item js-tilt">
+          <div key={`${partner}-${index}`} className="partner-item">
             <img src={partner} alt="Partner logo" className="partner-logo" />
           </div>
         ))}

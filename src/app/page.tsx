@@ -15,6 +15,7 @@ import LetUsHelp from "../components/sections/LetUsHelp";
 import OurWork from "../components/sections/OurWork";
 import Testimonials from "../components/sections/Testimonials";
 import EasyBoyWebPro from "../components/sections/EasyBoyWebPro"
+import SkillTiltBox from "../components/sections/SkillTiltBox";
 
 
 
@@ -85,62 +86,62 @@ export default function HomePage() {
             </p>
           </div>
           <div className="prnt-thrd-box">
-            <div className="skill-box">
+            <SkillTiltBox>
               <div className="skill-icon">
                 <Image src={skill1} alt="Web Development" />
               </div>
               <h3 className="font-aloevera">
                 Web Development
               </h3>
-            </div>
-            <div className="skill-box">
+            </SkillTiltBox>
+            <SkillTiltBox>
               <div className="skill-icon">
                 <Image src={skill2} alt="Mobile App Development" />
               </div>
               <h3 className="font-aloevera">
                 Mobile App Development
               </h3>
-            </div>
-            <div className="skill-box">
+            </SkillTiltBox>
+            <SkillTiltBox>
               <div className="skill-icon">
                 <Image src={skill3} alt="Custom Software" />
               </div>
               <h3 className="font-aloevera">
                 Custom Software
               </h3>
-            </div>
-            <div className="skill-box">
+            </SkillTiltBox>
+            <SkillTiltBox>
               <div className="skill-icon">
                 <Image src={skill4} alt="Ecommerce Solutions" />
               </div>
               <h3 className="font-aloevera">
                 Ecommerce Solutions
               </h3>
-            </div>
-            <div className="skill-box">
+            </SkillTiltBox>
+            <SkillTiltBox>
               <div className="skill-icon">
                 <Image src={skill5} alt="SEO & Ads" />
               </div>
               <h3 className="font-aloevera">
                 SEO & Ads
               </h3>
-            </div>
-            <div className="skill-box">
+            </SkillTiltBox>
+            <SkillTiltBox>
               <div className="skill-icon">
                 <Image src={skill6} alt="Social Media Automation" />
               </div>
               <h3 className="font-aloevera">
                 Social Media Automation
               </h3>
-            </div>
-            <div className="skill-box">
+            </SkillTiltBox>
+            <SkillTiltBox>
               <div className="skill-icon">
                 <Image src={skill3} alt="CRM EasyBoyWeb Pro" />
               </div>
               <h3 className="font-aloevera">
                 CRM (EasyBoyWeb Pro)
               </h3>
-            </div>
+            </SkillTiltBox>
           </div>
         </div>
       </section>

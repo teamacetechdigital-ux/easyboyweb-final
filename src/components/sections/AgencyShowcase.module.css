@@ -1,0 +1,254 @@
+.showcase {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  height: 460px;
+  flex: 1 1 0;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.project {
+  background: #e6f1f8;
+  background-image: linear-gradient(#0393e710 1px, transparent 1px), linear-gradient(90deg, #0393e710 1px, transparent 1px);
+  background-size: 40px 40px;
+  border: 1px solid #cfdeea;
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 70%;
+  aspect-ratio: 1;
+  right: -24%;
+  top: -18%;
+  background: radial-gradient(circle, #0393e738, transparent 68%);
+}
+
+.projectHeading,
+.processHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 30px 0;
+}
+
+.eyebrow {
+  color: #40637b;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.discipline {
+  padding: 7px 10px;
+  border: 1px solid #0393e726;
+  border-radius: 20px;
+  background: #ffffff75;
+  color: #43677f;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.browser {
+  position: absolute;
+  inset: 88px 8% 79px;
+  overflow: hidden;
+  border: 1px solid #ffffffd9;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 24px 42px -14px #174e7540, 0 2px 6px #174e7514;
+  transform: rotate(-3deg);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 700ms;
+}
+
+.browserBar {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 14px;
+  border-bottom: 1px solid #e5edf1;
+  color: #8095a5;
+  font-size: 12px;
+}
+
+.browserDots { display: flex; gap: 4px; }
+.browserDots i { width: 5px; height: 5px; border-radius: 50%; background: #bad0dd; }
+.browserDots i:first-child { background: #0393e7; }
+.browserAddress { color: #7a90a0; font-size: 8px; letter-spacing: 0.03em; }
+
+.browserCanvas {
+  position: relative;
+  height: calc(100% - 30px);
+  background: linear-gradient(140deg, #c4e0ee, #f5f9fb 62%, #dae9f1);
+}
+
+.browserCanvas img {
+  object-fit: contain;
+  padding: 9px 8px;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projectFooter {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.projectFooter > span { color: #35566d; font-size: 11px; }
+
+.workLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #12374f;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.workLink > span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0393e7;
+  color: #fff;
+  font-size: 19px;
+  transition: transform 300ms;
+}
+
+.workLink:focus-visible { outline: 2px solid #0393e7; outline-offset: 5px; border-radius: 4px; }
+
+.process {
+  display: flex;
+  flex-direction: column;
+  padding: 0 34px;
+  background: radial-gradient(ellipse at 105% -5%, #0393e746, transparent 57%), #101d2c;
+  color: #fff;
+  border: 1px solid #20364a;
+}
+
+.process::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 340px;
+  height: 340px;
+  top: -120px;
+  right: -138px;
+  border: 1px solid #0393e731;
+  border-radius: 50%;
+  box-shadow: 0 0 0 36px #0393e70a, 0 0 0 72px #0393e708;
+}
+
+.processHeading { padding: 27px 0 0; }
+.process .eyebrow { color: #7cbedf; }
+.brandMark { font-size: 32px; line-height: 1; color: #73ceff; transition: transform 600ms; }
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  gap: 0;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 15px 0;
+}
+
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 58px;
+  bottom: -16px;
+  width: 1px;
+  background: linear-gradient(#0393e791, #36526d);
+}
+
+.stepNumber {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border: 1px solid #3c6080;
+  border-radius: 50%;
+  background: #15283a;
+  color: #78cfff;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 350ms, border-color 350ms;
+}
+
+.step h3 { margin: 0 0 7px; color: #fff; font-size: clamp(23px, 2.3vw, 31px); line-height: 1.12; font-weight: 700; letter-spacing: -0.025em; }
+.step p { margin: 0; max-width: 320px; color: #a8bbce; font-size: 12px; line-height: 1.6; }
+
+.processFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px 0 23px;
+  border-top: 1px solid #ffffff1c;
+  color: #a8bbce;
+  font-size: 11px;
+}
+
+.processFooter > span:last-child { font-size: 22px; color: #64c6ff; }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .project:hover .browser, .project:focus-within .browser { transform: rotate(0) translateY(-4px); box-shadow: 0 30px 52px -15px #174e7552; }
+  .project:hover .browserCanvas img { transform: scale(1.03); }
+  .workLink:hover > span { transform: rotate(45deg); }
+  .process:hover .brandMark { transform: rotate(60deg); }
+  .step:hover .stepNumber { background: #0393e7; border-color: #0393e7; color: #fff; }
+}
+
+@media (max-width: 767px) {
+  .showcase { height: 370px; flex: auto; border-radius: 18px; }
+  .projectHeading { padding: 22px 20px 0; gap: 10px; }
+  .eyebrow { font-size: 8px; }
+  .discipline { padding: 6px 8px; font-size: 8px; }
+  .browser { inset: 75px 7% 79px; }
+  .projectFooter { left: 20px; right: 20px; bottom: 19px; gap: 10px; }
+  .projectFooter > span { max-width: 115px; line-height: 1.6; font-size: 10px; }
+  .workLink { gap: 8px; font-size: 10px; }
+  .process { padding-inline: 24px; }
+  .processHeading { padding-top: 22px; }
+  .brandMark { font-size: 26px; }
+  .steps { margin-block: 4px; }
+  .step { gap: 17px; padding-block: 11px; }
+  .step h3 { font-size: 24px; margin-bottom: 5px; }
+  .step p { font-size: 10px; }
+  .stepNumber { width: 37px; height: 37px; font-size: 10px; }
+  .step:not(:last-child)::after { left: 18px; top: 48px; bottom: -12px; }
+  .processFooter { padding: 12px 0 17px; font-size: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase *, .showcase *::after { transition: none; }
+  .browser { transform: none; }
+}

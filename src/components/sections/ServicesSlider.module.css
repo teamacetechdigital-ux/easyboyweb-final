@@ -1,0 +1,51 @@
+.controls {
+  align-items: center;
+  gap: 12px;
+}
+
+.autoplayButton {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 96px;
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.autoplayButton:hover:not(:disabled) {
+  border-color: #fff;
+  background: rgb(255 255 255 / 10%);
+}
+
+.autoplayButton:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.autoplayButton:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+.autoplayButton span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .autoplayButton {
+    transition: none;
+  }
+}

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./responsive.css";
+import "./motion.css";
 import GsapAnimations from "../components/layout/GsapAnimations";
 
 export const metadata: Metadata = {
-  title: "Responsive Website Development | Easyboyweb",
+  title: "Easyboyweb | Websites, Mobile Apps & Custom Software",
   description:
-    "Responsive website hosting, maintenance, security, updates and support from Easyboyweb.",
+    "Strategy, design and development for ambitious businesses. Custom websites, mobile apps and software from Easyboyweb in Greenville, SC and Atlanta, GA.",
 };
 
 export default function RootLayout({

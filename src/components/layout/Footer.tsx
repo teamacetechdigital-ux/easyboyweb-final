@@ -13,7 +13,7 @@ import footerLogo from "../../../public/imgs/footerlogo.svg";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "Easyboyweb Pro", href: "/easyboyweb-pro" },
+  { label: "Easyboyweb Pro", href: "/pro" },
   { label: "What We Do", href: "/services" },
   { label: "Work", href: "/work" },
   { label: "Blog", href: "/blog" },
@@ -47,7 +47,7 @@ const services = [
   },
   {
     label: "CRM (EasyBoyWeb Pro)",
-    href: "/easyboyweb-pro",
+    href: "/pro",
   },
 ];
 

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useId, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./ServicesSlider.module.css";
 
 import skill1 from "../../../public/imgs/skill1.svg";
 import skill2 from "../../../public/imgs/skill2.svg";
@@ -50,8 +51,33 @@ const services = [
   },
 ];
 
+const reducedMotionQuery = "(prefers-reduced-motion: reduce)";
+
+function subscribeToMotionPreference(callback: () => void) {
+  const preference = window.matchMedia(reducedMotionQuery);
+  preference.addEventListener("change", callback);
+  return () => preference.removeEventListener("change", callback);
+}
+
+function getMotionPreference() {
+  return window.matchMedia(reducedMotionQuery).matches;
+}
+
+function getServerMotionPreference() {
+  return false;
+}
+
 export default function ServicesSlider() {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const sliderRef = useRef<HTMLDivElement | null>(null);
+  const sliderId = useId();
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
+  const reducedMotion = useSyncExternalStore(
+    subscribeToMotionPreference,
+    getMotionPreference,
+    getServerMotionPreference
+  );
+  const isAutoplayActive = !isAutoplayPaused && !reducedMotion;
 
   const loopedServices = useMemo(
     () => [...services, ...services, ...services],
@@ -80,7 +106,21 @@ export default function ServicesSlider() {
       });
     });
 
-    const interval = window.setInterval(() => {
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const slider = sliderRef.current;
+
+    if (!section || !slider || !isAutoplayActive) return;
+
+    let interval: number | undefined;
+    let isInView = false;
+    let isHovered = section.matches(":hover");
+    let isFocused = section.contains(document.activeElement);
+
+    const advance = () => {
       const scrollDistance = getScrollDistance();
       const currentLoopStart = slider.scrollWidth / 3;
       const currentLoopEnd = currentLoopStart * 2;
@@ -98,13 +138,56 @@ export default function ServicesSlider() {
         left: scrollDistance,
         behavior: "smooth",
       });
-    }, 3500);
+    };
+
+    const updateAutoplay = () => {
+      window.clearInterval(interval);
+      interval = undefined;
+
+      if (isInView && !isHovered && !isFocused && !document.hidden) {
+        interval = window.setInterval(advance, 3500);
+      }
+    };
+
+    const onPointerEnter = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      isHovered = true;
+      updateAutoplay();
+    };
+    const onPointerLeave = () => {
+      isHovered = false;
+      updateAutoplay();
+    };
+    const onFocusIn = () => {
+      isFocused = true;
+      updateAutoplay();
+    };
+    const onFocusOut = (event: FocusEvent) => {
+      isFocused = event.relatedTarget instanceof Node && section.contains(event.relatedTarget);
+      updateAutoplay();
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      isInView = entry.isIntersecting;
+      updateAutoplay();
+    }, { threshold: 0.15 });
+
+    observer.observe(section);
+    section.addEventListener("pointerenter", onPointerEnter);
+    section.addEventListener("pointerleave", onPointerLeave);
+    section.addEventListener("focusin", onFocusIn);
+    section.addEventListener("focusout", onFocusOut);
+    document.addEventListener("visibilitychange", updateAutoplay);
 
     return () => {
-      cancelAnimationFrame(frame);
       window.clearInterval(interval);
+      observer.disconnect();
+      section.removeEventListener("pointerenter", onPointerEnter);
+      section.removeEventListener("pointerleave", onPointerLeave);
+      section.removeEventListener("focusin", onFocusIn);
+      section.removeEventListener("focusout", onFocusOut);
+      document.removeEventListener("visibilitychange", updateAutoplay);
     };
-  }, []);
+  }, [isAutoplayActive]);
 
   const moveSlider = (direction: number) => {
     const slider = sliderRef.current;
@@ -115,6 +198,7 @@ export default function ServicesSlider() {
 
     if (!scrollDistance) return;
 
+    setIsAutoplayPaused(true);
     const loopStart = slider.scrollWidth / 3;
     const loopEnd = loopStart * 2;
     const nextPosition = slider.scrollLeft + direction * scrollDistance;
@@ -125,12 +209,12 @@ export default function ServicesSlider() {
         : nextPosition >= loopEnd
           ? loopStart
           : nextPosition,
-      behavior: "smooth",
+      behavior: reducedMotion ? "auto" : "smooth",
     });
   };
 
   return (
-    <section className="fifth-section">
+    <section className="fifth-section" ref={sectionRef} aria-label="Our services" aria-roledescription="carousel">
       <div className="container">
         <div className="flex items-center justify-between gap-8 mob-col-cust">
           <h2 className="font-aloevera w-1/2 sect-head">
@@ -139,14 +223,27 @@ export default function ServicesSlider() {
             Grow Under One Roof
           </h2>
 
-          <div className="slider-controls w-1/2 justify-end">
+          <div className={`slider-controls w-1/2 justify-end ${styles.controls}`}>
             <button
               type="button"
               className="slider-arrow slider-arrow-previous"
               onClick={() => moveSlider(-1)}
               aria-label="Previous services"
+              aria-controls={sliderId}
             >
               &#8592;
+            </button>
+
+            <button
+              type="button"
+              className={styles.autoplayButton}
+              onClick={() => setIsAutoplayPaused((paused) => !paused)}
+              aria-label={reducedMotion ? "Service slideshow paused for reduced motion" : isAutoplayActive ? "Pause service slideshow" : "Play service slideshow"}
+              aria-controls={sliderId}
+              disabled={reducedMotion}
+            >
+              <span aria-hidden="true">{isAutoplayActive ? "Ⅱ" : "▷"}</span>
+              {reducedMotion ? "Paused" : isAutoplayActive ? "Pause" : "Play"}
             </button>
 
             <button
@@ -154,13 +251,14 @@ export default function ServicesSlider() {
               className="slider-arrow slider-arrow-next"
               onClick={() => moveSlider(1)}
               aria-label="Next services"
+              aria-controls={sliderId}
             >
               &#8594;
             </button>
           </div>
         </div>
 
-        <div className="services-slider" ref={sliderRef}>
+        <div className="services-slider" ref={sliderRef} id={sliderId}>
           {loopedServices.map((service, index) => (
             <article
               className="service-slider-card"

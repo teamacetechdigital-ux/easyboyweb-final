@@ -15,6 +15,8 @@ import LetUsHelp from "../components/sections/LetUsHelp";
 import OurWork from "../components/sections/OurWork";
 import Testimonials from "../components/sections/Testimonials";
 import EasyBoyWebPro from "../components/sections/EasyBoyWebPro"
+import HomeHero from "../components/sections/HomeHero";
+import AgencyShowcase from "../components/sections/AgencyShowcase";
 
 
 
@@ -23,59 +25,15 @@ export default function HomePage() {
   return (
     <main className="home-page">
       <Header />
-      <section className="banner">
-        <video
-          className="banner-video"
-          src="/imgs/banner-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-        />
-
-        <div className="banner-overlay" />
-
-        <div className="banner-side-list" aria-label="Quick categories">
-          <span className="font-inter">
-            <Link href="/facebook">Facebook</Link>
-          </span>
-          <span className="font-inter">
-            <Link href="/twitter">Twitter</Link>
-          </span>
-          <span className="font-inter">
-            <Link href="/instagram">Instagram</Link>
-          </span>
-          <span className="font-inter">
-            <Link href="/youtube">Youtube</Link>
-          </span>
-        </div>
-
-        <div className="container">
-          <div className="banner-content flex flex-col items-center justify-center text-center">
-            <h1 className="font-aloevera">
-              Custom Web, Mobile &{" "}
-              <span className="clr-chng">Software Solutions</span> That Grow
-              Your Business
-            </h1>
-            <p className="font-inter">
-              A full-service web development agency in Greenville, SC & Atlanta,
-              GA helping businesses design, build, and scale digital products
-              that convert.
-            </p>
-            <Link href="/contact" className="banner-btn">
-              Let’s Talk
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       <Partners />
 
 
-      <section className="third-section">
+      <section className="third-section" id="expertise">
         <div className="container">
           <div className="prnt-third-txt flex items-center justify-center flex-col gap-8">
+            <span className="section-kicker">01 / Built around your ambition</span>
             <h2 className="font-aloevera">
               Everything You Need to Build, Launch & Grow Online
             </h2>
@@ -167,20 +125,12 @@ export default function HomePage() {
                 We don’t just build—we partner with you to grow.
               </p>
 
-              <Link href="/about" className="growth-button banner-btn font-inter">
-                Learn More About Us
+              <Link href="/services" className="growth-button banner-btn font-inter">
+                Explore Our Expertise <span aria-hidden="true">↗</span>
               </Link>
             </div>
 
-            <div className="growth-video w-1/2">
-              <button
-                type="button"
-                className="growth-play-button"
-                aria-label="Play video"
-              >
-                <span />
-              </button>
-            </div>
+            <AgencyShowcase variant="project" />
           </div>
         </div>
       </section>
@@ -188,20 +138,12 @@ export default function HomePage() {
       <ServicesSlider />
       <LetUsHelp />
       <WhoWeAre />
-      <OurWork />
+      <div id="selected-work"><OurWork /></div>
 
 
       <section className="why-choose-section">
         <div className="why-choose-container">
-          <div className="why-choose-video">
-            <button
-              type="button"
-              className="why-choose-play"
-              aria-label="Play video"
-            >
-              <span aria-hidden="true" />
-            </button>
-          </div>
+          <AgencyShowcase variant="process" />
 
           <div className="why-choose-content">
             <h2 className="font-aloevera">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 import whoweare1 from "../../../public/imgs/whoweare1.svg";
@@ -66,9 +66,7 @@ const statistics = [
 ];
 
 function StatisticCounter({ number }: { number: string }) {
-  const [displayValue, setDisplayValue] = useState(0);
-  const hasStarted = useRef(false);
-  const counterRef = useRef<HTMLDivElement | null>(null);
+  const counterRef = useRef<HTMLSpanElement | null>(null);
   const match = number.match(/^(\d+)(.*)$/);
   const targetValue = match ? Number(match[1]) : 0;
   const suffix = match?.[2] ?? "";
@@ -78,39 +76,63 @@ function StatisticCounter({ number }: { number: string }) {
 
     if (!counter) return;
 
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let animationFrame = 0;
+    let hasStarted = false;
+
+    const showFinalValue = () => {
+      window.cancelAnimationFrame(animationFrame);
+      counter.textContent = number;
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || hasStarted.current) return;
+        if (!entry.isIntersecting || hasStarted || motionPreference.matches) return;
 
-        hasStarted.current = true;
+        hasStarted = true;
         const startedAt = performance.now();
         const duration = 1600;
+        counter.textContent = `0${suffix}`;
 
         const animate = (currentTime: number) => {
           const progress = Math.min((currentTime - startedAt) / duration, 1);
           const easedProgress = 1 - Math.pow(1 - progress, 3);
 
-          setDisplayValue(Math.round(targetValue * easedProgress));
+          counter.textContent = `${Math.round(targetValue * easedProgress)}${suffix}`;
 
           if (progress < 1) {
-            requestAnimationFrame(animate);
+            animationFrame = window.requestAnimationFrame(animate);
           }
         };
 
-        requestAnimationFrame(animate);
+        animationFrame = window.requestAnimationFrame(animate);
         observer.disconnect();
       },
       { threshold: 0.35 }
     );
 
-    observer.observe(counter);
+    const updateMotionPreference = () => {
+      if (motionPreference.matches) {
+        showFinalValue();
+        observer.disconnect();
+      } else if (!hasStarted) {
+        observer.observe(counter);
+      }
+    };
 
-    return () => observer.disconnect();
-  }, [targetValue]);
+    updateMotionPreference();
+    motionPreference.addEventListener("change", updateMotionPreference);
+
+    return () => {
+      observer.disconnect();
+      motionPreference.removeEventListener("change", updateMotionPreference);
+      showFinalValue();
+    };
+  }, [number, suffix, targetValue]);
 
   return (
-    <strong ref={counterRef} className="font-aloevera">
-      {displayValue}{suffix}
+    <strong className="font-aloevera" aria-label={number}>
+      <span ref={counterRef} aria-hidden="true" style={{ font: "inherit", margin: 0 }}>{number}</span>
     </strong>
   );
 }

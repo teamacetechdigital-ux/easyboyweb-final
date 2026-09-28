@@ -37,7 +37,7 @@ export default function EasyBoyWebPro() {
             </p>
 
             <Link
-              href="/easyboyweb-pro"
+              href="/pro"
               className="easyboy-pro-button font-inter"
             >
               Learn More EasyBoyWeb Pro

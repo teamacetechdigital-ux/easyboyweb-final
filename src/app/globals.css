@@ -1011,7 +1011,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .service-slider-card h3 {
   margin: 34px 0 26px;
-  color: #000000;
+  color: #fff;
   font-size: 26px;
   font-weight: 900;
   line-height: 110%;
@@ -1019,7 +1019,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .service-slider-card p {
   margin: 0;
-  color: #000000;
+  color: #fff;
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -1030,7 +1030,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   display: inline-flex;
   align-items: center;
   gap: 18px;
-  color: #000000;
+  color: #fff;
   font-size: 15px;
   font-weight: 400;
   text-decoration: none;

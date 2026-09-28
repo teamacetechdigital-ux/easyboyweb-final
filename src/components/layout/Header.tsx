@@ -47,7 +47,7 @@ export default function Header({ variant = "default", className = "" }: HeaderPr
           </div>
 
           <nav className={`site-nav ${isMenuOpen ? "is-open" : ""}`} aria-label="Main navigation">
-            <Link className="font-inter" href="/Landing-Page" onClick={closeMenu}>
+            <Link className="font-inter" href="/pro" onClick={closeMenu}>
               easyboyweb Pro
             </Link>
             <div className="services-menu">

@@ -15,39 +15,39 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Easyboyweb Pro", href: "/pro" },
   { label: "What We Do", href: "/services" },
-  { label: "Work", href: "/work" },
+  { label: "Work", href: "/Work" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "tel:+18008070319" },
 ];
 
 const services = [
   {
     label: "Web Development",
-    href: "/services#web-development",
+    href: "/Custom-Web-Development",
   },
   {
     label: "Mobile App Development",
-    href: "/services#mobile-development",
+    href: "/Mobile-Apps",
   },
   {
     label: "Custom Software",
-    href: "/services#custom-software",
+    href: "/UX-&-Custom-Software",
   },
   {
-    label: "Ecommerce Solution",
-    href: "/services#ecommerce",
+    label: "AI Development",
+    href: "/Ai-Development",
+  },
+  {
+    label: "Digital Branding",
+    href: "/Digital-Branding",
   },
   {
     label: "SEO & Ads",
-    href: "/services#seo",
+    href: "/Digital-Strategy-&-SEO",
   },
   {
-    label: "Social Media Automation",
-    href: "/services#social-media",
-  },
-  {
-    label: "CRM (EasyBoyWeb Pro)",
-    href: "/pro",
+    label: "Hosting & Maintenance",
+    href: "/Hosting-&-Maintenance",
   },
 ];
 

@@ -1017,6 +1017,10 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   line-height: 110%;
 }
 
+.hosting-services-grid .responsive-website-page .we-focus-sections .container > div {
+  border: none !important;
+}
+
 .service-slider-card p {
   margin: 0;
   color: #fff;
@@ -2268,7 +2272,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .footer-social-link:hover {
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   transform: translateY(-3px);
 }
 
@@ -3933,8 +3937,8 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 8px 24px rgba(44, 62, 80, 0.1);
-  text-align: center;
-  align-items: center;
+  text-align: left;
+  align-items: flex-start;
 }
 
 .responsive-website-page .maintenance-service-icon {
@@ -3956,7 +3960,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   color: #2c3e50;
   font-size: 24px;
   line-height: 1.2;
-  text-align: center;
+  text-align: left;
 }
 
 .responsive-website-page .maintenance-service-card p {
@@ -3964,7 +3968,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   color: #000;
   font-size: 16px;
   line-height: 1.65;
-  text-align: center;
+  text-align: left;
 }
 
 .responsive-website-page .top-notch-section {
@@ -4065,7 +4069,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .responsive-website-page .hosting-focus-section .hosting-service-card:nth-child(n + 4) {
   padding-top: 42px;
-  border-top: 1px solid transparent;
+  /* border-top: 1px solid transparent; */
   border-image: linear-gradient(90deg, #2c3e50 0%, #029cf5 50%, #2c3e50 100%) 1;
 }
 
@@ -4310,7 +4314,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Left and right blur */
@@ -4644,7 +4648,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   max-height: 81.87px;
   display: block;
   object-fit: contain;
-  filter: brightness(0.7) contrast(1.05);
+  /* filter: brightness(0.7) contrast(1.05); */
 }
 
 .technologies-track:hover {
@@ -5035,7 +5039,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 .hosting-service-card {
   min-height: 210px;
   padding: 0 32px 28px;
-  border-right: 1px solid #fff;
+  /* border-right: 1px solid #fff; */
 }
 
 .hosting-service-card:nth-child(3n) {
@@ -7822,6 +7826,75 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 /* ===============================
 ===================================
 ===============================Mobile Screen Slider */
+.mobile-app-work-section {
+  padding: 76px 16px 70px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.mobile-app-work-heading {
+  margin: 0;
+  color: #2c3e50;
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mobile-app-work-slider {
+  width: min(900px, 100%);
+  height: clamp(250px, 38vw, 440px);
+  margin: 40px auto 0;
+  overflow: hidden;
+}
+
+.mobile-app-work-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.mobile-app-work-track::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-app-work-track:focus-visible {
+  outline: 2px solid #029cf5;
+  outline-offset: 4px;
+}
+
+.mobile-app-work-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.mobile-app-work-slide img {
+  object-fit: contain;
+}
+
+.mobile-app-work-controls {
+  display: flex;
+  width: 128px;
+  height: 56px;
+  margin: 32px auto 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.responsive-website-page .maintenance-service-card .maintenance-service-icon {
+  align-self: flex-start;
+}
+
 .recent-work-section {
   width: 100%;
   padding: 76px 0 80px;

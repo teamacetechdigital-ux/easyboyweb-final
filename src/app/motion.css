@@ -736,6 +736,67 @@ html {
   box-shadow: 0 12px 30px #0393e725;
 }
 
+.custom-software-page .partner-item,
+.custom-software-page .technology-item {
+  border-radius: 0;
+  background: transparent;
+}
+
+.custom-software-page .partner-logo {
+  filter: grayscale(1);
+  opacity: .68;
+  transition: opacity .3s, filter .3s;
+}
+
+.custom-software-page .partner-item:hover .partner-logo {
+  filter: none;
+  opacity: 1;
+}
+
+.custom-software-page .technology-logo {
+  transition: transform .3s ease;
+}
+
+.custom-software-page .technology-item:hover .technology-logo {
+  transform: scale(1.08);
+}
+
+.custom-software-page .custom-software-card,
+.custom-software-page .website-crm-card {
+  transition: translate .35s ease, box-shadow .35s ease;
+}
+
+.custom-software-page .custom-software-card:hover,
+.custom-software-page .website-crm-card:hover {
+  translate: 0 -5px;
+  box-shadow: 0 12px 28px #0393e718;
+}
+
+.custom-software-page .banner-btn {
+  transition: translate .3s, background .3s, box-shadow .3s;
+}
+
+.custom-software-page .banner-btn:hover {
+  translate: 0 -3px;
+  box-shadow: 0 12px 30px #0393e725;
+}
+
+.site-footer > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer .footer-large-logo {
+  height: auto;
+  margin: 0;
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  z-index: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
 @keyframes identity-icon-shake {
 
   0%,

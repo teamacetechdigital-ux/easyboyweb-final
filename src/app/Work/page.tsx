@@ -32,9 +32,54 @@ const webAppSlides = [
     link: "#",
     alt: "Web application project four",
   },
+  {
+    image: "/imgs/Creativescreen1.svg",
+    link: "#",
+    alt: "Web application project one",
+  },
+  {
+    image: "/imgs/Creativescreen2.svg",
+    link: "#",
+    alt: "Web application project two",
+  },
+  {
+    image: "/imgs/Creativescreen3.svg",
+    link: "#",
+    alt: "Web application project three",
+  },
+  {
+    image: "/imgs/Creativescreen4.svg",
+    link: "#",
+    alt: "Web application project four",
+  },
 ];
 
 const websiteSlides = [
+  {
+    image: "/imgs/screen (1).svg",
+    link: "#", // Add your link
+    alt: "Website project one",
+  },
+  {
+    image: "/imgs/screen (2).svg",
+    link: "#", // Add your link
+    alt: "Website project two",
+  },
+  {
+    image: "/imgs/screen (3).svg",
+    link: "#", // Add your link
+    alt: "Website project three",
+  },
+  {
+    image: "/imgs/screen (4).svg",
+    link: "#", // Add your link
+    alt: "Website project four",
+  },
+  {
+    image: "/imgs/screen (5).svg",
+    link: "#", // Add your link
+    alt: "Website project five",
+  },
   {
     image: "/imgs/screen (1).svg",
     link: "#", // Add your link
@@ -74,6 +119,38 @@ const websiteLoopSlides = [
 
 
 const logoSlides = [
+  {
+    image: "/imgs/ourwork_1.svg",
+    alt: "Brand logo one",
+  },
+  {
+    image: "/imgs/ourwork_2.svg",
+    alt: "Brand logo two",
+  },
+  {
+    image: "/imgs/ourwork_3.svg",
+    alt: "Brand logo three",
+  },
+  {
+    image: "/imgs/ourwork_4.svg",
+    alt: "Brand logo four",
+  },
+  {
+    image: "/imgs/ourwork_5.svg",
+    alt: "Brand logo five",
+  },
+  {
+    image: "/imgs/ourwork_6.svg",
+    alt: "Brand logo six",
+  },
+  {
+    image: "/imgs/ourwork_7.svg",
+    alt: "Brand logo seven",
+  },
+  {
+    image: "/imgs/ourwork_8.svg",
+    alt: "Brand logo eight",
+  },
   {
     image: "/imgs/ourwork_1.svg",
     alt: "Brand logo one",

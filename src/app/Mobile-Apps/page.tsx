@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Footer from "@/src/components/layout/Footer";
 import Header from "@/src/components/layout/Header";
 import Testimonials from "@/src/components/sections/Testimonials";
@@ -17,24 +17,6 @@ import appIcon3 from "../../../public/imgs/app_icon3.svg";
 import appIcon4 from "../../../public/imgs/app_icon4.svg";
 import appIcon5 from "../../../public/imgs/app_icon5.svg";
 import appIcon6 from "../../../public/imgs/app_icon6.svg";
-
-const recentWorkScreens = [
-  {
-    src: "/imgs/appscreen1.svg",
-    imageClass: "recent-work-screen-one",
-  },
-  {
-    src: "/imgs/appscreen2.svg",
-    imageClass: "recent-work-screen-two",
-  },
-];
-
-const repeatedWorkScreens = [
-  ...recentWorkScreens,
-  ...recentWorkScreens,
-];
-
-
 
 
 const whyEasyboywebItems = [
@@ -135,57 +117,6 @@ const appWorkSteps = [
 
 
 function Custom_Mobile_app() {
-
-  const [activeRecentWork, setActiveRecentWork] = useState(0);
-  const [recentWorkTransition, setRecentWorkTransition] =
-    useState(true);
-
-  useEffect(() => {
-    const sliderTimer = window.setTimeout(() => {
-      setRecentWorkTransition(true);
-
-      setActiveRecentWork((current) =>
-        current >= 2 ? 1 : current + 1
-      );
-    }, 4000);
-
-    return () => window.clearTimeout(sliderTimer);
-  }, [activeRecentWork]);
-
-  const showNextWork = () => {
-    setRecentWorkTransition(true);
-
-    setActiveRecentWork((current) =>
-      current >= 2 ? 1 : current + 1
-    );
-  };
-
-  const showPreviousWork = () => {
-    if (activeRecentWork === 0) {
-      setRecentWorkTransition(false);
-      setActiveRecentWork(2);
-
-      window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-          setRecentWorkTransition(true);
-          setActiveRecentWork(1);
-        });
-      });
-
-      return;
-    }
-
-    setRecentWorkTransition(true);
-    setActiveRecentWork((current) => current - 1);
-  };
-
-  const handleRecentWorkTransition = () => {
-    if (activeRecentWork === 2) {
-      setRecentWorkTransition(false);
-      setActiveRecentWork(0);
-    }
-  };
-
 
   const [openMobileFaq, setOpenMobileFaq] = useState<number | null>(
     null

@@ -1041,19 +1041,98 @@
 
   .footer-main {
     height: auto;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 65px 70px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(82px, 0.65fr) minmax(108px, 0.9fr) minmax(180px, 1.55fr);
+    gap: 24px;
   }
 
   .footer-brand,
   .footer-brand-description {
+    width: auto;
+  }
+
+  .footer-brand-logo {
+    width: min(220px, 100%);
+    height: auto;
+  }
+
+  .footer-brand-logo img {
     width: 100%;
+    height: auto;
   }
 
   .footer-brand-description {
-    max-width: 390px;
+    max-width: none;
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .footer-social-links {
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    gap: 8px;
+  }
+
+  .footer-social-link {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer-social-link img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .footer-links-column h2,
+  .footer-newsletter h2 {
     font-size: 16px;
-    line-height: 26px;
+  }
+
+  .footer-links-column ul {
+    margin-top: 16px;
+  }
+
+  .footer-links-column li {
+    height: 30px;
+  }
+
+  .footer-links-column a {
+    font-size: 12px;
+    line-height: 30px;
+  }
+
+  .footer-newsletter-description {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .footer-email-form {
+    height: 42px;
+    margin-top: 16px;
+  }
+
+  .footer-email-form input {
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .footer-email-form button {
+    width: 42px;
+  }
+
+  .footer-email-disclaimer {
+    margin-top: 12px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .footer-phone {
+    margin-top: 14px;
+    gap: 10px;
+    font-size: 12px;
+    line-height: 20px;
   }
 
   .footer-newsletter {
@@ -1195,20 +1274,21 @@
   }
 
   .footer-main {
-    gap: 60px 55px;
+    gap: 24px;
   }
 
   .footer-links-column h2,
   .footer-newsletter h2 {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .footer-bottom {
-    height: 55px;
+    height: auto;
+    padding: 12px 0;
   }
 
   .footer-large-logo {
-    margin-top: 35px;
+    margin-top: 0;
   }
 
   .website-crm-section {
@@ -1412,6 +1492,7 @@
   }
 
   .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 55px 35px;
   }
 
@@ -2025,7 +2106,7 @@
   .responsive-website-page .maintenance-service-card:nth-child(n + 4) {
     padding-top: 28px;
     border-top: 1px solid transparent;
-    border-image: linear-gradient(90deg, #ecf8fc 0%, #029cf5 50%, #ecf8fc 100%) 1;
+    border-image: linear-gradient(180deg, #ecf8fc 0%, #029cf5 50%, #ecf8fc 100%) 1;
   }
 
   .responsive-website-page .maintenance-service-icon {
@@ -2687,6 +2768,11 @@
     text-align: center;
   }
 
+  .responsive-website-page .maintenance-service-card {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .responsive-website-page .maintenance-service-icon,
   .responsive-website-page .hosting-service-card img {
     width: 110px;
@@ -2703,6 +2789,10 @@
     text-align: center;
   }
 
+  .responsive-website-page .maintenance-service-card h3 {
+    text-align: left;
+  }
+
   .responsive-website-page .maintenance-service-card p,
   .responsive-website-page .hosting-service-card p {
     margin: 14px 0 0;
@@ -2710,6 +2800,14 @@
     font-size: 16px;
     line-height: 1.65;
     text-align: center;
+  }
+
+  .responsive-website-page .maintenance-service-card p {
+    text-align: left;
+  }
+
+  .responsive-website-page .maintenance-service-icon {
+    align-self: flex-start;
   }
 
   .responsive-website-page .top-notch-section {
@@ -10259,28 +10357,28 @@
 .responsive-website-page .top-notch-section .mt-12 h3 {
   margin: 0 0 9px;
   color: #fff;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.15;
 }
 
 .responsive-website-page .top-notch-section .mt-12 p {
   margin: 0;
   color: rgb(255 255 255 / 90%);
-  font-size: 11px;
+  font-size: 16px;
   line-height: 1.35;
 }
 
 .responsive-website-page .top-notch-cta {
   display: flex;
-  width: 138px;
-  min-height: 32px;
+  width: 260px;
+  min-height: 60px;
   align-items: center;
   justify-content: center;
   margin: 34px auto 0;
   border-radius: 999px;
   background: #029cf5;
   color: #fff;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   text-transform: uppercase;
@@ -10345,7 +10443,7 @@
 .responsive-website-page .hosting-focus-section .hosting-service-card {
   min-height: 174px;
   padding: 0 30px 25px;
-  border-right: 1px solid rgb(255 255 255 / 22%);
+  /* border-right: 1px solid rgb(255 255 255 / 22%); */
   border-top: 0;
 }
 

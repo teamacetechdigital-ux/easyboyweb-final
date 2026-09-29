@@ -1,119 +1,94 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const sliderCopies = [0, 1, 2];
+const workScreens = [
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+    { src: "/imgs/appscreen1.svg", alt: "Mobile app project screenshot 1" },
+    { src: "/imgs/appscreen2.svg", alt: "Mobile app project screenshot 2" },
+];
 
 function MobileScreen() {
-
-
     const recentWorkSliderRef = useRef<HTMLDivElement | null>(null);
+    const [activeSlide, setActiveSlide] = useState(0);
 
-const moveRecentWorkSlider = (
-  direction: "previous" | "next"
-) => {
-  const slider = recentWorkSliderRef.current;
+    useEffect(() => {
+        const slider = recentWorkSliderRef.current;
 
-  if (!slider) return;
+        if (!slider) return;
 
-  const scrollAmount = Math.min(
-    360,
-    slider.clientWidth * 0.35
-  );
-  const loopStart = slider.scrollWidth / 3;
-  const loopEnd = loopStart * 2;
-  const nextPosition =
-    slider.scrollLeft + (direction === "next" ? scrollAmount : -scrollAmount);
+        const updateActiveSlide = () => {
+            setActiveSlide(
+                Math.round(slider.scrollLeft / slider.clientWidth)
+            );
+        };
 
-  slider.scrollTo({
-    left: nextPosition < loopStart
-      ? loopEnd - scrollAmount
-      : nextPosition >= loopEnd
-        ? loopStart
-        : nextPosition,
-    behavior: "smooth",
-  });
-};
+        slider.addEventListener("scroll", updateActiveSlide, { passive: true });
+        return () => slider.removeEventListener("scroll", updateActiveSlide);
+    }, []);
 
-const centerRecentWorkImage = () => {
-  const slider = recentWorkSliderRef.current;
+    const moveRecentWorkSlider = (direction: -1 | 1) => {
+        const slider = recentWorkSliderRef.current;
 
-  if (!slider) return;
+        if (!slider) return;
 
-  slider.scrollTo({
-    left: slider.scrollWidth / 3,
-    behavior: "auto",
-  });
-};
+        const nextSlide =
+            (activeSlide + direction + workScreens.length) % workScreens.length;
 
-useEffect(() => {
-  const slider = recentWorkSliderRef.current;
-
-  if (!slider) return;
-
-  const frame = window.requestAnimationFrame(centerRecentWorkImage);
-  const interval = window.setInterval(() => {
-    const loopStart = slider.scrollWidth / 3;
-    const loopEnd = loopStart * 2;
-    const scrollAmount = Math.min(360, slider.clientWidth * 0.35);
-
-    if (!scrollAmount) return;
-
-    if (slider.scrollLeft + scrollAmount >= loopEnd) {
-      slider.scrollTo({ left: loopStart, behavior: "auto" });
-    }
-
-    slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  }, 4000);
-
-  return () => {
-    window.cancelAnimationFrame(frame);
-    window.clearInterval(interval);
-  };
-}, []);
-
-
+        slider.scrollTo({
+            left: nextSlide * slider.clientWidth,
+            behavior: "smooth",
+        });
+    };
 
   return (
-    <>
-    
-    
-    <section className="recent-work-section">
+    <section className="mobile-app-work-section">
   <div className="container">
-    <h2 className="recent-work-heading font-aloevera">
+    <h2 className="mobile-app-work-heading font-aloevera">
       Our Recent Work
     </h2>
 
-    <div className="recent-work-slider-shell">
+    <div className="mobile-app-work-slider">
       <div
         ref={recentWorkSliderRef}
-        className="recent-work-slider"
+        className="mobile-app-work-track"
+        role="region"
         aria-label="Our recent mobile application work"
+        tabIndex={0}
       >
-        {sliderCopies.map((copy) => (
-          <Image
-            key={copy}
-            src="/imgs/mobile_screen.svg"
-            alt={copy === 1 ? "Our recent mobile application projects" : ""}
-            width={2045}
-            height={503}
-            className="recent-work-image"
-            onLoad={copy === 0 ? centerRecentWorkImage : undefined}
-            priority={copy === 0}
-          />
+        {workScreens.map((screen, index) => (
+          <div className="mobile-app-work-slide" key={screen.src}>
+            <Image
+              src={screen.src}
+              alt={screen.alt}
+              fill
+              sizes="(max-width: 768px) calc(100vw - 32px), 900px"
+              priority={index === 0}
+            />
+          </div>
         ))}
-        
       </div>
     </div>
 
-    <div className="recent-work-controls">
+    <div className="mobile-app-work-controls">
       <button
         type="button"
         className="recent-work-arrow recent-work-arrow-previous"
-        onClick={() =>
-          moveRecentWorkSlider("previous")
-        }
+        onClick={() => moveRecentWorkSlider(-1)}
         aria-label="Previous projects"
       >
         <svg
@@ -127,7 +102,7 @@ useEffect(() => {
       <button
         type="button"
         className="recent-work-arrow recent-work-arrow-next"
-        onClick={() => moveRecentWorkSlider("next")}
+        onClick={() => moveRecentWorkSlider(1)}
         aria-label="Next projects"
       >
         <svg
@@ -140,10 +115,6 @@ useEffect(() => {
     </div>
   </div>
 </section>
-    
-    
-    
-    </>
   )
 }
 

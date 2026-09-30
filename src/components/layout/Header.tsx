@@ -75,13 +75,13 @@ export default function Header({ variant = "default", className = "" }: HeaderPr
               Blog
             </Link>
             <div className="mobile-contact-links">
-              <Link href="tel:+1 800-807-0319">Call Us</Link>
+              <Link href="tel:+18008070319">Call Us</Link>
               <Link href="/contact">Email Us</Link>
             </div>
           </nav>
 
           <div className="icn-col">
-            <Link href="tel:+1 800-807-0319" aria-label="Call us">
+            <Link href="tel:+18008070319" aria-label="Call us">
               <Image src={phone} alt="" aria-hidden="true" />
             </Link>
             <Link href="/contact" aria-label="Email us">

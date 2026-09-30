@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { CSSProperties } from "react";
 import styles from "./LogoStrip.module.css";
 
 type BrandLogo = {
@@ -14,24 +13,29 @@ type LogoStripProps = {
 };
 
 export default function LogoStrip({ logos, label, className = "" }: LogoStripProps) {
+  const marqueeLogos = [...logos, ...logos];
+
   return (
-    <section className={`${styles.section} ${className}`} aria-label={label}>
-      <ul
-        className={styles.grid}
-        style={{ "--brand-count": logos.length } as CSSProperties}
-      >
-        {logos.map((logo) => (
-          <li className={styles.item} key={logo.name}>
-            <Image
-              src={logo.src}
-              alt={logo.name}
-              width={180}
-              height={80}
-              className={styles.logo}
-            />
-          </li>
-        ))}
-      </ul>
+    <section className={`${styles.section} ${className}`.trim()} aria-label={label}>
+      <div className={styles.marquee}>
+        <div className={styles.track}>
+          {marqueeLogos.map((logo, index) => (
+            <div
+              className={styles.item}
+              key={`${logo.name}-${index}`}
+              aria-hidden={index >= logos.length}
+            >
+              <Image
+                src={logo.src}
+                alt={logo.name}
+                width={180}
+                height={80}
+                className={styles.logo}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

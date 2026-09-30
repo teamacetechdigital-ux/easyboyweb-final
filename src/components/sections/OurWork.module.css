@@ -103,7 +103,7 @@
 
 .preview img { padding: 26px 12px 34px; object-fit: contain; transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1); }
 .logo img { padding: 64px 42px; }
-.preview.mobile img { object-fit: cover; object-position: center; padding: 60px 0; }
+.preview.mobile img { object-fit: contain; object-position: center; padding: 36px 16px; }
 
 .projectNumber {
   position: absolute;

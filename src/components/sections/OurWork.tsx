@@ -28,7 +28,8 @@ const projects = [
   { title: "Website Design Study 03", image: "/imgs/screen (3).svg", category: "website" },
   { title: "Website Design Study 05", image: "/imgs/screen (5).svg", category: "website" },
   { title: "Brand Identity Project", image: "/imgs/ourwork_1.svg", category: "logo" },
-  { title: "Mobile Application Project", image: "/imgs/mobile_screen.svg", category: "mobile" },
+  { title: "Mobile Application Project", image: "/imgs/gallery/appscreen1.png", category: "mobile" },
+  { title: "Mobile Application Showcase", image: "/imgs/gallery/appscreen2.png", category: "mobile" },
   { title: "Logo Design Project", image: "/imgs/ourwork_2.svg", category: "logo" },
 ] as const;
 

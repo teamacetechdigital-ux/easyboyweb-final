@@ -3112,13 +3112,13 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   }
 
   .seo-audit-left {
-    flex-basis: 46%;
-    max-width: 46%;
+    flex-basis: calc(46% - 20px);
+    max-width: calc(46% - 20px);
   }
 
   .seo-audit-right {
-    flex-basis: 54%;
-    max-width: 54%;
+    flex-basis: calc(54% - 20px);
+    max-width: calc(54% - 20px);
   }
 }
 

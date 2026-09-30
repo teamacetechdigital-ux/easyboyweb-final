@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./responsive.css";
 import "./motion.css";
+import "./quality.css";
 import GsapAnimations from "../components/layout/GsapAnimations";
 
 export const metadata: Metadata = {

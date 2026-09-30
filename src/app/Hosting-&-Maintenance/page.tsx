@@ -1,8 +1,5 @@
-"use client";
-import { useState } from "react";
 import Footer from "@/src/components/layout/Footer";
 import Header from "@/src/components/layout/Header";
-import weFocusimg from "../../../public/imgs/we-focus-img1.png";
 import Link from "next/link";
 import Image from "next/image";
 import Testimonials from "@/src/components/sections/Testimonials";
@@ -136,15 +133,6 @@ const hostingServices = [
 
 export default function CustomSoftwareDevelopment() {
 
-    const [openHostingFaq, setOpenHostingFaq] = useState<
-        number | null
-    >(null);
-
-    const toggleHostingFaq = (index: number) => {
-        setOpenHostingFaq((current) =>
-            current === index ? null : index
-        );
-    };
     return (
         <main className="responsive-website-page">
             <Header />
@@ -209,13 +197,13 @@ export default function CustomSoftwareDevelopment() {
                         <p className="font-inter">Our development team stays updated on the latest and greatest in web design and development tools. We specialize in a wide range of web technologies, helping businesses maintain secure, efficient, and flawless websites. Our maintenance packages are designed for websites across all sizes and sectors, providing the essential expertise and support every business needs. <br /><br /> A website maintenance plan is important for a number of reasons:</p>
                     </div>
                     {/* Main Content */}
-                    <div className="mt-12 grid items-center gap-10 lg:grid-cols-[280px_minmax(420px,1fr)_280px] xl:grid-cols-[340px_minmax(420px,1fr)_340px]">
+                    <div className="maintenance-benefits-layout">
                         {/* Left Cards */}
-                        <div className="flex flex-col gap-3">
+                        <div className="maintenance-benefits-column">
                             {leftCards.map((card) => (
                                 <div
                                     key={card.title}
-                                    className="rounded-[5px] bg-[#2C3E50] px-5 py-5 text-white"
+                                    className="maintenance-benefit-card"
                                 >
                                     <h3 className="mb-3 text-[20px] font-inter font-semibold leading-tight">
                                         {card.title}
@@ -229,7 +217,7 @@ export default function CustomSoftwareDevelopment() {
                         </div>
 
                         {/* Center Graphic */}
-                        <div className="flex items-center justify-center">
+                        <div className="maintenance-benefits-illustration">
                             <div className="maintenance-graphic-frame">
                                 {/* Rotating Orbit Image */}
                                 <div className="maintenance-graphic">
@@ -237,8 +225,7 @@ export default function CustomSoftwareDevelopment() {
                                         src={innerImg}
                                         alt="Website maintenance services"
                                         fill
-                                        priority
-                                        className="object-contain animate-maintenance-fade"
+                                        className="object-contain"
                                         sizes="(max-width: 1024px) 90vw, 540px"
                                     />
                                 </div>
@@ -246,11 +233,11 @@ export default function CustomSoftwareDevelopment() {
                         </div>
 
                         {/* Right Cards */}
-                        <div className="flex flex-col gap-3">
+                        <div className="maintenance-benefits-column">
                             {rightCards.map((card) => (
                                 <div
                                     key={card.title}
-                                    className="rounded-[5px] bg-[#2C3E50] px-5 py-5 text-white"
+                                    className="maintenance-benefit-card"
                                 >
                                     <h3 className="mb-3 text-[20px] font-inter font-semibold leading-tight">
                                         {card.title}
@@ -263,7 +250,7 @@ export default function CustomSoftwareDevelopment() {
                             ))}
                         </div>
                     </div>
-                    <Link href="/contact" className="top-notch-cta font-inter">
+                    <Link href="tel:+18008070319" className="top-notch-cta site-cta font-inter">
                         get a free estimate
                     </Link>
                 </div>

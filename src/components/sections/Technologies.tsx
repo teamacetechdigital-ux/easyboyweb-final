@@ -1,48 +1,23 @@
-import Image from "next/image";
+import LogoStrip from "./LogoStrip";
 
 const technologies = [
-  "/imgs/Technologies_icon1.svg",
-  "/imgs/Technologies_icon2.svg",
-  "/imgs/Technologies_icon3.svg",
-  "/imgs/Technologies_icon4.svg",
-  "/imgs/Technologies_icon5.svg",
-  "/imgs/Technologies_icon6.svg",
-  "/imgs/Technologies_icon7.svg",
-  "/imgs/Technologies_icon8.svg",
-  "/imgs/Technologies_icon9.svg",
-   "/imgs/Technologies_icon1.svg",
-  "/imgs/Technologies_icon2.svg",
-  "/imgs/Technologies_icon3.svg",
-  "/imgs/Technologies_icon4.svg",
-  "/imgs/Technologies_icon5.svg",
-  "/imgs/Technologies_icon6.svg",
-  "/imgs/Technologies_icon7.svg",
-  "/imgs/Technologies_icon8.svg",
-  "/imgs/Technologies_icon9.svg"
+  { src: "/imgs/Technologies_icon1.svg", name: "AJAX" },
+  { src: "/imgs/Technologies_icon2.svg", name: "PHP" },
+  { src: "/imgs/Technologies_icon3.svg", name: "React" },
+  { src: "/imgs/Technologies_icon4.svg", name: "Amazon Web Services" },
+  { src: "/imgs/Technologies_icon5.svg", name: "Google Cloud" },
+  { src: "/imgs/Technologies_icon6.svg", name: "Angular" },
+  { src: "/imgs/Technologies_icon7.svg", name: "Python" },
+  { src: "/imgs/Technologies_icon8.svg", name: "Vue.js" },
+  { src: "/imgs/platform-nextjs.svg", name: "Next.js" },
 ];
 
 export default function Technologies() {
   return (
-    <section className="technologies-section">
-      <div
-        className="technologies-track"
-        aria-label="Technologies we use"
-      >
-        {technologies.map((technology, index) => (
-          <div
-            className="technology-item"
-            key={`${technology}-${index}`}
-          >
-            <Image
-              src={technology}
-              alt={`Technology ${index + 1}`}
-              width={140}
-              height={70}
-              className="technology-logo"
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+    <LogoStrip
+      logos={technologies}
+      label="Technologies we use"
+      className="technologies-section"
+    />
   );
 }

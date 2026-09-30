@@ -1,0 +1,170 @@
+/* Shared finish across the service pages. Loaded after legacy page rules. */
+:root {
+  --site-ink: #2c3e50;
+  --site-blue: #0393e7;
+  --site-copy-size: 16px;
+  --site-cta-height: 54px;
+}
+:where(main) :is(a, button, input, textarea):focus-visible {
+  outline: 3px solid #0393e7;
+  outline-offset: 5px;
+}
+main img { max-width: 100%; }
+main .container { max-width: calc(100% - 32px); }
+main :is(.banner-btn, .top-notch-cta, .easyboy-pro-button, .easyboy-cta-button, .website-crm-button, .site-cta) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 180px;
+  min-height: var(--site-cta-height);
+  height: auto;
+  padding: 15px 28px;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  text-wrap: balance;
+  transition: translate .3s ease, background-color .3s ease, box-shadow .3s ease;
+}
+/* Apply the homepage's interactions to the same components on every route. */
+main :is(.identity-card, .easy-point, .website-crm-card, .custom-software-card, .seo-box, .maintenance-benefit-card, .maintenance-service-card, .hosting-service-card) {
+  transition: translate .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+main :is(.identity-icon img, .seo-icon img, .maintenance-service-icon img, .hosting-service-card > img) { transition: rotate .35s ease; }
+main :is(.help-number-hexagon, .how-we-work-number) { transition: transform .7s ease; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  main :is(.banner-btn, .top-notch-cta, .easyboy-pro-button, .easyboy-cta-button, .website-crm-button, .site-cta):hover { translate: 0 -3px; box-shadow: 0 12px 28px #0393e725; }
+  main :is(.identity-card, .easy-point, .website-crm-card, .custom-software-card, .seo-box, .maintenance-benefit-card, .maintenance-service-card, .hosting-service-card):hover { translate: 0 -5px; box-shadow: 0 12px 28px #0393e71c; }
+  main .identity-card:hover .identity-icon img { animation: identity-icon-shake .55s ease-in-out; }
+  main :is(.seo-box, .maintenance-service-card, .hosting-service-card):hover :is(.seo-icon img, .maintenance-service-icon img, img) { rotate: -6deg; }
+  main .help-step:hover .help-number-hexagon,
+  main .how-we-work-step:hover .how-we-work-number { transform: rotate(360deg); }
+}
+/* Normal document flow reserves space for the watermark at every breakpoint. */
+main .site-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  padding: clamp(52px, 6vw, 88px) 0 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+.site-footer .footer-main {
+  height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .7fr) minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 3vw, 56px);
+}
+.site-footer :is(.footer-brand, .footer-brand-description, .footer-newsletter, .footer-links-column) { width: 100%; min-width: 0; max-width: none; }
+.site-footer .footer-brand-description { font-size: 14px; line-height: 1.8; }
+.site-footer .footer-divider { margin-top: 48px; }
+.site-footer .footer-bottom { height: auto; min-height: 0; padding-top: 26px; gap: 20px; align-items: center; }
+.site-footer .footer-phone { flex-wrap: wrap; }
+.site-footer .footer-large-logo {
+  position: relative;
+  inset: auto;
+  flex: none;
+  width: calc(100% - 40px);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 1810 / 200;
+  margin: clamp(30px, 4vw, 68px) auto 0;
+  transform: none;
+  overflow: hidden;
+  line-height: 0;
+}
+.site-footer .footer-large-logo img { display: block; width: 100%; max-width: none; height: auto; margin: 0; object-fit: contain; }
+/* Center the icon, title and paragraph on the same axis. */
+.responsive-website-page .maintenance-services-grid,
+.responsive-website-page .hosting-focus-section .hosting-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  margin-top: 42px;
+}
+.responsive-website-page .maintenance-services-grid .maintenance-service-card,
+.responsive-website-page .hosting-focus-section .hosting-services-grid .hosting-service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  padding: 30px 24px;
+  border: 1px solid #0393e71f;
+  border-radius: 12px;
+  text-align: center;
+  background: #ffffff75;
+}
+.responsive-website-page .hosting-focus-section .hosting-services-grid .hosting-service-card { background: #ffffff06; border-color: #ffffff25; }
+.responsive-website-page .hosting-service-card::before { display: none; }
+.responsive-website-page .maintenance-service-card .maintenance-service-icon { width: 54px; height: 54px; margin: 0 auto; align-self: center; }
+.responsive-website-page .maintenance-service-card .maintenance-service-icon img,
+.responsive-website-page .hosting-focus-section .hosting-service-card > img { width: 54px; height: 54px; margin: 0 auto; flex: none; object-fit: contain; }
+.responsive-website-page .maintenance-service-card h3,
+.responsive-website-page .hosting-focus-section .hosting-service-card h3 { width: 100%; margin: 0; font-size: 22px; line-height: 1.3; font-weight: 600; text-align: center; text-wrap: balance; }
+.responsive-website-page .maintenance-service-card p,
+.responsive-website-page .hosting-focus-section .hosting-service-card p { width: 100%; max-width: 38ch; margin: 0; font-size: var(--site-copy-size); line-height: 1.75; text-align: center; text-transform: none; }
+.responsive-website-page :is(.res-sec-sect-cont, .top-notch-txt-sect) h2,
+.responsive-website-page .hosting-focus-section .we-focus-main-txt h2 { width: 100%; max-width: 850px; margin-inline: auto; font-size: clamp(30px, 3.2vw, 46px); line-height: 1.15; }
+.responsive-website-page :is(.res-sec-sect-cont, .top-notch-txt-sect) p,
+.responsive-website-page .hosting-focus-section .we-focus-main-txt p { width: 100%; max-width: 960px; font-size: 17px; line-height: 1.8; text-transform: none; }
+.responsive-website-page .top-notch-section { padding-block: clamp(60px, 7vw, 100px); }
+.maintenance-benefits-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 28px; margin-top: 46px; }
+.maintenance-benefits-column { display: grid; gap: 16px; min-width: 0; }
+.maintenance-benefit-card { padding: 24px; border: 1px solid #ffffff15; border-radius: 10px; background: #2c3e50; color: #fff; }
+.maintenance-benefit-card h3 { margin: 0 0 12px; color: #fff; font-size: 20px; line-height: 1.3; font-weight: 600; }
+.maintenance-benefit-card p { margin: 0; color: #e3ebf1; font-size: 16px; line-height: 1.75; }
+.maintenance-benefits-illustration { width: 100%; min-width: 0; display: flex; justify-content: center; }
+.responsive-website-page .maintenance-benefits-illustration .maintenance-graphic-frame { width: 100%; max-width: 540px; height: auto; aspect-ratio: 1; }
+.responsive-website-page .maintenance-graphic img { object-fit: contain; }
+.responsive-website-page .top-notch-cta,
+.responsive-website-page .we-focus-sections:not(.clr-bg-chng) .we-focus-main-txt .banner-btn { display: flex; width: fit-content; min-width: 230px; min-height: 54px; height: auto; margin: 34px auto 0; padding: 15px 28px; font-size: 15px; line-height: 1.4; }
+.responsive-website-page .we-focus-sections:not(.clr-bg-chng) .we-focus-main-txt .banner-btn { margin-left: 0; }
+.responsive-website-page .we-focus-sections:not(.clr-bg-chng) .container > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 72px); }
+.responsive-website-page .we-focus-main-txt { min-width: 0; }
+.responsive-website-page .we-focus-main-txt img { width: 100%; height: auto; object-fit: contain; }
+@media (max-width: 1100px) {
+  .site-footer .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px; }
+  .maintenance-benefits-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .maintenance-benefits-illustration { grid-row: 1; grid-column: 1 / -1; }
+  .maintenance-benefits-column { align-self: stretch; grid-auto-rows: 1fr; }
+  .responsive-website-page .maintenance-benefits-illustration .maintenance-graphic-frame { max-width: 470px; }
+  .responsive-website-page .maintenance-services-grid,
+  .responsive-website-page .hosting-focus-section .hosting-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .agency-showcase { flex: none; }
+  .responsive-website-page .we-focus-sections:not(.clr-bg-chng) .container > div { display: grid; grid-template-columns: 1fr; gap: 34px; }
+  .responsive-website-page .we-focus-sections .we-focus-main-txt { width: 100%; max-width: 100%; }
+}
+@media (max-width: 600px) {
+  main :is(.banner-btn, .top-notch-cta, .easyboy-pro-button, .easyboy-cta-button, .website-crm-button, .site-cta) { min-width: 160px; font-size: 14px; padding-inline: 24px; }
+  .site-footer .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 22px; }
+  .site-footer :is(.footer-brand, .footer-newsletter) { grid-column: 1 / -1; }
+  .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .site-footer .footer-bottom p, .site-footer .footer-legal-links { font-size: 12px; line-height: 1.6; }
+  .site-footer .footer-large-logo { width: calc(100% - 20px); }
+  .maintenance-benefits-layout { grid-template-columns: 1fr; gap: 16px; }
+  .maintenance-benefits-column { gap: 16px; }
+  .maintenance-benefit-card { padding: 24px; }
+  .responsive-website-page .maintenance-services-grid,
+  .responsive-website-page .hosting-focus-section .hosting-services-grid { grid-template-columns: 1fr; gap: 16px; }
+  .responsive-website-page .maintenance-services-grid .maintenance-service-card,
+  .responsive-website-page .hosting-focus-section .hosting-services-grid .hosting-service-card { padding: 28px 22px; }
+  .responsive-website-page :is(.res-sec-sect-cont, .top-notch-txt-sect) p { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  main :is(.identity-card, .easy-point, .website-crm-card, .custom-software-card, .seo-box, .maintenance-benefit-card, .maintenance-service-card, .hosting-service-card):hover { translate: none; }
+  main .how-we-work-step:hover .how-we-work-number { transform: none; }
+}

@@ -1,32 +1,18 @@
+import LogoStrip from "./LogoStrip";
+
 const partners = [
-  "/imgs/partner1.svg",
-  "/imgs/partner2.svg",
-  "/imgs/partner3.svg",
-  "/imgs/partner4.svg",
-  "/imgs/partner5.svg",
-  "/imgs/partner6.svg",
-  "/imgs/partner7.svg",
-  "/imgs/partner8.svg",
-  "/imgs/partner1.svg",
-  "/imgs/partner2.svg",
-  "/imgs/partner3.svg",
-  "/imgs/partner4.svg",
-  "/imgs/partner5.svg",
-  "/imgs/partner6.svg",
-  "/imgs/partner7.svg",
-  "/imgs/partner8.svg",
+  { src: "/imgs/partner1.svg", name: "Dell" },
+  { src: "/imgs/partner2.svg", name: "Marriott" },
+  { src: "/imgs/partner3.svg", name: "Lowe's" },
+  { src: "/imgs/partner4.svg", name: "AT&T" },
+  { src: "/imgs/partner5.svg", name: "Smalls Sliders" },
+  { src: "/imgs/partner6.svg", name: "Nairobi Professional" },
+  { src: "/imgs/partner7.svg", name: "Tampa General Hospital" },
+  { src: "/imgs/partner8.svg", name: "Summit Racing Equipment" },
 ];
 
 export default function Partners() {
   return (
-    <section className="partners-section">
-      <div className="partners-track" aria-label="Partner logos">
-        {partners.map((partner, index) => (
-          <div key={`${partner}-${index}`} className="partner-item">
-            <img src={partner} alt="Partner logo" className="partner-logo" />
-          </div>
-        ))}
-      </div>
-    </section>
+    <LogoStrip logos={partners} label="Clients we serve" className="partners-section" />
   );
 }

@@ -1,0 +1,84 @@
+.section {
+  width: 100%;
+  padding: 32px 24px 56px;
+  background: #fff;
+}
+
+/* Every brand stays visible instead of being cropped at a moving track edge. */
+.grid {
+  --logo-columns: var(--brand-count);
+  --logo-gap: clamp(20px, 2.4vw, 36px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px var(--logo-gap);
+  width: min(100%, 1360px);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex: 0 1 calc((100% - (var(--logo-columns) - 1) * var(--logo-gap)) / var(--logo-columns));
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 80px;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: 70px;
+  max-width: 160px;
+  object-fit: contain;
+  /* Preserve source colors. Brightness filters turn white mattes gray. */
+  mix-blend-mode: multiply;
+  transition: transform 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .item:hover .logo {
+    transform: translateY(-3px) scale(1.035);
+  }
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    --logo-columns: 4;
+    max-width: 850px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 20px 24px 40px;
+  }
+
+  .grid {
+    --logo-columns: 2;
+    --logo-gap: 28px;
+    row-gap: 20px;
+  }
+
+  .item {
+    height: 70px;
+  }
+
+  .logo {
+    max-width: 140px;
+    height: 58px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    transition: none;
+  }
+
+  .item:hover .logo {
+    transform: none;
+  }
+}

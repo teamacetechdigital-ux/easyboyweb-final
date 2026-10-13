@@ -234,8 +234,6 @@ export default function Footer() {
 
           <div className="footer-legal-links font-inter">
             <Link href="/privacy-policy">Privacy Policy</Link>
-            <span>|</span>
-            <Link href="/sitemap.xml">Sitemap</Link>
           </div>
         </div>
       </div>

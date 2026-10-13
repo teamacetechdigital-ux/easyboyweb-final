@@ -1213,12 +1213,6 @@ const landingPageFaqs = [
           <Link href="/privacy-policy">
             Privacy Policy
           </Link>
-
-          <span>|</span>
-
-          <Link href="/sitemap.xml">
-            Sitemap
-          </Link>
         </div>
       </div>
     </div>

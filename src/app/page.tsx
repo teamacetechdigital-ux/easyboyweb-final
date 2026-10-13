@@ -91,14 +91,6 @@ export default function HomePage() {
                 Social Media Automation
               </h3>
             </div>
-            <div className="skill-box">
-              <div className="skill-icon">
-                <Image src={skill3} alt="CRM EasyBoyWeb Pro" />
-              </div>
-              <h3 className="font-aloevera">
-                CRM (EasyBoyWeb Pro)
-              </h3>
-            </div>
           </div>
         </div>
       </section>
@@ -154,26 +146,7 @@ export default function HomePage() {
             </h2>
 
             <p className="font-inter">
-              Our website development and mobile solutions are tailor-made to
-              captivate your audience while ensuring seamless management for you.
-            </p>
-            <p className="font-inter">
-              From ideation to full-service design &amp; development, we’re all
-              about crafting sites, web software and mobile apps that not only look
-              amazing but also function flawlessly.
-            </p>
-            <p className="font-inter">
-              But here’s the kicker we don’t stop there!
-            </p>
-            <p className="font-inter">
-              With our worry-free hosting and management services, you can breathe
-              easy knowing your online assets are in good hands.
-            </p>
-            <p className="font-inter">
-              And let’s talk
-              about automated SEO and social media solutions we’ve got the tools
-              to skyrocket your visibility and engagement, leaving you free to
-              focus on what really matters: your business.
+              We create custom websites, web software, and mobile apps that look great, perform flawlessly, and are easy to manage. From concept to development, we handle it all, including hassle-free hosting, ongoing management, and automated SEO and social media solutions to boost your visibility and engagement, so you can focus on growing your business.
             </p>
           </div>
         </div>

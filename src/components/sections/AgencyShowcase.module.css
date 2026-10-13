@@ -41,7 +41,7 @@
   font-size: 10px;
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: 0.14em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -53,7 +53,7 @@
 
 .projectHeading .eyebrow {
   font-size: clamp(18px, 1.5vw, 22px);
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
 }
 
 .discipline {
@@ -95,7 +95,7 @@
 .browserDots { display: flex; gap: 4px; }
 .browserDots i { width: 5px; height: 5px; border-radius: 50%; background: #bad0dd; }
 .browserDots i:first-child { background: #0393e7; }
-.browserAddress { color: #7a90a0; font-size: 8px; letter-spacing: 0.03em; }
+.browserAddress { color: #7a90a0; font-size: 8px; letter-spacing: 0; }
 
 .browserCanvas {
   position: relative;
@@ -179,7 +179,7 @@
   transition: background-color 350ms, border-color 350ms;
 }
 
-.step h3 { margin: 0 0 7px; color: #fff; font-size: clamp(23px, 2.3vw, 31px); line-height: 1.12; font-weight: 700; letter-spacing: -0.025em; }
+.step h3 { margin: 0 0 7px; color: #fff; font-size: clamp(23px, 2.3vw, 31px); line-height: 1.12; font-weight: 700; letter-spacing: 0; }
 .step p { margin: 0; max-width: 320px; color: #a8bbce; font-size: 12px; line-height: 1.6; }
 
 .processFooter {

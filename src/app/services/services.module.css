@@ -19,7 +19,7 @@
   margin: 0 0 24px;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.17em;
+  letter-spacing: 0;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -34,7 +34,7 @@
   font-family: "Aloevera", sans-serif;
   font-size: clamp(52px, 6.9vw, 98px);
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
   line-height: 1.02;
 }
 
@@ -103,7 +103,7 @@
   font-family: "Aloevera", sans-serif;
   font-size: clamp(32px, 3.6vw, 50px);
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   line-height: 1.1;
 }
 
@@ -146,7 +146,7 @@
 .number {
   color: #647b8d;
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
 }
 
 .card h3 {
@@ -154,7 +154,7 @@
   font-family: "Aloevera", sans-serif;
   font-size: 26px;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1.18;
 }
 
@@ -208,7 +208,7 @@
   font-family: "Aloevera", sans-serif;
   font-size: clamp(30px, 3vw, 42px);
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   line-height: 1.1;
 }
 

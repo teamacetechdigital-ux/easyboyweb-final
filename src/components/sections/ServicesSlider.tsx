@@ -91,7 +91,8 @@ export default function ServicesSlider() {
     if (!slider || !card) return 0;
 
     const gap = Number.parseFloat(window.getComputedStyle(slider).gap) || 30;
-    return card.getBoundingClientRect().width + gap;
+    // Entrance/hover transforms must not change the carousel's scroll distance.
+    return card.offsetWidth + gap;
   };
 
   useEffect(() => {
@@ -101,7 +102,7 @@ export default function ServicesSlider() {
 
     const frame = requestAnimationFrame(() => {
       slider.scrollTo({
-        left: slider.scrollWidth / 3,
+        left: services.length * getScrollDistance(),
         behavior: "auto",
       });
     });
@@ -122,7 +123,7 @@ export default function ServicesSlider() {
 
     const advance = () => {
       const scrollDistance = getScrollDistance();
-      const currentLoopStart = slider.scrollWidth / 3;
+      const currentLoopStart = services.length * scrollDistance;
       const currentLoopEnd = currentLoopStart * 2;
 
       if (!scrollDistance) return;
@@ -199,7 +200,7 @@ export default function ServicesSlider() {
     if (!scrollDistance) return;
 
     setIsAutoplayPaused(true);
-    const loopStart = slider.scrollWidth / 3;
+    const loopStart = services.length * scrollDistance;
     const loopEnd = loopStart * 2;
     const nextPosition = slider.scrollLeft + direction * scrollDistance;
 
@@ -232,18 +233,6 @@ export default function ServicesSlider() {
               aria-controls={sliderId}
             >
               &#8592;
-            </button>
-
-            <button
-              type="button"
-              className={styles.autoplayButton}
-              onClick={() => setIsAutoplayPaused((paused) => !paused)}
-              aria-label={reducedMotion ? "Service slideshow paused for reduced motion" : isAutoplayActive ? "Pause service slideshow" : "Play service slideshow"}
-              aria-controls={sliderId}
-              disabled={reducedMotion}
-            >
-              <span aria-hidden="true">{isAutoplayActive ? "Ⅱ" : "▷"}</span>
-              {reducedMotion ? "Paused" : isAutoplayActive ? "Pause" : "Play"}
             </button>
 
             <button

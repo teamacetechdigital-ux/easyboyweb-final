@@ -3,6 +3,8 @@ import "./globals.css";
 import "./responsive.css";
 import "./motion.css";
 import "./quality.css";
+import "./consistency.css";
+import "./card-motion.css";
 import GsapAnimations from "../components/layout/GsapAnimations";
 
 export const metadata: Metadata = {

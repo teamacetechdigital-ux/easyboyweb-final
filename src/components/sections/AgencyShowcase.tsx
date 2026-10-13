@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./AgencyShowcase.module.css";
 
 type AgencyShowcaseProps = {
@@ -15,7 +14,7 @@ const steps = [
 export default function AgencyShowcase({ variant }: AgencyShowcaseProps) {
   if (variant === "process") {
     return (
-      <div className={`agency-showcase ${styles.showcase} ${styles.process}`}>
+      <div className={`agency-showcase agency-showcase-process ${styles.showcase} ${styles.process}`}>
         <div className={styles.processHeading}>
           <span className={styles.eyebrow}>The way we work</span>
           <span className={styles.brandMark} aria-hidden="true">✳</span>
@@ -59,12 +58,6 @@ export default function AgencyShowcase({ variant }: AgencyShowcaseProps) {
             sizes="(max-width: 767px) 85vw, 550px"
           />
         </div>
-      </div>
-      <div className={styles.projectFooter}>
-        <span className="font-inter">From idea to experience.</span>
-        <Link href="/Work" className={styles.workLink}>
-          Explore our work <span aria-hidden="true">↗</span>
-        </Link>
       </div>
     </div>
   );

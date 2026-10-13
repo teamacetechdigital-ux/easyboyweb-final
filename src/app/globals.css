@@ -61,6 +61,7 @@ body::-webkit-scrollbar,
   src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -68,6 +69,7 @@ body::-webkit-scrollbar,
   src: url("../fonts/Aloeveracondensed-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -75,6 +77,7 @@ body::-webkit-scrollbar,
   src: url("../fonts/Aloeveracondensed-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -82,6 +85,7 @@ body::-webkit-scrollbar,
   src: url("../fonts/Aloevera-ExtraBold.otf") format("opentype");
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 
 .container {
@@ -1017,7 +1021,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   line-height: 110%;
 }
 
-.hosting-services-grid .responsive-website-page .we-focus-sections .container > div {
+.hosting-services-grid .responsive-website-page .we-focus-sections .container>div {
   border: none !important;
 }
 
@@ -2521,7 +2525,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .sec-seo-section {
-  margin-top: -200px;
+  margin-top: -140px;
 }
 
 .seo-identity-grid {
@@ -2538,7 +2542,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .seo-third-section {
-  padding: 100px 0 80px;
+  padding: 100px 0 120px;
   background: linear-gradient(0deg, #D7EFF9, #fff);
 }
 
@@ -2729,7 +2733,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .seo-seventh-section {
-  padding: 80px 0 400px;
+  padding: 80px 0 0px;
 }
 
 .seo-page .seo-feature-groups {
@@ -3445,14 +3449,14 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .custom-web-development-page .cust-web-deveplop .banner-content {
-  width: min(763px, 100%);
+  width: min(1000px, 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 0 auto;
-  padding-top: 244px;
+  /* padding-top: 244px; */
 }
 
 .custom-web-development-page .cust-web-deveplop .banner-content h1,
@@ -5210,6 +5214,59 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   transform: scale(1.07);
 }
 
+.our-work-card {
+  appearance: none;
+  font: inherit;
+}
+
+.logo-preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(10, 20, 30, 0.82);
+}
+
+.logo-preview-dialog {
+  position: relative;
+  width: min(800px, 90vw);
+  height: min(600px, 80vh);
+  padding: 48px 24px 24px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.logo-preview-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 1;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #2c3e50;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.logo-preview-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.logo-preview-image img {
+  object-fit: contain;
+}
+
 .our-work-button {
   display: flex;
   align-items: center;
@@ -5356,7 +5413,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   transform: translateY(-7px) scale(1.06);
 }
 
-.mobileapp-service h2 {
+.mobileapp-service h3 {
   display: flex;
   flex-direction: column;
   margin: 19px 0 0;
@@ -5371,8 +5428,8 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .why-easyboyweb-section {
   width: 100%;
-  height: 1150px;
-  padding-top: 137px;
+  /* height: 1150px; */
+  padding: 100px 0;
   box-sizing: border-box;
   overflow: hidden;
   background: #d7eff9;
@@ -6344,8 +6401,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 /* custom ai */
 .custom-ai-section {
   width: 100%;
-  height: 963px;
-  padding-top: 88px;
+  padding: 88px 0;
   box-sizing: border-box;
   overflow: hidden;
   background: linear-gradient(180deg,
@@ -6597,6 +6653,15 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   height: 100%;
 }
 
+.blog-detail-module__DqIlNW__blogDetailFeaturedImage img {
+  height: 500px !important;
+  object-fit: contain !important;
+}
+
+.website-crm-strip p {
+  margin-bottom: 0 !important;
+}
+
 .work-banner-content,
 .blog-banner-content {
   display: flex;
@@ -6604,7 +6669,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   align-items: center;
   width: min(763px, 100%);
   margin: 0 auto;
-  padding-top: 244px;
+  /* padding-top: 244px; */
   box-sizing: border-box;
   color: #ffffff;
   text-align: center;
@@ -6614,6 +6679,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 220px 0 !important;
 }
 
 .blog-index-page .blog-banner-content,
@@ -7390,6 +7456,9 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   position: relative;
   overflow: hidden;
   background-image: url(../../public/imgs/Ai-devep-banner.png);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .ai-solutions-container {
@@ -7479,7 +7548,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .ai-call-agent-section {
   width: 100%;
-  height: 1919px;
+  /* height: 1919px; */
   padding: 59px 0 80px;
   box-sizing: border-box;
   overflow: hidden;
@@ -7718,7 +7787,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .faq-answer p {
-  width: min(967px, calc(100% - 48px));
+  width: min(1067px, calc(100% - 48px));
   margin: 0 auto;
   padding: 17px 0 19px;
   color: #000000;
@@ -8700,16 +8769,16 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .getting-step-circle::before {
   content: "";
-  width: 158px;
-  height: 158px;
-  position: absolute;
-  top: -5px;
-  left: -3px;
   z-index: -1;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  border-radius: 50%;
-  clip-path: inset(0 0 50% 0);
+  clip-path: inset(0 0 50%);
   pointer-events: none;
+  border: 1.5px solid #ffffff8c;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -3px;
+  left: -1px;
 }
 
 .getting-step-circle span {
@@ -9401,10 +9470,6 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 /* Landing Page FAQ and footer refinements */
 .landing-page .landing-faq-section .faq-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(5, auto);
-  grid-auto-flow: column;
   column-gap: 28px;
   row-gap: 14px;
 }
@@ -10047,7 +10112,6 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .subscription-panel .container {
-  padding-top: 75px;
   position: relative;
   box-sizing: border-box;
 }

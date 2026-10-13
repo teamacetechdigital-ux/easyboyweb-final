@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Header from '@/src/components/layout/Header'
+import FooterWatermark from "@/src/components/layout/FooterWatermark";
 import Faq from '@/src/components/sections/Faq'
+import "./pro-layout.css";
 
 
 const subscriptionLogoRows = [
@@ -91,7 +93,7 @@ const businessTools = [
   {
     title: "Automations",
     description:
-      "Trigger smart workflows that follow up, nurture, and convert leads — all on autopilot.",
+      "Trigger smart workflows that follow up, nurture, and convert leads all on autopilot.",
     icon: "/imgs/tool-land-icon4.svg",
   },
   {
@@ -174,6 +176,18 @@ const additionalServices = [
 
 
 function Landing_page() {
+  const demoVideoRef = useRef<HTMLVideoElement>(null);
+  const [isDemoPlaying, setIsDemoPlaying] = useState(false);
+  const [demoError, setDemoError] = useState("");
+
+  const playDemo = async () => {
+    setDemoError("");
+    try {
+      await demoVideoRef.current?.play();
+    } catch {
+      setDemoError("The video could not start. Please try the video controls.");
+    }
+  };
 
     const dataSectionRef = useRef<HTMLElement | null>(null);
 const dataAnimationStarted = useRef(false);
@@ -340,27 +354,27 @@ const footerSocials = [
   {
     name: "Facebook",
     icon: "/imgs/facebook_icon.svg",
-    href: "#",
+    href: "https://www.facebook.com/easyboyweb",
   },
   {
     name: "YouTube",
     icon: "/imgs/youtube_icon.svg",
-    href: "#",
+    href: "https://www.youtube.com/user/easyboyweb",
   },
   {
     name: "Instagram",
     icon: "/imgs/instagram_icon.svg",
-    href: "#",
+    href: "https://www.instagram.com/easyboyweb",
   },
   {
     name: "Twitter",
     icon: "/imgs/twitter_icon.svg",
-    href: "#",
+    href: "https://x.com/easyboyweb",
   },
   {
     name: "TikTok",
     icon: "/imgs/tiktok_icon.svg",
-    href: "#",
+    href: "https://www.tiktok.com/@easyboyweb",
   },
 ];
 
@@ -421,7 +435,7 @@ const landingPageFaqs = [
 
 
   return (
-    <main className="landing-page">
+    <main className="landing-page pro-page">
     <Header/>
     <section className="landing-hero-section">
   <div className="container">
@@ -429,19 +443,19 @@ const landingPageFaqs = [
       <h1 className="landing-hero-heading font-inter">
         All-In-One CRM &{" "}
         <span className="clr-chng">Marketing</span>
-        <br />
+        {" "}
         <span className="clr-chng">
           Automation Platform
         </span>{" "}
         For
-        <br />
+        {" "}
         Small Businesses
       </h1>
 
       <p className="landing-hero-description font-inter">
         Capture leads, automate follow-ups, and close more sales
-        — all from
-        <br className="landing-description-break" />
+        all from
+        {" "}
         one powerful dashboard.
       </p>
 
@@ -489,7 +503,7 @@ const landingPageFaqs = [
 
   {/* EasyBoyWeb Pro Section */}
 
-  <section className="landing-pro-section">
+  <section className="landing-pro-section" id="ebw-pro-demo">
     <div
       className="landing-pro-watermark-layer"
       aria-hidden="true"
@@ -505,7 +519,7 @@ const landingPageFaqs = [
 
     <div className="container">
       <h2 className="landing-pro-title font-inter">
-        Introducing
+        Introducing{" "}
         <span className="clr-chng">
           EasyBoyWeb Pro!
         </span>
@@ -527,9 +541,24 @@ const landingPageFaqs = [
         />
 
         <div className="landing-video-screen">
-          <button
+          <video
+            ref={demoVideoRef}
+            controls
+            playsInline
+            preload="metadata"
+            poster="/imgs/landing_img.png"
+            onPlay={() => setIsDemoPlaying(true)}
+            onPause={() => setIsDemoPlaying(false)}
+            onEnded={() => setIsDemoPlaying(false)}
+            aria-label="EasyBoyWeb Pro introduction video"
+          >
+            <source src="/imgs/BoyWeb_Pro.mp4" type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+          {!isDemoPlaying && <button
             type="button"
             className="landing-video-play"
+            onClick={playDemo}
             aria-label="Play EasyBoyWeb Pro introduction video"
           >
             <svg
@@ -538,9 +567,10 @@ const landingPageFaqs = [
             >
               <path d="M8 5.5v13l10-6.5L8 5.5Z" />
             </svg>
-          </button>
+          </button>}
         </div>
       </div>
+      {demoError && <p className="landing-video-error" role="alert">{demoError}</p>}
     </div>
   </section>
 
@@ -551,11 +581,11 @@ const landingPageFaqs = [
       <div className="multiple-tools-copy">
         <h2 className="multiple-tools-heading font-inter">
           Still Using Multiple
-          <br />
+          {" "}
           Tools To{" "}
           <span className="clr-chng">
             Run Your
-            <br />
+            {" "}
             Business?
           </span>
         </h2>
@@ -564,7 +594,8 @@ const landingPageFaqs = [
           Managing your CRM, email marketing, SMS, funnels,
           scheduling, and reviews across different platforms is
           slowing you down  and costing you leads.
-          <br />
+        </p>
+        <p className="multiple-tools-description font-inter">
           You’re not just wasting time you’re losing revenue.
         </p>
 
@@ -576,7 +607,7 @@ const landingPageFaqs = [
         </ul>
 
         <a
-          href="/get-started"
+          href="/contact?service=pro"
           className="multiple-tools-button font-inter"
         >
           Get Started
@@ -653,15 +684,15 @@ const landingPageFaqs = [
       <div className="platform-automation-content">
         <h2 className="platform-automation-heading font-inter">
           One Platform. Total
-          <br className="platform-desktop-break" />
+          {" "}
           Business Automation.
         </h2>
 
         <h3 className="platform-automation-subheading font-inter">
           Everything You Need To Capture,
-          <br className="platform-desktop-break" />
+          {" "}
           Nurture, And Convert Leads In
-          <br className="platform-desktop-break" />
+          {" "}
           One Place.
         </h3>
 
@@ -672,7 +703,7 @@ const landingPageFaqs = [
         </p>
 
         <a
-          href="#get-started"
+          href="/contact?service=pro"
           className="platform-automation-button font-inter"
         >
           Get Started
@@ -689,7 +720,7 @@ const landingPageFaqs = [
   <div className="container">
     <h2 className="business-tools-heading font-inter">
       Powerful Tools To Grow
-      <br />
+      {" "}
       Your Business Faster
     </h2>
 
@@ -731,7 +762,7 @@ const landingPageFaqs = [
     <div className="container">
       <h2 className="subscription-heading font-inter">
         Stop Paying For Multiple
-        <br />
+        {" "}
         Subscriptions
       </h2>
 
@@ -741,6 +772,7 @@ const landingPageFaqs = [
         revenue.
       </p>
 
+      <div className="subscription-table-scroll" tabIndex={0} role="region" aria-label="Software subscription comparison. Scroll horizontally on smaller screens.">
       <Image
         src="/imgs/table_landing.svg"
         alt="EasyBoyWeb Pro software subscription comparison table"
@@ -748,9 +780,10 @@ const landingPageFaqs = [
         height={961}
         className="subscription-table-image"
       />
+      </div>
 
       <a
-        href="/get-started"
+        href="/contact?service=pro"
         className="subscription-cta font-inter"
       >
         Get Started With Easy Boyweb
@@ -758,7 +791,7 @@ const landingPageFaqs = [
 
       <h3 className="subscription-secondary-heading font-inter">
         1 Monthly Software Subscription To
-        <br />
+        {" "}
         Replace{" "}
         <span className="clr-chng">
           15+ Different Softwares
@@ -846,7 +879,7 @@ const landingPageFaqs = [
         </p>
 
         <a
-          href="#get-started"
+          href="/contact?service=pro"
           className="getting-started-button font-inter"
         >
           Get Started With Easy Boyweb
@@ -867,7 +900,7 @@ const landingPageFaqs = [
             Flexible Pricing
           </span>{" "}
           For
-          <br />
+          {" "}
           Every Business
         </h2>
 
@@ -916,7 +949,7 @@ const landingPageFaqs = [
             </ul>
 
             <a
-              href="#get-started"
+              href="/contact?service=pro"
               className="pricing-get-started font-inter"
             >
               Get Started
@@ -935,7 +968,7 @@ const landingPageFaqs = [
   <div className="container">
     <h2 className="need-more-heading font-inter">
       Need More? We&apos;ve Got
-      <br />
+      {" "}
       You Covered
     </h2>
 
@@ -1029,7 +1062,7 @@ const landingPageFaqs = [
         <div className="entrepreneur-introduction">
           <h2 className="entrepreneur-heading font-inter">
             Built By Entrepreneurs,
-            <br />
+            {" "}
             For Entrepreneurs
           </h2>
 
@@ -1080,7 +1113,8 @@ const landingPageFaqs = [
           Once your monthly free credits are used, your account
           will automatically reload in $10 increments to keep
           your services running.
-          <br />
+        </p>
+        <p>
           Please note: unused credits do not roll over to the next
           month.
         </p>
@@ -1090,7 +1124,7 @@ const landingPageFaqs = [
         <div className="automation-cta-content">
           <h2 className="automation-cta-heading font-inter">
             Ready To Automate And
-            <br />
+            {" "}
             Scale Your Business?
           </h2>
 
@@ -1101,14 +1135,14 @@ const landingPageFaqs = [
 
           <div className="automation-cta-buttons">
             <a
-              href="/get-started"
+              href="/contact?service=pro"
               className="automation-cta-button automation-cta-primary font-inter"
             >
               Get Started Today
             </a>
 
             <a
-              href="/book-demo"
+              href="/contact?service=pro-demo"
               className="automation-cta-button automation-cta-secondary font-inter"
             >
               Book A Free Demo
@@ -1182,7 +1216,7 @@ const landingPageFaqs = [
 
           <span>|</span>
 
-          <Link href="/sitemap">
+          <Link href="/sitemap.xml">
             Sitemap
           </Link>
         </div>
@@ -1190,14 +1224,7 @@ const landingPageFaqs = [
     </div>
   </div>
 
-  <Image
-    src="/imgs/footerlogo.svg"
-    alt=""
-    width={1810}
-    height={327}
-    className="easyboyweb-footer-watermark"
-    aria-hidden="true"
-  />
+  <FooterWatermark />
 </footer>
 
 

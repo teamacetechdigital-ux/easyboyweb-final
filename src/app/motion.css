@@ -410,47 +410,6 @@ html {
   margin-bottom: 7px;
 }
 
-.hero-showcase-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  position: absolute;
-  bottom: -23px;
-  inset-inline: 10px;
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  color: #9eb3c5;
-}
-
-.home-page .hero-bottom {
-  position: absolute;
-  bottom: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #ffffff15;
-  color: #8299ac;
-  font-size: 9px;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
-
-.home-page .hero-scroll {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #aabfce;
-}
-
-.hero-scroll-line {
-  width: 1px;
-  height: 23px;
-  background: linear-gradient(transparent, #8fd7ff);
-}
-
 .hero-video-toggle {
   display: flex;
   align-items: center;
@@ -971,9 +930,6 @@ html {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero-bottom-note {
-    display: none;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1094,18 +1050,6 @@ html {
 
   .hero-project-image {
     height: calc(100% - 21px);
-  }
-
-  .hero-showcase-caption {
-    bottom: -15px;
-    font-size: 7px;
-    letter-spacing: .09em;
-  }
-
-  .home-page .hero-bottom {
-    bottom: 16px;
-    font-size: 7px;
-    letter-spacing: .07em;
   }
 
   .home-page .third-section,

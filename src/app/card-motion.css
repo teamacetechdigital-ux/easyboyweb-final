@@ -1,0 +1,161 @@
+/* Card-specific interactions; typography and layout stay in consistency.css.
+   main[class] outranks the legacy page-specific hover rules on every route. */
+.gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: transform 450ms var(--site-motion-ease),
+    box-shadow 450ms ease, border-color 450ms ease;
+}
+
+.gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 25%, #0393e712 48%, #ffffff30 52%, transparent 75%);
+  opacity: 0;
+  transform: translateX(-110%);
+  transition: transform 850ms var(--site-motion-ease), opacity 250ms ease;
+}
+
+.gsap-page-root main[class] :is(.skill-box .skill-icon img, .service-slider-icon img, .service-index-card img) {
+  transition: transform 450ms var(--site-motion-ease), rotate 450ms ease;
+}
+
+.gsap-page-root main[class] :is(.identity-card, .custom-software-card, .maintenance-benefit-card,
+  .maintenance-service-card, .hosting-service-card, .digital-benefit-card, .seo-box, .seo-short-txt-box) {
+  transition: transform 400ms var(--site-motion-ease),
+    box-shadow 400ms ease, border-color 400ms ease;
+}
+
+.gsap-page-root main[class] :is(.identity-icon img, .maintenance-service-icon img, .hosting-service-card > img) {
+  transition: scale 400ms var(--site-motion-ease), rotate 400ms var(--site-motion-ease);
+}
+
+.gsap-page-root main[class] :is(.easy-point, .website-crm-card, .help-step, .how-we-work-step) {
+  transition: transform 400ms var(--site-motion-ease), box-shadow 400ms ease, border-color 400ms ease;
+}
+
+.gsap-page-root main[class] :is(.help-number-hexagon, .how-we-work-number) {
+  transition: scale 450ms var(--site-motion-ease), transform 450ms var(--site-motion-ease);
+}
+
+.gsap-page-root main[class] .help-number-hexagon {
+  transition: scale 450ms var(--site-motion-ease), transform 900ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.gsap-page-root main[class] :is(.custom-ai-card, .ai-call-agent-card, .business-growth-card,
+  .business-tool-card, .need-more-card, .pricing-plan-card) {
+  transition: transform 450ms var(--site-motion-ease),
+    box-shadow 450ms ease, border-color 450ms ease;
+}
+
+.gsap-page-root main[class] :is(.portfolio-slide, .our-work-card, .technology-blog-card) {
+  transition: transform 500ms var(--site-motion-ease), box-shadow 500ms ease;
+}
+
+.gsap-page-root main[class] .services-slider {
+  padding-block: 14px 24px;
+}
+
+/* Reset legacy individual transforms; each card now has one transform owner. */
+.gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card, .identity-card, .custom-software-card, .maintenance-benefit-card, .maintenance-service-card, .hosting-service-card, .digital-benefit-card, .seo-box, .seo-short-txt-box, .easy-point, .website-crm-card, .help-step, .how-we-work-step, .custom-ai-card, .ai-call-agent-card, .business-growth-card, .business-tool-card, .need-more-card, .pricing-plan-card, .portfolio-slide, .our-work-card, .technology-blog-card) {
+  translate: none !important;
+  rotate: none !important;
+  scale: none !important;
+  transform: none;
+}
+
+/* GSAP owns the entrance; CSS transitions resume when it clears inline opacity. */
+.gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card, .identity-card, .custom-software-card, .maintenance-benefit-card, .maintenance-service-card, .hosting-service-card, .digital-benefit-card, .seo-box, .seo-short-txt-box, .easy-point, .website-crm-card, .help-step, .how-we-work-step, .custom-ai-card, .ai-call-agent-card, .business-growth-card, .business-tool-card, .need-more-card, .pricing-plan-card, .portfolio-slide, .our-work-card, .technology-blog-card)[style*="opacity"] {
+  transition: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+
+  /* Services: a soft lift, light sweep and floating icon. */
+  .gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card):is(:hover, :focus-within) {
+    transform: translateY(-8px) rotate(-.6deg);
+    border-color: #0393e780;
+    box-shadow: 0 20px 40px #0393e726;
+  }
+
+  .gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card):is(:hover, :focus-within)::after {
+    opacity: 1;
+    transform: translateX(110%);
+  }
+
+  .gsap-page-root main[class] .skill-box:is(:hover, :focus-within) .skill-icon img,
+  .gsap-page-root main[class] .service-slider-card:is(:hover, :focus-within) .service-slider-icon img,
+  .gsap-page-root main[class] .service-index-card:is(:hover, :focus-within) img {
+    translate: 0 -5px;
+    scale: 1.12;
+    rotate: 0deg;
+  }
+
+  /* Trust/features: expand slightly into a blue inset frame. */
+  .gsap-page-root main[class] :is(.identity-card, .custom-software-card, .maintenance-benefit-card,
+    .maintenance-service-card, .hosting-service-card, .digital-benefit-card, .seo-box, .seo-short-txt-box):is(:hover, :focus-within) {
+    transform: translateY(-3px) scale(1.015);
+    border-color: #0393e770;
+    box-shadow: inset 0 0 0 2px #0393e74d, 0 12px 26px #0393e71c;
+  }
+
+  .gsap-page-root main[class] .identity-card:is(:hover, :focus-within) .identity-icon img {
+    animation: none;
+    rotate: 8deg;
+    scale: 1.1;
+  }
+
+  /* Steps/CRM: a sideways nudge follows the direction of the process. */
+  .gsap-page-root main[class] :is(.easy-point, .website-crm-card):is(:hover, :focus-within) {
+    transform: translateX(6px);
+    box-shadow: -4px 0 0 #0393e7, 0 10px 24px #0393e71a;
+  }
+
+  .gsap-page-root main[class] :is(.help-step, .how-we-work-step):is(:hover, :focus-within) {
+    transform: translateY(-4px);
+  }
+
+  .gsap-page-root main[class] .help-step:is(:hover, :focus-within) .help-number-hexagon,
+  .gsap-page-root main[class] .how-we-work-step:is(:hover, :focus-within) .how-we-work-number {
+    transform: rotate(360deg) scale(1.1);
+  }
+
+  /* Product/pricing: a restrained zoom with a deeper shadow. */
+  .gsap-page-root main[class] :is(.custom-ai-card, .ai-call-agent-card, .business-growth-card,
+    .business-tool-card, .need-more-card, .pricing-plan-card):is(:hover, :focus-within) {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 42px #10253822;
+  }
+
+  /* Project images retain their own zoom/shine and gain a small card lift. */
+  .gsap-page-root main[class] :is(.portfolio-slide, .our-work-card, .technology-blog-card):is(:hover, :focus-within) {
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card,
+    .identity-card, .custom-software-card, .maintenance-benefit-card, .maintenance-service-card,
+    .hosting-service-card, .digital-benefit-card, .seo-box, .seo-short-txt-box,
+    .easy-point, .website-crm-card, .help-step, .how-we-work-step, .custom-ai-card,
+    .ai-call-agent-card, .business-growth-card, .business-tool-card, .need-more-card,
+    .pricing-plan-card, .portfolio-slide, .our-work-card, .technology-blog-card) {
+    translate: none !important;
+    rotate: none !important;
+    scale: none !important;
+    transform: none !important;
+  }
+
+  .gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card)::after {
+    display: none;
+  }
+}

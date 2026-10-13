@@ -2,6 +2,7 @@ import Footer from "@/src/components/layout/Footer";
 import Header from "@/src/components/layout/Header";
 import Link from "next/link";
 import Image from "next/image";
+import FeatureIcon from "@/src/components/ui/FeatureIcon";
 import Testimonials from "@/src/components/sections/Testimonials";
 import Faq from "@/src/components/sections/Faq";
 import EasyBoyWebPro from "@/src/components/sections/EasyBoyWebPro";
@@ -53,48 +54,56 @@ const maintenanceServices = [
 const leftCards = [
     {
         title: "Security",
+        icon: "shield",
         description:
             "Regular updates and security checks protect your site from vulnerabilities and potential threats.",
     },
     {
         title: "Performance",
+        icon: "speed",
         description:
             "Ongoing maintenance ensures your website runs smoothly, loads quickly, and provides a positive user experience.",
     },
     {
         title: "Content Updates",
+        icon: "content",
         description:
             "Keeping your content fresh and relevant helps engage visitors and improve search engine rankings.",
     },
     {
         title: "Backup and Recovery",
+        icon: "cloud",
         description:
             "Regular backups safeguard your data, enabling quick recovery in cases of data loss or system failures.",
     },
-];
+] as const;
 
 const rightCards = [
     {
         title: "Search Engine Optimization (SEO)",
+        icon: "search",
         description:
             "Maintenance supports SEO efforts, helping your site rank higher in search engine results.",
     },
     {
         title: "Technology Updates",
+        icon: "refresh",
         description:
             "Keeping up with the latest technologies ensures compatibility with new devices and browsers.",
     },
     {
         title: "Customer Trust",
+        icon: "trust",
         description:
             "A well-maintained website instills confidence in users, demonstrating your commitment to professionalism and reliability.",
     },
     {
         title: "Uptime and Reliability",
+        icon: "uptime",
         description:
             "Regular maintenance minimizes downtime, ensuring your website is always available for your customers.",
     },
-];
+] as const;
 
 const hostingServices = [
     {
@@ -194,7 +203,8 @@ export default function CustomSoftwareDevelopment() {
                         <h2 className="font-aloevera">
                             Top-Notch Website Maintenance Solutions Provider
                         </h2>
-                        <p className="font-inter">Our development team stays updated on the latest and greatest in web design and development tools. We specialize in a wide range of web technologies, helping businesses maintain secure, efficient, and flawless websites. Our maintenance packages are designed for websites across all sizes and sectors, providing the essential expertise and support every business needs. <br /><br /> A website maintenance plan is important for a number of reasons:</p>
+                        <p className="font-inter">Our development team stays updated on the latest and greatest in web design and development tools. We specialize in a wide range of web technologies, helping businesses maintain secure, efficient, and flawless websites. Our maintenance packages are designed for websites across all sizes and sectors, providing the essential expertise and support every business needs.</p>
+                        <p className="font-inter">A website maintenance plan is important for a number of reasons:</p>
                     </div>
                     {/* Main Content */}
                     <div className="maintenance-benefits-layout">
@@ -205,6 +215,7 @@ export default function CustomSoftwareDevelopment() {
                                     key={card.title}
                                     className="maintenance-benefit-card"
                                 >
+                                    <FeatureIcon name={card.icon} />
                                     <h3 className="mb-3 text-[20px] font-inter font-semibold leading-tight">
                                         {card.title}
                                     </h3>
@@ -239,6 +250,7 @@ export default function CustomSoftwareDevelopment() {
                                     key={card.title}
                                     className="maintenance-benefit-card"
                                 >
+                                    <FeatureIcon name={card.icon} />
                                     <h3 className="mb-3 text-[20px] font-inter font-semibold leading-tight">
                                         {card.title}
                                     </h3>
@@ -304,8 +316,8 @@ export default function CustomSoftwareDevelopment() {
                         </div>
                         <div className="w-1/2 we-focus-main-txt txt-clr-two">
                             <h2 className="font-aloevera pb-8">Let us host your WordPress website!</h2>
-                            <p className="font-inter">EasyBoyWeb offers affordable website hosting with premium features included, available to all our customers.<br /><br />
-                                Reliable web hosting ensures your website is always accessible, loads quickly for a smooth user experience, and has robust security features like SSL certificates and frequent backups. Quick and efficient support is also important. We provide all of this and more.</p>
+                            <p className="font-inter">EasyBoyWeb offers affordable website hosting with premium features included, available to all our customers.</p>
+                            <p className="font-inter">Reliable web hosting ensures your website is always accessible, loads quickly for a smooth user experience, and has robust security features like SSL certificates and frequent backups. Quick and efficient support is also important. We provide all of this and more.</p>
                         </div>
                     </div>
 

@@ -248,7 +248,7 @@ export default async function BlogDetailPage({
                 We build websites and mobile apps that <span>Attract, Convert, and Retain Leads</span> so you can focus on building your business!
               </h2>
 
-              <Link href="/contact" className={`${styles.blogDetailCtaButton} font-inter`}>
+              <Link href="/contact" className={`${styles.blogDetailCtaButton} site-cta font-inter`}>
                 Get a Free Estimate <span aria-hidden="true">→</span>
               </Link>
             </div>

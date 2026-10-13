@@ -110,9 +110,9 @@ export default function HomePage() {
             <div className="growth-content w-1/2">
               <h2 className="font-aloevera">
                 A Modern Web &amp; Mobile
-                <br />
+                {" "}
                 <span className="clr-chng">Development Agency</span> Built
-                <br />
+                {" "}
                 For Growth
               </h2>
 
@@ -121,8 +121,9 @@ export default function HomePage() {
                 powerful digital experiences. Whether you need a high-performing
                 website, a custom CRM, or a scalable mobile app, our team delivers
                 solutions that attract, convert, and retain customers.
-                <br />
-                We don’t just build—we partner with you to grow.
+              </p>
+              <p className="font-inter">
+                We don’t just build we partner with you to grow.
               </p>
 
               <Link href="/services" className="growth-button banner-btn font-inter">
@@ -148,22 +149,29 @@ export default function HomePage() {
           <div className="why-choose-content">
             <h2 className="font-aloevera">
               Why Businesses Choose
-              <br />
+              {" "}
               Easyboyweb
             </h2>
 
             <p className="font-inter">
               Our website development and mobile solutions are tailor-made to
               captivate your audience while ensuring seamless management for you.
+            </p>
+            <p className="font-inter">
               From ideation to full-service design &amp; development, we’re all
               about crafting sites, web software and mobile apps that not only look
               amazing but also function flawlessly.
-              <br />
-              But here’s the kicker – we don’t stop there!
-              <br />
+            </p>
+            <p className="font-inter">
+              But here’s the kicker we don’t stop there!
+            </p>
+            <p className="font-inter">
               With our worry-free hosting and management services, you can breathe
-              easy knowing your online assets are in good hands. And let’s talk
-              about automated SEO and social media solutions – we’ve got the tools
+              easy knowing your online assets are in good hands.
+            </p>
+            <p className="font-inter">
+              And let’s talk
+              about automated SEO and social media solutions we’ve got the tools
               to skyrocket your visibility and engagement, leaving you free to
               focus on what really matters: your business.
             </p>

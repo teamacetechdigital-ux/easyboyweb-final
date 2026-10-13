@@ -13,25 +13,23 @@ type LogoStripProps = {
 };
 
 export default function LogoStrip({ logos, label, className = "" }: LogoStripProps) {
-  const marqueeLogos = [...logos, ...logos];
-
   return (
     <section className={`${styles.section} ${className}`.trim()} aria-label={label}>
       <div className={styles.marquee}>
         <div className={styles.track}>
-          {marqueeLogos.map((logo, index) => (
-            <div
-              className={styles.item}
-              key={`${logo.name}-${index}`}
-              aria-hidden={index >= logos.length}
-            >
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                width={180}
-                height={80}
-                className={styles.logo}
-              />
+          {[0, 1].map((copy) => (
+            <div className={styles.group} key={copy} aria-hidden={copy === 1}>
+              {logos.map((logo) => (
+                <div className={styles.item} key={logo.src}>
+                  <Image
+                    src={logo.src}
+                    alt={copy === 0 ? logo.name : ""}
+                    width={140}
+                    height={48}
+                    className={styles.logo}
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>

@@ -1,9 +1,11 @@
 import Link from "next/link";
+import FeatureIcon from "../ui/FeatureIcon";
 
 const systemSteps = [
   {
     number: "01",
     title: "Attract",
+    icon: "leads",
     subtitle: "Custom Website",
     description:
       "A conversion-focused experience built around your brand, services, and customers.",
@@ -11,6 +13,7 @@ const systemSteps = [
   {
     number: "02",
     title: "Capture",
+    icon: "convert",
     subtitle: "Lead Generation",
     description:
       "Strategic forms, calls-to-action, quote requests, and booking opportunities capture visitor intent.",
@@ -18,6 +21,7 @@ const systemSteps = [
   {
     number: "03",
     title: "Connect",
+    icon: "connect",
     subtitle: "CRM Integration",
     description:
       "New leads are automatically sent into your CRM instead of getting lost in emails or spreadsheets.",
@@ -25,11 +29,12 @@ const systemSteps = [
   {
     number: "04",
     title: "Convert",
+    icon: "growth",
     subtitle: "Sales Follow-Up",
     description:
       "Your team gets a clearer process for managing, nurturing, and converting opportunities.",
   },
-];
+] as const;
 
 export default function WebsiteCRM() {
   return (
@@ -94,6 +99,7 @@ export default function WebsiteCRM() {
           <div className="website-crm-cards">
             {systemSteps.map((step) => (
               <article className="website-crm-card" key={step.number}>
+                <FeatureIcon name={step.icon} />
                 <h3 className="website-crm-card-heading font-aloevera">
                   <span>{step.number}</span> {step.title}
                 </h3>

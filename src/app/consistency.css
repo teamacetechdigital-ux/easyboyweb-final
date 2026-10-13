@@ -1,0 +1,512 @@
+/* Site-wide design roles. Keep this after the legacy route styles.
+   The typography declarations deliberately outrank old page-specific sizes. */
+:root {
+  --site-banner-size: clamp(44px, 7.8vw, 112px);
+  --site-heading-size: clamp(32px, 4.3vw, 56px);
+  --site-card-heading-size: 24px;
+  --site-copy-size: 22px;
+  --site-small-size: 16px;
+  --site-button-size: 17px;
+  --site-cta-height: 58px;
+  --site-motion-duration: 320ms;
+  --site-motion-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  font-size: var(--site-copy-size);
+}
+
+/* Text-only feature boxes now reserve a consistent space for their icons. */
+.gsap-page-root main[class] :is(.easy-point, .seo-short-txt-box, .business-growth-card) {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: auto;
+  min-height: 104px;
+  padding: 18px 22px;
+}
+
+.gsap-page-root main[class] :is(.easy-point, .business-growth-card)>span,
+.gsap-page-root main[class] .seo-short-txt-box>h3 {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.gsap-page-root main[class] :is(.maintenance-benefit-card, .website-crm-card, .ai-call-agent-card)>.feature-icon {
+  margin-bottom: 16px;
+}
+
+.gsap-page-root main[class] .ai-call-agent-card {
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .gsap-page-root main[class] :is(.easy-point, .seo-short-txt-box, .business-growth-card) {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gsap-page-root main[class] :is(.easy-point, .business-growth-card)>span,
+  .gsap-page-root main[class] .seo-short-txt-box>h3 {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.gsap-page-root main h1 {
+  font-size: var(--site-banner-size) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em;
+  height: auto;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.gsap-page-root main h2 {
+  font-size: var(--site-heading-size) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -.025em;
+  height: auto;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.gsap-page-root main h3,
+.gsap-page-root main h4 {
+  font-size: var(--site-card-heading-size) !important;
+  line-height: 1.3 !important;
+  height: auto;
+  overflow-wrap: break-word;
+}
+
+.gsap-page-root main :is(h1, h2, h3)>span:not([aria-hidden]) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.gsap-page-root p,
+.gsap-page-root main :is(.custom-ai-card, .ai-call-agent-card, .why-easyboyweb-ai-text, .pricing-card, .business-tool-card) li {
+  font-size: var(--site-copy-size) !important;
+  line-height: 1.6 !important;
+  height: auto;
+  text-transform: none !important;
+  overflow-wrap: break-word;
+  margin-bottom: 40px;
+}
+
+.gsap-page-root p+p {
+  margin-block-start: 1em !important;
+}
+
+.gsap-page-root p :is(span, strong, em, a):not([aria-hidden]) {
+  font-size: inherit !important;
+}
+
+/* Small supporting labels share a separate role from body copy. */
+.gsap-page-root main :is(.section-kicker, .hero-eyebrow, .website-crm-label, .ai-solutions-label, .ai-call-agent-label):not(p) {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  letter-spacing: .1em;
+}
+
+.gsap-page-root main .testimonial-rating span {
+  font-size: var(--site-small-size) !important;
+  line-height: 1.6 !important;
+}
+
+.gsap-page-root main .testimonial-person p {
+  white-space: normal;
+}
+
+.gsap-page-root main .testimonial-person h3 {
+  font-size: 18px !important;
+  white-space: normal;
+}
+
+.gsap-page-root main :is(.hero-secondary, .service-learn-more, .testimonial-read-more, .technology-read-more) {
+  font-size: var(--site-button-size);
+  line-height: 1.5;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Every primary/secondary CTA uses the same type, height and padding. */
+.gsap-page-root main :is(.site-cta, .banner-btn, .top-notch-cta, .portfolio-view-button,
+  .easyboy-pro-button, .easyboy-cta-button, .easyboy-quote-button,
+  .easyboy-call-button, .website-crm-button, .testimonials-full-button,
+  .our-work-button, .mobileapp-banner-btn, .work-banner-button,
+  .ai-solutions-button, .ai-cta-button, .landing-hero-button,
+  .multiple-tools-button, .platform-automation-button, .getting-started-button,
+  .need-more-button, .subscription-cta, .automation-cta-button, .seo-audit-submit, .pricing-get-started) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: fit-content !important;
+  max-width: 100%;
+  min-width: 180px;
+  height: auto !important;
+  min-height: var(--site-cta-height) !important;
+  padding: 16px 28px !important;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: var(--site-button-size) !important;
+  font-weight: 600;
+  line-height: 1.4 !important;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  white-space: normal;
+  cursor: pointer;
+  transition: translate var(--site-motion-duration) var(--site-motion-ease),
+    background-color var(--site-motion-duration) ease,
+    border-color var(--site-motion-duration) ease,
+    box-shadow var(--site-motion-duration) ease;
+}
+
+.gsap-page-root main :is(.portfolio-tab, .technology-category-button) {
+  min-height: 46px;
+  height: auto;
+  padding: 12px 18px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.gsap-page-root main :is(.faq-question, .faq-question-text) {
+  font-size: var(--site-card-heading-size);
+  line-height: 1.4;
+}
+
+.gsap-page-root main :is(input, textarea) {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.gsap-page-root main :is(.skill-box, .identity-card, .easy-point, .service-slider-card, .help-step, .how-we-work-step, .website-crm-card) {
+  height: auto;
+  min-width: 0;
+}
+
+.gsap-page-root main .service-slider-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 28px;
+}
+
+.gsap-page-root main .service-slider-card p {
+  max-height: none;
+  overflow: visible;
+}
+
+.gsap-page-root main .service-learn-more {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.gsap-page-root main .identity-card {
+  padding: 30px 20px;
+}
+
+.gsap-page-root main .skill-box {
+  padding: 28px 18px;
+}
+
+.gsap-page-root main .prnt-thrd-box {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.gsap-page-root main .skill-box h3 {
+  width: 100%;
+  max-width: none;
+  text-wrap: balance;
+}
+
+.gsap-page-root main :is(.prnt-third-txt, .growth-content, .why-choose-content) p {
+  color: #4b6172;
+}
+
+.gsap-page-root main .easy-point {
+  padding-block: 18px;
+  font-size: var(--site-copy-size);
+  line-height: 1.5;
+}
+
+.gsap-page-root main :is(.growth-content, .why-choose-content, .we-focus-main-txt, .banner-content) {
+  min-width: 0;
+}
+
+.gsap-page-root main :is(.growth-content, .why-choose-content) h2 br {
+  display: none;
+}
+
+.gsap-page-root main .subscription-secondary-heading {
+  font-size: var(--site-heading-size) !important;
+  line-height: 1.15 !important;
+}
+
+/* Reserve space for larger copy rather than crop it into fixed-height frames. */
+.gsap-page-root main[class] :is(.ai-solutions-section, .landing-hero-section, .platform-automation-section,
+  .business-growth-section, .business-tool-card) {
+  height: auto;
+}
+
+.gsap-page-root main[class] :is(.ai-solutions-section, .landing-hero-section, .platform-automation-section) {
+  padding-bottom: clamp(48px, 5vw, 80px);
+}
+
+.gsap-page-root main .agency-showcase-process {
+  height: auto;
+  min-height: 480px;
+}
+
+.gsap-page-root main :is(.custom-development-banner, .seo-banner, .custom-mobileapp-banner, .work-banner-section, .blog-banner-section) {
+  height: auto;
+  min-height: 0;
+  padding-top: clamp(150px, 14vw, 110px);
+  padding-bottom: clamp(64px, 7vw, 60px);
+}
+
+.gsap-page-root main .subscription-logo-group,
+.gsap-page-root main .subscription-logo-row:nth-child(2) .subscription-logo-group {
+  gap: clamp(40px, 4vw, 64px);
+  padding-right: clamp(40px, 4vw, 64px);
+}
+
+.gsap-page-root main .subscription-logo-image {
+  width: 140px;
+  height: 48px;
+  flex-basis: 140px;
+}
+
+.gsap-page-root main .testimonials-slider-expanded {
+  overflow: visible;
+}
+
+.gsap-page-root main .testimonials-slider-expanded .testimonials-track {
+  width: min(1340px, calc(100% - 40px));
+  margin-inline: auto;
+  left: 0;
+  animation: none;
+  transform: none;
+}
+
+.gsap-page-root main .testimonials-slider-expanded .testimonials-set {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0;
+}
+
+.gsap-page-root main .testimonials-slider-expanded .testimonials-set[aria-hidden="true"] {
+  display: none;
+}
+
+.gsap-page-root main .testimonials-slider-expanded .testimonial-card {
+  width: 100%;
+}
+
+.gsap-page-root main :is(.site-footer, .easyboyweb-footer) h2 {
+  font-size: 24px !important;
+  line-height: 1.3 !important;
+}
+
+.gsap-page-root main :is(.footer-links-list a, .footer-legal-links, .easyboyweb-footer-links a) {
+  font-size: var(--site-small-size);
+  line-height: 1.6;
+}
+
+.gsap-page-root main :is(.site-nav a, .services-trigger) {
+  font-size: 16px;
+}
+
+/* Identical card and button feedback across copied sections and routes. */
+.gsap-page-root main :is(.skill-box, .identity-card, .easy-point, .website-crm-card,
+  .custom-software-card, .seo-box, .seo-short-txt-box, .maintenance-benefit-card,
+  .maintenance-service-card, .hosting-service-card, .digital-benefit-card,
+  .custom-ai-card, .ai-call-agent-card) {
+  transition: translate var(--site-motion-duration) var(--site-motion-ease),
+    box-shadow var(--site-motion-duration) ease, border-color var(--site-motion-duration) ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+
+  .gsap-page-root main :is(.skill-box, .identity-card, .easy-point, .website-crm-card,
+    .custom-software-card, .seo-box, .seo-short-txt-box, .maintenance-benefit-card,
+    .maintenance-service-card, .hosting-service-card, .digital-benefit-card,
+    .custom-ai-card, .ai-call-agent-card):hover {
+    translate: 0 -5px;
+    box-shadow: 0 16px 36px #0393e71c;
+  }
+
+  .gsap-page-root main :is(.banner-btn, .site-cta, .portfolio-view-button,
+    .easyboy-pro-button, .easyboy-quote-button, .easyboy-call-button,
+    .website-crm-button, .testimonials-full-button, .our-work-button,
+    .mobileapp-banner-btn, .work-banner-button, .ai-cta-button,
+    .landing-hero-button, .multiple-tools-button, .platform-automation-button,
+    .getting-started-button, .need-more-button, .subscription-cta, .automation-cta-button):hover {
+    transform: none;
+    translate: 0 -3px;
+    box-shadow: 0 12px 28px #0393e72b;
+  }
+
+  .gsap-page-root main .identity-card:hover .identity-icon img {
+    animation: none;
+    rotate: -6deg;
+  }
+
+  .gsap-page-root main .help-step:hover .help-number-hexagon,
+  .gsap-page-root main .how-we-work-step:hover .how-we-work-number {
+    transform: rotate(8deg);
+  }
+}
+
+@media (max-width: 1000px) {
+  .gsap-page-root main .prnt-thrd-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gsap-page-root main .identity-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .gsap-page-root main .testimonials-slider-expanded .testimonials-set {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --site-banner-size: clamp(56px, 11vw, 96px);
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --site-banner-size: clamp(48px, 12.7vw, 76px);
+    --site-heading-size: clamp(30px, 8.2vw, 38px);
+    --site-card-heading-size: 22px;
+    --site-small-size: 15px;
+    --site-button-size: 16px;
+    --site-cta-height: 56px;
+  }
+
+  .gsap-page-root main .identity-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .gsap-page-root main .testimonials-slider-expanded .testimonials-set {
+    grid-template-columns: 1fr;
+  }
+
+  .gsap-page-root main .identity-card {
+    min-height: 180px;
+  }
+
+  .gsap-page-root main .prnt-thrd-box {
+    grid-template-columns: 1fr;
+  }
+
+  .gsap-page-root main .skill-box {
+    min-height: 160px;
+  }
+
+  .gsap-page-root main .agency-showcase-process {
+    min-height: 480px;
+  }
+
+  .gsap-page-root main .hero-actions {
+    gap: 18px;
+  }
+
+  .gsap-page-root main .hero-eyebrow {
+    font-size: 12px !important;
+  }
+
+  .gsap-page-root main :is(.help-content, .how-we-work-content) {
+    min-width: 0;
+  }
+
+  .gsap-page-root main .testimonials-heading br {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .gsap-page-root main *,
+  .gsap-page-root main *::before,
+  .gsap-page-root main *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .gsap-page-root main :is(.skill-box, .identity-card, .easy-point,
+    .seo-short-txt-box, .custom-software-card, .website-crm-card,
+    .help-number-hexagon, .how-we-work-number, .banner-btn):hover {
+    translate: none;
+    transform: none;
+  }
+
+  .gsap-page-root main :is(.testimonials-slider, .subscription-logo-sliders) {
+    overflow-x: auto;
+  }
+
+  .gsap-page-root main .testimonials-track {
+    left: 0;
+  }
+
+  .gsap-page-root main .testimonials-set[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+.gsap-page-root main.home-page .studio-hero h1 {
+  font-size: clamp(64px, 8vw, 116px) !important;
+  line-height: .97 !important;
+}
+
+.gsap-page-root main.home-page .studio-hero .hero-primary,
+.gsap-page-root main.home-page .studio-hero .hero-secondary {
+  font-size: 18px !important;
+}
+
+@media (max-width: 900px) {
+  .gsap-page-root main.home-page .studio-hero h1 {
+    font-size: clamp(64px, 11vw, 100px) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .gsap-page-root main.home-page .studio-hero h1 {
+    font-size: clamp(50px, 12.5vw, 76px) !important;
+  }
+
+  .gsap-page-root main.home-page .hero-actions {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .gsap-page-root main.home-page .studio-hero .hero-primary,
+  .gsap-page-root main.home-page .studio-hero .hero-secondary {
+    font-size: 17px !important;
+  }
+}

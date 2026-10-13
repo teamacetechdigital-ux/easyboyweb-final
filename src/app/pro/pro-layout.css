@@ -1,0 +1,250 @@
+/* The Pro page grows with its content instead of using fixed canvas sizes. */
+.gsap-page-root main.landing-page.pro-page > section {
+  height: auto;
+  min-height: 0;
+  margin-block: 0;
+  padding-block: clamp(64px, 7vw, 96px);
+}
+.gsap-page-root main.landing-page.pro-page .container {
+  width: min(1280px, calc(100% - 64px));
+  max-width: min(1280px, calc(100% - 64px));
+  height: auto;
+  margin-inline: auto;
+}
+.gsap-page-root main.landing-page.pro-page :is(h1, h2, h3, p) {
+  max-width: 100%;
+  min-height: 0;
+}
+.gsap-page-root main.landing-page.pro-page .landing-hero-section {
+  padding-top: clamp(156px, 14vw, 200px);
+  padding-bottom: 80px;
+}
+.gsap-page-root main.landing-page.pro-page .landing-hero-content {
+  width: 100%;
+  padding: 0;
+}
+.gsap-page-root main.landing-page.pro-page .landing-hero-heading {
+  max-width: 1050px;
+  margin-inline: auto;
+  font-size: clamp(40px, 5.7vw, 78px) !important;
+  line-height: 1.08 !important;
+}
+.gsap-page-root main.landing-page.pro-page .landing-hero-description {
+  max-width: 800px;
+  margin: 28px auto 0;
+}
+.gsap-page-root main.landing-page.pro-page .landing-benefits-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  width: 100%;
+  height: auto;
+}
+.gsap-page-root main.landing-page.pro-page .landing-benefit-item {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  gap: 20px;
+}
+.gsap-page-root main.landing-page.pro-page .landing-pro-section {
+  overflow: hidden;
+}
+.gsap-page-root main.landing-page.pro-page .landing-pro-title {
+  position: relative;
+  inset: auto;
+  transform: none;
+  width: min(880px, 100%);
+  margin: 0 auto;
+}
+.gsap-page-root main.landing-page.pro-page .landing-pro-watermark-layer {
+  inset: auto 0 0;
+  transform: none;
+  height: 60%;
+}
+.gsap-page-root main.landing-page.pro-page .landing-video-window {
+  position: relative;
+  inset: auto;
+  transform: none;
+  width: min(960px, 100%);
+  height: auto;
+  aspect-ratio: auto;
+  margin: 40px auto 0;
+  padding: 40px 14px 14px;
+}
+.gsap-page-root main.landing-page.pro-page .landing-video-dots { top: 14px; left: 18px; }
+.gsap-page-root main.landing-page.pro-page .landing-video-dots span { width: 10px; height: 10px; }
+.gsap-page-root main.landing-page.pro-page .landing-video-address { top: 14px; right: 18px; height: 8px; }
+.gsap-page-root main.landing-page.pro-page .landing-video-screen {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #101d2c;
+}
+.gsap-page-root main.landing-page.pro-page .landing-video-screen video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.gsap-page-root main.landing-page.pro-page .landing-video-play { position: absolute; width: 72px; }
+.gsap-page-root main.landing-page.pro-page .landing-video-error { margin: 16px 0 0; text-align: center; }
+.gsap-page-root main.landing-page.pro-page :is(
+  .multiple-tools-content, .platform-automation-layout, .pricing-section-layout,
+  .business-anywhere-layout, .entrepreneur-content, .data-stats-grid,
+  .business-tools-grid, .need-more-grid, .getting-started-progress,
+  .subscription-logo-sliders
+) {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+  margin-inline: 0;
+}
+.gsap-page-root main.landing-page.pro-page :is(.multiple-tools-content, .platform-automation-layout) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+  padding: 0;
+}
+.gsap-page-root main.landing-page.pro-page :is(
+  .multiple-tools-copy, .platform-automation-content, .platform-automation-image,
+  .entrepreneur-introduction, .entrepreneur-credit-list
+) { width: 100%; min-width: 0; }
+.gsap-page-root main.landing-page.pro-page .multiple-tools-image {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.gsap-page-root main.landing-page.pro-page .data-stats-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.gsap-page-root main.landing-page.pro-page .data-stat-card { height: auto; padding: 28px 20px; }
+.gsap-page-root main.landing-page.pro-page .data-stat-number { font-size: clamp(44px, 5vw, 72px); }
+.gsap-page-root main.landing-page.pro-page .business-tools-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.gsap-page-root main.landing-page.pro-page .business-tool-card { width: 100%; height: auto; padding: 28px; }
+.gsap-page-root main.landing-page.pro-page .subscription-panel {
+  width: min(1360px, calc(100% - 32px));
+  height: auto;
+  padding: clamp(24px, 4vw, 56px);
+}
+.gsap-page-root main.landing-page.pro-page .subscription-panel .container { width: 100%; max-width: none; }
+.gsap-page-root main.landing-page.pro-page .subscription-heading { margin-top: 0; padding-top: 0; }
+.gsap-page-root main.landing-page.pro-page .subscription-table-scroll { overflow-x: auto; margin-top: 40px; }
+.gsap-page-root main.landing-page.pro-page .subscription-table-image { width: 100%; max-width: none; height: auto; margin: 0; }
+.gsap-page-root main.landing-page.pro-page .subscription-cta { margin-top: 36px; }
+.gsap-page-root main.landing-page.pro-page .subscription-secondary-heading { margin-top: 64px; }
+.gsap-page-root main.landing-page.pro-page .subscription-logo-sliders { margin-top: 40px; }
+.gsap-page-root main.landing-page.pro-page .getting-started-progress { min-height: 0; margin-top: 48px; }
+.gsap-page-root main.landing-page.pro-page .getting-started-steps { gap: 32px; }
+.gsap-page-root main.landing-page.pro-page .getting-started-line { top: 48px; height: 4px; }
+.gsap-page-root main.landing-page.pro-page .getting-step-circle { width: 100px; height: 100px; }
+.gsap-page-root main.landing-page.pro-page .getting-started-step p { width: 100%; height: auto; margin-top: 24px; }
+.gsap-page-root main.landing-page.pro-page .getting-started-cta { margin-top: 40px; }
+.gsap-page-root main.landing-page.pro-page .pricing-heading-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.gsap-page-root main.landing-page.pro-page :is(.pricing-heading, .pricing-introduction) { width: 100%; margin: 0; }
+.gsap-page-root main.landing-page.pro-page :is(.pricing-plans-grid, .need-more-grid) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.gsap-page-root main.landing-page.pro-page .pricing-plan-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding-bottom: 28px;
+}
+.gsap-page-root main.landing-page.pro-page .pricing-plan-header { width: auto; height: auto; margin: 9px; padding: 28px 20px; }
+.gsap-page-root main.landing-page.pro-page .pricing-plan-price { flex-wrap: wrap; }
+.gsap-page-root main.landing-page.pro-page .pricing-plan-price strong { font-size: clamp(48px, 5vw, 72px); }
+.gsap-page-root main.landing-page.pro-page .pricing-feature-list { margin: 28px; }
+.gsap-page-root main.landing-page.pro-page .pricing-feature-list li { grid-template-columns: 18px minmax(0, 1fr); width: 100%; }
+.gsap-page-root main.landing-page.pro-page .pricing-get-started { position: relative; inset: auto; margin: auto auto 0; }
+.gsap-page-root main.landing-page.pro-page .need-more-card { width: 100%; height: auto; padding: 28px; }
+.gsap-page-root main.landing-page.pro-page .need-more-button { margin-top: auto; }
+.gsap-page-root main.landing-page.pro-page .business-anywhere-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: center;
+}
+.gsap-page-root main.landing-page.pro-page .business-anywhere-card {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  padding: 36px;
+}
+.gsap-page-root main.landing-page.pro-page .business-anywhere-content { position: relative; inset: auto; width: 100%; }
+.gsap-page-root main.landing-page.pro-page .business-anywhere-content h2 { width: 100%; }
+.gsap-page-root main.landing-page.pro-page .business-anywhere-download { width: 100%; max-width: 420px; }
+.gsap-page-root main.landing-page.pro-page .business-anywhere-download img { width: 100%; height: auto; }
+.gsap-page-root main.landing-page.pro-page .business-anywhere-screen { position: relative; inset: auto; width: 100%; height: auto; margin: 0; }
+.gsap-page-root main.landing-page.pro-page .entrepreneur-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; min-height: 0; }
+.gsap-page-root main.landing-page.pro-page .entrepreneur-credit-item { grid-template-columns: 18px minmax(0, 1fr); }
+.gsap-page-root main.landing-page.pro-page .entrepreneur-credit-item p { width: 100%; }
+.gsap-page-root main.landing-page.pro-page .entrepreneur-note { min-height: 0; margin-top: 32px; }
+.gsap-page-root main.landing-page.pro-page .automation-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, .7fr);
+  align-items: center;
+  gap: 32px;
+  height: auto;
+  min-height: 0;
+  margin-top: 56px;
+  padding: clamp(24px, 4vw, 56px);
+  overflow: hidden;
+}
+.gsap-page-root main.landing-page.pro-page .automation-cta-content { position: relative; inset: auto; width: 100%; }
+.gsap-page-root main.landing-page.pro-page :is(.automation-cta-heading, .automation-cta-description) { width: 100%; }
+.gsap-page-root main.landing-page.pro-page .automation-cta-buttons { width: 100%; height: auto; flex-wrap: wrap; }
+.gsap-page-root main.landing-page.pro-page .automation-rocket { position: relative; inset: auto; width: min(320px, 100%); height: auto; margin: 0 auto; transform: none; }
+.gsap-page-root main.landing-page.pro-page .easyboyweb-footer { padding-top: clamp(52px, 6vw, 88px); }
+.gsap-page-root main.landing-page.pro-page .easyboyweb-footer-content { padding: 0; }
+.gsap-page-root main.landing-page.pro-page .easyboyweb-footer-bottom { width: 100%; left: auto; transform: none; gap: 24px; flex-wrap: wrap; }
+.gsap-page-root main.landing-page.pro-page .easyboyweb-footer-divider { width: 100%; left: auto; transform: none; }
+
+@media (max-width: 1000px) {
+  .gsap-page-root main.landing-page.pro-page :is(.multiple-tools-content, .platform-automation-layout, .business-anywhere-layout, .entrepreneur-top, .pricing-heading-row) { grid-template-columns: 1fr; }
+  .gsap-page-root main.landing-page.pro-page :is(.business-tools-grid, .data-stats-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gsap-page-root main.landing-page.pro-page .pricing-plans-grid { grid-template-columns: 1fr; max-width: 680px; margin-inline: auto; }
+  .gsap-page-root main.landing-page.pro-page :is(.multiple-tools-image, .platform-automation-image, .business-anywhere-screen) { max-width: 680px; margin-inline: auto; }
+  .gsap-page-root main.landing-page.pro-page .automation-cta { grid-template-columns: 1fr; }
+  .gsap-page-root main.landing-page.pro-page .automation-rocket { width: 220px; }
+}
+@media (max-width: 600px) {
+  .gsap-page-root main.landing-page.pro-page .container { width: calc(100% - 32px); max-width: calc(100% - 32px); }
+  .gsap-page-root main.landing-page.pro-page .landing-hero-section { padding-top: 148px; padding-bottom: 64px; }
+  .gsap-page-root main.landing-page.pro-page :is(.business-tools-grid, .data-stats-grid, .need-more-grid, .landing-benefits-list, .getting-started-steps) { grid-template-columns: 1fr; }
+  .gsap-page-root main.landing-page.pro-page .landing-benefit-item { flex-direction: row; justify-content: flex-start; text-align: left; }
+  .gsap-page-root main.landing-page.pro-page .landing-benefit-title { width: auto; text-align: left; }
+  .gsap-page-root main.landing-page.pro-page .landing-video-window { padding: 32px 8px 8px; }
+  .gsap-page-root main.landing-page.pro-page .landing-video-play { width: 48px; }
+  .gsap-page-root main.landing-page.pro-page .subscription-panel .container { width: 100%; max-width: none; }
+  .gsap-page-root main.landing-page.pro-page .subscription-table-image { min-width: 760px; }
+  .gsap-page-root main.landing-page.pro-page .getting-started-line { display: none; }
+  .gsap-page-root main.landing-page.pro-page .getting-started-step { flex-direction: row; gap: 20px; text-align: left; }
+  .gsap-page-root main.landing-page.pro-page .getting-step-circle { width: 64px; height: 64px; flex: 0 0 64px; }
+  .gsap-page-root main.landing-page.pro-page .getting-step-circle span { font-size: 28px; }
+  .gsap-page-root main.landing-page.pro-page .getting-started-step p { margin: 0; text-align: left; }
+  .gsap-page-root main.landing-page.pro-page .business-anywhere-card { padding: 24px; }
+  .gsap-page-root main.landing-page.pro-page .automation-cta-buttons { flex-direction: column; align-items: flex-start; }
+  .gsap-page-root main.landing-page.pro-page .automation-rocket { width: 180px; }
+  .gsap-page-root main.landing-page.pro-page .easyboyweb-footer .container { padding: 0; }
+}

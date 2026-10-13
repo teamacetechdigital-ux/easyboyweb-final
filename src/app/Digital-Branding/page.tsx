@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import Footer from "@/src/components/layout/Footer";
 import Header from "@/src/components/layout/Header";
 import Link from "next/link";
@@ -44,16 +45,25 @@ const digitalBenefits = [
 
 
 export default function CustomSoftwareDevelopment() {
+    const [selectedLogo, setSelectedLogo] = useState<{ image: string; index: number } | null>(null);
 
-    const [openLogoFaq, setOpenLogoFaq] = useState<number | null>(
-  null
-);
+    useEffect(() => {
+        if (!selectedLogo) return;
 
-const toggleLogoFaq = (index: number) => {
-  setOpenLogoFaq((current) =>
-    current === index ? null : index
-  );
-};
+        const previousOverflow = document.body.style.overflow;
+        const closeOnEscape = (event: KeyboardEvent) => {
+            if (event.key === "Escape") setSelectedLogo(null);
+        };
+
+        document.body.style.overflow = "hidden";
+        window.addEventListener("keydown", closeOnEscape);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener("keydown", closeOnEscape);
+        };
+    }, [selectedLogo]);
+
     return (
        <main className="digital-marketing-page">
             <Header />
@@ -102,21 +112,59 @@ const toggleLogoFaq = (index: number) => {
 
                     <div className="our-work-grid">
                         {workImages.map((image, index) => (
-                            <div className="our-work-card" key={image}>
+                            <button
+                                type="button"
+                                className="our-work-card"
+                                onClick={() => setSelectedLogo({ image, index })}
+                                aria-label={`Preview logo project ${index + 1}`}
+                                key={image}
+                            >
                                 <Image
                                     src={image}
                                     alt={`Our work project ${index + 1}`}
                                     width={345}
                                     height={184}
                                 />
-                            </div>
+                            </button>
                         ))}
                     </div>
 
-                    <a href="/work" className="our-work-button font-inter">
+                    <a href="/Work" className="our-work-button font-inter">
                         Learn More
                     </a>
                 </div>
+                {selectedLogo && (
+                    <div
+                        className="logo-preview-overlay"
+                        role="presentation"
+                        onClick={() => setSelectedLogo(null)}
+                    >
+                        <div
+                            className="logo-preview-dialog"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label={`Logo project ${selectedLogo.index + 1} preview`}
+                            onClick={(event) => event.stopPropagation()}
+                        >
+                            <button
+                                type="button"
+                                className="logo-preview-close"
+                                onClick={() => setSelectedLogo(null)}
+                                aria-label="Close logo preview"
+                            >
+                                &times;
+                            </button>
+                            <div className="logo-preview-image">
+                                <Image
+                                    src={selectedLogo.image}
+                                    alt={`Our work project ${selectedLogo.index + 1}`}
+                                    fill
+                                    sizes="(max-width: 700px) 90vw, 800px"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                )}
             </section>
 
 

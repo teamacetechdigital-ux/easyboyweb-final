@@ -6,12 +6,12 @@ import grwo3 from "../../../public/imgs/grow-dev3.svg";
 import weFocusimg from "../../../public/imgs/we-focus-img1.png";
 import Link from "next/link";
 import Image from "next/image";
+import FeatureIcon from "@/src/components/ui/FeatureIcon";
 import Testimonials from "@/src/components/sections/Testimonials";
 import Faq from "@/src/components/sections/Faq";
 import EasyBoyWebPro from "@/src/components/sections/EasyBoyWebPro";
 import Platforms from "@/src/components/sections/platforms"
 import WebsiteCRM from "@/src/components/sections/WebsiteCRM";
-import Technologies from "@/src/components/sections/Technologies";
 import Process from "@/src/components/sections/Process";
 import OurWork from "@/src/components/sections/OurWork";
 
@@ -37,32 +37,41 @@ const seoCards = [
 const shorttext = [
     {
         title: "Save Time & Money",
+        icon: "savings",
     },
     {
         title: "Server Installation",
+        icon: "server",
     },
     {
         title: "Fast Loading",
+        icon: "speed",
     },
     {
         title: "Mobile Ready",
+        icon: "mobile",
     },
     {
         title: "Security Optimization",
+        icon: "shield",
     },
     {
         title: "Premium Support",
+        icon: "support",
     },
     {
         title: "Google Friendly SEO",
+        icon: "search",
     },
     {
         title: "Browser/Device Compatible",
+        icon: "devices",
     },
     {
         title: "Integrations & Automations",
+        icon: "automation",
     },
-];
+] as const;
 
 export default function CustomSoftwareDevelopment() {
     return (
@@ -75,7 +84,7 @@ export default function CustomSoftwareDevelopment() {
                             Custom Web<br /> Development
                         </h1>
                         <p className="font-inter">
-                            Fast Loading - Mobile Ready - Search Engine Friendly
+                            Fast Loading Mobile Ready Search Engine Friendly
                         </p>
                         <Link
                             href="/contact"
@@ -143,7 +152,7 @@ export default function CustomSoftwareDevelopment() {
                         <div className="w-1/2 we-focus-main-txt">
                             <h2 className="font-aloevera pb-8">We focus on your digital footprint so you can focus on your business</h2>
                             <p className="font-inter">Keeping your website fresh and up-to-date can be time-consuming, yet it’s crucial for making a strong first impression on potential clients.</p>
-                            <p className="font-inter pt-8 pb-6">Our Website Management Services for WordPress are here to help you, offering comprehensive maintenance, security, support, and updates at a competitive rate. Don’t let a neglected website open doors to security threats, technical issues, or downtime.</p>
+                            <p className="font-inter">Our Website Management Services for WordPress are here to help you, offering comprehensive maintenance, security, support, and updates at a competitive rate. Don’t let a neglected website open doors to security threats, technical issues, or downtime.</p>
                             <p className="font-inter">Let us take care of it, so you can focus on what you do best.</p>
                             <Link
                                 href="/contact"
@@ -167,6 +176,7 @@ export default function CustomSoftwareDevelopment() {
                     <div className="grid grid-cols-3 grid-rows-3 items-center justify-center gap-x-8 gap-y-4 pt-14">
                         {shorttext.map((item) => (
                             <div className="seo-short-txt-box" key={item.title}>
+                                <FeatureIcon name={item.icon} />
                                 <h3 className="font-inter">
                                     {item.title}
                                 </h3>

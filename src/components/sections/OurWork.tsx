@@ -164,7 +164,7 @@ export default function OurWork({
                   <Image src={project.image} alt={project.title} fill sizes="(max-width: 600px) 82vw, (max-width: 1200px) 44vw, 480px" />
                   <span className={styles.previewLabel} aria-hidden="true">EasyBoyWeb / Selected work</span>
                 </div>
-                <Link href="/Work" className={styles.caption} aria-label={`${project.title} — explore our portfolio`}>
+                <Link href="/Work" className={styles.caption} aria-label={`${project.title} explore our portfolio`}>
                   <div>
                     <span>{categoryLabels[project.category]}</span>
                     <h3 className="font-inter">{project.title}</h3>

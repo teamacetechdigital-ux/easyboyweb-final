@@ -9,7 +9,7 @@ import facebookIcon from "../../../public/imgs/facebook_icon.svg";
 import youtubeIcon from "../../../public/imgs/youtube_icon.svg";
 import emailSendIcon from "../../../public/imgs/emailSend_icon.svg";
 import phoneIcon from "../../../public/imgs/phone.svg";
-import footerLogo from "../../../public/imgs/footerlogo.svg";
+import FooterWatermark from "./FooterWatermark";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -22,15 +22,7 @@ const quickLinks = [
 
 const services = [
   {
-    label: "Web Development",
-    href: "/Custom-Web-Development",
-  },
-  {
-    label: "Mobile App Development",
-    href: "/Mobile-Apps",
-  },
-  {
-    label: "Custom Software",
+    label: "UX & Custom Software",
     href: "/UX-&-Custom-Software",
   },
   {
@@ -38,43 +30,51 @@ const services = [
     href: "/Ai-Development",
   },
   {
-    label: "Digital Branding",
-    href: "/Digital-Branding",
+    label: "Mobile Apps",
+    href: "/Mobile-Apps",
   },
   {
-    label: "SEO & Ads",
-    href: "/Digital-Strategy-&-SEO",
+    label: "Custom Web Development",
+    href: "/Custom-Web-Development",
   },
   {
     label: "Hosting & Maintenance",
     href: "/Hosting-&-Maintenance",
+  },
+  {
+    label: "Digital Strategy & SEO",
+    href: "/Digital-Strategy-&-SEO",
+  },
+  {
+    label: "Digital Branding",
+    href: "/Digital-Branding",
   },
 ];
 
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/easyboyweb",
     icon: facebookIcon,
   },
   {
     label: "YouTube",
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/user/easyboyweb",
     icon: youtubeIcon,
   },
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/easyboyweb",
     icon: instagramIcon,
   },
   {
     label: "Twitter",
-    href: "https://x.com",
+    href: "https://x.com/easyboyweb",
     icon: twitterIcon,
   },
   {
     label: "TikTok",
-    href: "https://tiktok.com",
+    href: "https://www.tiktok.com/@easyboyweb",
     icon: tiktokIcon,
   },
 ];
@@ -101,7 +101,8 @@ export default function Footer() {
               real collaboration, we can make amazing things happen.
               Take a look around, and if you think we’d be a good
               match, give us a shout!
-              <br />
+            </p>
+            <p className="footer-brand-description font-inter">
               Offices in Greenville, South Carolina and Atlanta,
               Georgia.
             </p>
@@ -239,14 +240,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-large-logo" aria-hidden="true">
-        <Image
-          src={footerLogo}
-          alt=""
-          width={1810}
-          height={327}
-        />
-      </div>
+      <FooterWatermark />
     </footer>
   );
 }

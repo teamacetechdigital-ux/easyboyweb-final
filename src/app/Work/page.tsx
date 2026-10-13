@@ -32,7 +32,7 @@ const webAppProjects = [
 
 export default function Page() {
   return (
-    <>
+    <main className="work-page">
       <Header />
       <section className="work-banner-section">
   <div className="container">
@@ -86,6 +86,6 @@ export default function Page() {
       <ProjectGallery title="Logos" projects={logoProjects} variant="logos" />
       <ProjectGallery title="Web Apps" projects={webAppProjects} />
       <Footer />
-    </>
+    </main>
   );
 }

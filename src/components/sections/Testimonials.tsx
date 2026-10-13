@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 import profileIcon1 from "../../../public/imgs/profile_icon1.svg";
 import profileIcon2 from "../../../public/imgs/profile_icon2.svg";
@@ -67,6 +66,8 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const [showAll, setShowAll] = useState(false);
+  const galleryId = useId();
   const [expandedId, setExpandedId] = useState<number | null>(
     null
   );
@@ -87,12 +88,12 @@ export default function Testimonials() {
       </div>
 
       <h2 className="testimonials-heading font-aloevera">
-        Real Businesses. Real Growth.
+        Real Businesses. Real Growth.{" "}
         <br />
         Real Results.
       </h2>
 
-      <div className="testimonials-slider">
+      <div className={`testimonials-slider ${showAll ? "testimonials-slider-expanded" : ""}`} id={galleryId}>
         <div
           className={`testimonials-track ${
             expandedId !== null
@@ -105,6 +106,7 @@ export default function Testimonials() {
               className="testimonials-set"
               key={copyNumber}
               aria-hidden={copyNumber === 1}
+              inert={copyNumber === 1}
             >
               {testimonials.map((testimonial) => {
                 const isExpanded =
@@ -164,7 +166,7 @@ export default function Testimonials() {
                     <div className="testimonial-review">
                       <p
                         className={`font-inter ${
-                          isExpanded
+                          isExpanded || showAll
                             ? "testimonial-review-expanded"
                             : ""
                         }`}
@@ -172,7 +174,7 @@ export default function Testimonials() {
                         {testimonial.review}
                       </p>
 
-                      <button
+                      {!showAll && <button
                         type="button"
                         className="testimonial-read-more font-inter"
                         onClick={() =>
@@ -181,7 +183,7 @@ export default function Testimonials() {
                         aria-expanded={isExpanded}
                       >
                         {isExpanded ? "Read Less" : "Read More"}
-                      </button>
+                      </button>}
                     </div>
                   </article>
                 );
@@ -192,12 +194,15 @@ export default function Testimonials() {
       </div>
 
       <div className="testimonials-button-wrapper">
-        <Link
-          href="/testimonials"
+        <button
+          type="button"
           className="testimonials-full-button font-inter"
+          onClick={() => setShowAll((current) => !current)}
+          aria-expanded={showAll}
+          aria-controls={galleryId}
         >
-          View Full Testimonials
-        </Link>
+          {showAll ? "Show Fewer Testimonials" : "View Full Testimonials"}
+        </button>
       </div>
     </section>
   );

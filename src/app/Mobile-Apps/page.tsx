@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Footer from "@/src/components/layout/Footer";
 import Header from "@/src/components/layout/Header";
 import Testimonials from "@/src/components/sections/Testimonials";
@@ -7,6 +6,7 @@ import EasyBoyWebPro from "@/src/components/sections/EasyBoyWebPro"
 import Faq from "@/src/components/sections/Faq"
 import MobileScreen from "@/src/components/sections/MobileScreen"
 import Image from "next/image";
+import FeatureIcon from "@/src/components/ui/FeatureIcon";
 import Link from "next/link";
 import backendIcon from "../../../public/imgs/backend_ips_icon.svg";
 import iosAndroidIcon from "../../../public/imgs/ios&and_icon.svg";
@@ -60,19 +60,19 @@ const whyEasyboywebItems = [
 
 
 const businessGrowthServices = [
-  "Backend Development",
-  "Cloud Hosting",
-  "In App Payments",
-  "Admin Panel",
-  "AI & Chatbot Integration",
-  "Premium Support",
-  "AppStore Submission",
-  "Payment Integration",
-  "Maintenance Services",
-  "Push Notifications",
-  "GPS & Maps Integration",
-  "Custom Features & Integrations",
-];
+  { title: "Backend Development", icon: "code" },
+  { title: "Cloud Hosting", icon: "cloud" },
+  { title: "In App Payments", icon: "payments" },
+  { title: "Admin Panel", icon: "dashboard" },
+  { title: "AI & Chatbot Integration", icon: "message" },
+  { title: "Premium Support", icon: "support" },
+  { title: "AppStore Submission", icon: "upload" },
+  { title: "Payment Integration", icon: "payments" },
+  { title: "Maintenance Services", icon: "settings" },
+  { title: "Push Notifications", icon: "bell" },
+  { title: "GPS & Maps Integration", icon: "location" },
+  { title: "Custom Features & Integrations", icon: "automation" },
+] as const;
 
 
 const appWorkSteps = [
@@ -118,18 +118,8 @@ const appWorkSteps = [
 
 function Custom_Mobile_app() {
 
-  const [openMobileFaq, setOpenMobileFaq] = useState<number | null>(
-    null
-  );
-
-  const toggleMobileFaq = (index: number) => {
-    setOpenMobileFaq((current) =>
-      current === index ? null : index
-    );
-  };
-
   return (
-    <>
+    <main className="mobile-apps-page">
       <Header />
 
       <section className="custom-mobileapp-banner">
@@ -162,9 +152,9 @@ function Custom_Mobile_app() {
                 />
               </div>
 
-              <h2 className="font-inter">
+              <h3 className="font-inter">
                 UX &amp; UI Prototyping
-              </h2>
+              </h3>
             </div>
 
             <div className="mobileapp-service">
@@ -177,9 +167,9 @@ function Custom_Mobile_app() {
                 />
               </div>
 
-              <h2 className="font-inter">
+              <h3 className="font-inter">
                 iOS &amp; Android
-              </h2>
+              </h3>
             </div>
 
             <div className="mobileapp-service">
@@ -192,10 +182,10 @@ function Custom_Mobile_app() {
                 />
               </div>
 
-              <h2 className="font-inter">
+              <h3 className="font-inter">
                 <span>Backend API Development</span>
                 <span>AI Integration, Web 3</span>
-              </h2>
+              </h3>
             </div>
           </div>
         </div>
@@ -268,9 +258,10 @@ function Custom_Mobile_app() {
               {businessGrowthServices.map((service) => (
                 <div
                   className="business-growth-card font-inter"
-                  key={service}
+                  key={service.title}
                 >
-                  {service}
+                  <FeatureIcon name={service.icon} />
+                  <span>{service.title}</span>
                 </div>
               ))}
             </div>
@@ -367,7 +358,7 @@ function Custom_Mobile_app() {
 
 
 
-    </>
+    </main>
 
   )
 }

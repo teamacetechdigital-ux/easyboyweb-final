@@ -47,7 +47,7 @@ main :is(.help-number-hexagon, .how-we-work-number) { transition: transform .7s 
   main .how-we-work-step:hover .how-we-work-number { transform: rotate(360deg); }
 }
 /* Normal document flow reserves space for the watermark at every breakpoint. */
-main .site-footer {
+.gsap-page-root .site-footer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -68,7 +68,14 @@ main .site-footer {
 .site-footer .footer-divider { margin-top: 48px; }
 .site-footer .footer-bottom { height: auto; min-height: 0; padding-top: 26px; gap: 20px; align-items: center; }
 .site-footer .footer-phone { flex-wrap: wrap; }
-.site-footer .footer-large-logo {
+.gsap-page-root main.landing-page .easyboyweb-footer {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 0;
+  padding-bottom: 0;
+}
+:is(.site-footer, .easyboyweb-footer) .footer-large-logo {
   position: relative;
   inset: auto;
   flex: none;
@@ -78,10 +85,12 @@ main .site-footer {
   aspect-ratio: 1810 / 200;
   margin: clamp(30px, 4vw, 68px) auto 0;
   transform: none;
+  z-index: 0;
+  pointer-events: none;
   overflow: hidden;
   line-height: 0;
 }
-.site-footer .footer-large-logo img { display: block; width: 100%; max-width: none; height: auto; margin: 0; object-fit: contain; }
+:is(.site-footer, .easyboyweb-footer) .footer-large-logo img { display: block; width: 100%; max-width: none; height: auto; margin: 0; object-fit: contain; }
 /* Center the icon, title and paragraph on the same axis. */
 .responsive-website-page .maintenance-services-grid,
 .responsive-website-page .hosting-focus-section .hosting-services-grid {
@@ -127,7 +136,33 @@ main .site-footer {
 .maintenance-benefit-card p { margin: 0; color: #e3ebf1; font-size: 16px; line-height: 1.75; }
 .maintenance-benefits-illustration { width: 100%; min-width: 0; display: flex; justify-content: center; }
 .responsive-website-page .maintenance-benefits-illustration .maintenance-graphic-frame { width: 100%; max-width: 540px; height: auto; aspect-ratio: 1; }
-.responsive-website-page .maintenance-graphic img { object-fit: contain; }
+.responsive-website-page .maintenance-graphic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72%;
+  height: 72%;
+  margin: auto;
+}
+.responsive-website-page .maintenance-graphic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: maintenanceImagePulse 2.8s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes maintenanceImagePulse {
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
 .responsive-website-page .top-notch-cta,
 .responsive-website-page .we-focus-sections:not(.clr-bg-chng) .we-focus-main-txt .banner-btn { display: flex; width: fit-content; min-width: 230px; min-height: 54px; height: auto; margin: 34px auto 0; padding: 15px 28px; font-size: 15px; line-height: 1.4; }
 .responsive-website-page .we-focus-sections:not(.clr-bg-chng) .we-focus-main-txt .banner-btn { margin-left: 0; }
@@ -154,7 +189,7 @@ main .site-footer {
   .site-footer :is(.footer-brand, .footer-newsletter) { grid-column: 1 / -1; }
   .site-footer .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
   .site-footer .footer-bottom p, .site-footer .footer-legal-links { font-size: 12px; line-height: 1.6; }
-  .site-footer .footer-large-logo { width: calc(100% - 20px); }
+  :is(.site-footer, .easyboyweb-footer) .footer-large-logo { width: calc(100% - 20px); }
   .maintenance-benefits-layout { grid-template-columns: 1fr; gap: 16px; }
   .maintenance-benefits-column { gap: 16px; }
   .maintenance-benefit-card { padding: 24px; }

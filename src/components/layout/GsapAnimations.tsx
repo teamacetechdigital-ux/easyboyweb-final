@@ -7,6 +7,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const revealGroups = [
+  ".prnt-thrd-box", ".identity-cards", ".easy-points", ".help-process",
+  ".how-we-work-process", ".custom-software-grid", ".website-crm-cards",
+  ".maintenance-services-grid", ".hosting-services-grid", ".maintenance-benefits-column",
+  ".digital-benefits-grid", ".custom-ai-grid", ".ai-call-agent-grid",
+  ".why-easyboyweb-grid", ".business-growth-grid", ".seo-service-grid",
+  ".seo-aeo-grid", ".seo-short-grid", ".business-tools-grid",
+  ".need-more-grid", ".pricing-plans-grid", ".services-slider", "[data-reveal-group]",
+].join(", ");
+
+/** Stable motion families: the same component keeps its effect on every route. */
+function cardEntrance(group: HTMLElement, index: number, desktop: boolean) {
+  if (group.matches(".prnt-thrd-box, .services-slider, [data-reveal-group='services']")) {
+    return { y: desktop ? 44 : 24, scale: 0.94, duration: 0.9, ease: "power3.out" };
+  }
+  if (group.matches(".identity-cards, .why-easyboyweb-grid, .maintenance-services-grid, .hosting-services-grid")) {
+    return { y: desktop ? 24 : 16, scale: 0.97, rotation: desktop ? (index % 2 ? 1.5 : -1.5) : 0, duration: 0.85, ease: "power2.out" };
+  }
+  if (group.matches(".easy-points, .help-process, .how-we-work-process, .website-crm-cards")) {
+    return { x: desktop ? -12 : -8, y: 0, duration: 0.8, ease: "power3.out" };
+  }
+  return { y: desktop ? 36 : 20, scale: 0.98, duration: 0.85, ease: "power3.out" };
+}
+
 export default function GsapAnimations({ children }: { children: ReactNode }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -27,17 +51,17 @@ export default function GsapAnimations({ children }: { children: ReactNode }) {
         if (!match.conditions?.motion) return;
         const desktop = match.conditions.desktop;
         const listeners: (() => void)[] = [];
+        const reveal = { y: desktop ? 28 : 18, opacity: 0, duration: 0.8, ease: "power3.out", clearProps: "transform,opacity" };
         const hero = root.querySelector<HTMLElement>(".studio-hero");
         const header = root.querySelector(".site-header");
         if (header) gsap.from(header, { y: -16, opacity: 0, duration: 0.7, ease: "power3.out", clearProps: "transform,opacity" });
 
         if (hero) {
           const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
-          intro.from(hero.querySelector(".hero-eyebrow"), { y: 14, opacity: 0, duration: 0.6 }, 0.1)
-            .from(hero.querySelectorAll(".hero-word"), { yPercent: 110, rotate: 3, duration: 1.15, stagger: 0.14, clearProps: "transform" }, 0.18)
-            .from(hero.querySelectorAll(".hero-description, .hero-actions, .hero-proof"), { y: 24, opacity: 0, duration: 0.8, stagger: 0.1, clearProps: "transform,opacity" }, 0.5)
-            .from(hero.querySelectorAll(".hero-project"), { y: 70, opacity: 0, duration: 1.2, stagger: 0.13, clearProps: "transform,opacity" }, 0.35)
-            .from(hero.querySelectorAll(".hero-project-tag, .hero-showcase-caption, .hero-bottom"), { y: 12, opacity: 0, duration: 0.75, stagger: 0.1, clearProps: "transform,opacity" }, 0.95);
+          intro.from(hero.querySelector(".hero-eyebrow"), { ...reveal }, 0.1)
+            .from(hero.querySelectorAll(".hero-word"), { ...reveal, stagger: 0.1 }, 0.18)
+            .from(hero.querySelectorAll(".hero-description, .hero-actions, .hero-proof"), { ...reveal, stagger: 0.1 }, 0.35)
+            .from(hero.querySelectorAll(".hero-project"), { ...reveal, stagger: 0.1 }, 0.35);
 
           if (desktop) {
             gsap.to(hero.querySelector(".hero-project-stack"), { y: -65, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.8 } });
@@ -59,20 +83,25 @@ export default function GsapAnimations({ children }: { children: ReactNode }) {
             }
           }
         } else {
-          const content = root.querySelector("[class*='banner-content'], [class*='ban-cont']");
-          if (content) gsap.from(content.children, { y: 24, opacity: 0, duration: 0.75, stagger: 0.08, clearProps: "transform,opacity" });
+          const content = root.querySelector("main h1")?.parentElement;
+          if (content) gsap.from(content.children, { ...reveal, stagger: 0.1 });
         }
 
         // Reveal content, never whole sections or moving carousel tracks.
-        const targets = gsap.utils.toArray<HTMLElement>("section h2, .growth-content > p, .why-choose-content > p, .agency-showcase, .footer-main", root);
+        const heroSection = root.querySelector("main h1")?.closest("section");
+        const targets = gsap.utils.toArray<HTMLElement>("section h2, section p, section .banner-btn, .agency-showcase, .footer-main", root);
         targets.forEach((target) => {
-          if (target.closest(".studio-hero")) return;
-          gsap.from(target, { y: desktop ? 36 : 20, opacity: 0, duration: 0.85, ease: "power3.out", clearProps: "transform,opacity", scrollTrigger: { trigger: target, start: "top 93%", once: true } });
+          // Moving tracks own their transforms; cards reveal as one unit.
+          if (heroSection?.contains(target) || target.closest(`${revealGroups}, .services-slider, .portfolio-slider, .testimonials-slider, .subscription-logo-sliders, .agency-showcase`)) {
+            if (!target.matches(".agency-showcase")) return;
+          }
+          if (target.closest("footer") && !target.matches(".footer-main")) return;
+          gsap.from(target, { ...reveal, scrollTrigger: { trigger: target, start: "top 92%", once: true } });
         });
 
-        [".prnt-thrd-box", ".identity-cards", ".easy-points", ".help-process", ".how-we-work-process"].forEach((selector) => {
-          root.querySelectorAll<HTMLElement>(selector).forEach((group) => {
-            gsap.from(group.children, { y: desktop ? 36 : 18, opacity: 0, duration: 0.7, stagger: 0.07, ease: "power3.out", clearProps: "transform,opacity", scrollTrigger: { trigger: group, start: "top 90%", once: true } });
+        root.querySelectorAll<HTMLElement>(revealGroups).forEach((group) => {
+          Array.from(group.children).forEach((card, index) => {
+            gsap.from(card, { ...reveal, ...cardEntrance(group, index, Boolean(desktop)), clearProps: "transform,opacity,translate,rotate,scale", delay: (index % 4) * 0.1, scrollTrigger: { trigger: card, start: "top 92%", once: true } });
           });
         });
 
@@ -103,6 +132,8 @@ export default function GsapAnimations({ children }: { children: ReactNode }) {
 
     window.addEventListener("load", refresh);
     root.addEventListener("load", refresh, true);
+    const sizeObserver = new ResizeObserver(refresh);
+    sizeObserver.observe(root);
     void document.fonts.ready.then(() => { if (!disposed) refresh(); });
     refresh();
     return () => {
@@ -110,6 +141,7 @@ export default function GsapAnimations({ children }: { children: ReactNode }) {
       cancelAnimationFrame(refreshFrame);
       window.removeEventListener("load", refresh);
       root.removeEventListener("load", refresh, true);
+      sizeObserver.disconnect();
       media.revert();
       context.revert();
     };

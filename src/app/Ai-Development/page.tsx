@@ -2,9 +2,9 @@ import Footer from "@/src/components/layout/Footer";
 import Header from "@/src/components/layout/Header";
 import EasyBoyWebPro from "@/src/components/sections/EasyBoyWebPro";
 import Testimonials from "@/src/components/sections/Testimonials";
-import WebsiteCRM from "@/src/components/sections/WebsiteCRM";
 import Faq from "@/src/components/sections/Faq";
 import Image from "next/image";
+import FeatureIcon, { type FeatureIconName } from "@/src/components/ui/FeatureIcon";
 
 import React from 'react'
 
@@ -63,7 +63,7 @@ const customAiServices = [
 
 const easyboywebAiPoints = [
   "Built specifically for small & mid-sized businesses",
-  "Custom solutions — not off-the-shelf AI",
+  "Custom solutions not off-the-shelf AI",
   "Full integration with websites, CRMs, and phone systems",
   "Scalable, secure, and future-ready",
   "Strategy + execution under one roof",
@@ -77,13 +77,15 @@ type CallAgentPoint = {
 
 type CallAgentCard = {
   title: string;
+  icon: FeatureIconName;
   points: CallAgentPoint[];
   note?: string;
 };
 
 const callAgentCards: CallAgentCard[] = [
   {
-    title: "AI Greet – Intelligent Call Handling",
+    title: "AI Greet Intelligent Call Handling",
+    icon: "phone",
     points: [
       {
         text: "Instant professional greeting for every call",
@@ -98,10 +100,11 @@ const callAgentCards: CallAgentCard[] = [
         text: "Clear, confident, and helpful communication",
       },
     ],
-    note: "Your business never misses a call — day or night.",
+    note: "Your business never misses a call day or night.",
   },
   {
     title: "Qualified Lead Detection (AI Logic)",
+    icon: "qualification",
     points: [
       {
         text: "Automated qualification questions on every call",
@@ -118,7 +121,7 @@ const callAgentCards: CallAgentCard[] = [
         ],
       },
       {
-        text: "100% call coverage — no missed opportunities",
+        text: "100% call coverage no missed opportunities",
       },
       {
         text: "Smart call transfer rules",
@@ -130,6 +133,7 @@ const callAgentCards: CallAgentCard[] = [
   },
   {
     title: "Handling Non-Qualified Callers",
+    icon: "message",
     points: [
       {
         text: "Automated intake forms sent via SMS or Email",
@@ -145,6 +149,7 @@ const callAgentCards: CallAgentCard[] = [
   },
   {
     title: "Multilanguage Conversations",
+    icon: "languages",
     points: [
       {
         text: "Supports multiple languages (English, Spanish, Hindi, and more)",
@@ -157,6 +162,7 @@ const callAgentCards: CallAgentCard[] = [
   },
   {
     title: "Voice, Tone & Background Customization",
+    icon: "settings",
     points: [
       {
         text: "Background sound options:",
@@ -180,6 +186,7 @@ const callAgentCards: CallAgentCard[] = [
   },
   {
     title: "Knowledge Base Integration",
+    icon: "knowledge",
     points: [
       {
         text: "Learns from uploaded PDFs and documents",
@@ -203,6 +210,7 @@ const callAgentCards: CallAgentCard[] = [
   },
   {
     title: "Custom Voice Integration (ElevenLabs)",
+    icon: "voice",
     points: [
       {
         text: "Create and use your own custom voice",
@@ -218,6 +226,7 @@ const callAgentCards: CallAgentCard[] = [
   },
   {
     title: "Appointment Scheduling",
+    icon: "calendar",
     points: [
       {
         text: "Real-time calendar availability checks",
@@ -239,7 +248,7 @@ const callAgentCards: CallAgentCard[] = [
 function Custom_Ai_Developement(){
 
   return (
-    <>
+    <main className="ai-development-page">
     <Header/>
 
 
@@ -260,7 +269,7 @@ function Custom_Ai_Developement(){
       <div className="ai-solutions-description font-inter">
         <p>
           At Easyboyweb, we help small and growing businesses use AI
-          in practical, revenue-driving ways — not complicated theory.
+          in practical, revenue-driving ways not complicated theory.
           Our AI solutions are designed to save time, reduce labor
           costs, improve customer experience, and increase
           conversions, all while integrating seamlessly into your
@@ -369,6 +378,7 @@ function Custom_Ai_Developement(){
           className="ai-call-agent-card"
           key={card.title}
         >
+          <FeatureIcon name={card.icon} />
           <h3 className="font-inter">{card.title}</h3>
 
           <ul className="ai-call-agent-list font-inter">
@@ -419,7 +429,7 @@ function Custom_Ai_Developement(){
         </ul>
 
         <p className="font-inter">
-          We don&apos;t just “add AI” — we engineer systems that
+          We don&apos;t just “add AI” we engineer systems that
           grow your business.
         </p>
       </div>
@@ -475,7 +485,7 @@ function Custom_Ai_Developement(){
 <EasyBoyWebPro/>
     <Footer/>
     
-    </>
+    </main>
   )
 }
 

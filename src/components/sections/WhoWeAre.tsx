@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import FeatureIcon from "../ui/FeatureIcon";
 
 import whoweare1 from "../../../public/imgs/whoweare1.svg";
 import whoweare2 from "../../../public/imgs/whoweare2.svg";
@@ -34,13 +35,13 @@ const identityCards = [
 
 
 const easyPoints = [
-  "Attract & Retain Leads",
-  "Keep Your Site Up-To-Date, Secure And Backed Up",
-  "Grow Your Web Presence Online",
-  "Outperform Your Competitors",
-  "Peace Of Mind Hosting & Maintenance/Management",
-  "Focus On Our Business & Reduce Stress",
-];
+  { title: "Attract & Retain Leads", icon: "leads" },
+  { title: "Keep Your Site Up-To-Date, Secure And Backed Up", icon: "shield" },
+  { title: "Grow Your Web Presence Online", icon: "growth" },
+  { title: "Outperform Your Competitors", icon: "trophy" },
+  { title: "Peace Of Mind Hosting & Maintenance/Management", icon: "server" },
+  { title: "Focus On Our Business & Reduce Stress", icon: "focus" },
+] as const;
 
 const statistics = [
   {
@@ -139,7 +140,7 @@ function StatisticCounter({ number }: { number: string }) {
 
 export default function WhoWeAre() {
   return (
-    <section className="who-we-are-section">
+    <section className="who-we-are-section" id="who-we-are">
       <div className="container relative">
         <h2 className="who-we-are-heading font-aloevera">
           Who We Are
@@ -168,8 +169,9 @@ export default function WhoWeAre() {
 
         <div className="easy-points">
           {easyPoints.map((point) => (
-            <div className="easy-point font-inter" key={point}>
-              {point}
+            <div className="easy-point font-inter" key={point.title}>
+              <FeatureIcon name={point.icon} />
+              <span>{point.title}</span>
             </div>
           ))}
         </div>

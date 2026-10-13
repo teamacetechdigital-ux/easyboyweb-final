@@ -66,7 +66,7 @@ export default function ServicesPage() {
           <h1>One team.<br />From idea to <span>launch.</span></h1>
           <div className={styles.heroBottom}>
             <p>Design, development, and ongoing support for your next big move. Explore the ways we help businesses build, launch, and grow online.</p>
-            <Link href="/Work" className={styles.button}>
+            <Link href="/Work" className={`${styles.button} site-cta`}>
               Explore our work <span aria-hidden="true">↗</span>
             </Link>
           </div>
@@ -79,9 +79,9 @@ export default function ServicesPage() {
             <p className={styles.eyebrow}>Built around your business</p>
             <h2 id="services-heading">The right expertise.<br />Every step of the way.</h2>
           </div>
-          <div className={styles.grid}>
+          <div className={styles.grid} data-reveal-group="services">
             {services.map((service, index) => (
-              <Link key={service.href} href={service.href} className={styles.card}>
+              <Link key={service.href} href={service.href} className={`${styles.card} service-index-card`}>
                 <div className={styles.cardTop}>
                   <Image src={service.icon} alt="" width={48} height={48} />
                   <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
@@ -95,7 +95,7 @@ export default function ServicesPage() {
               <p className={styles.eyebrow}>Let’s build something great</p>
               <h3>Have an idea?<br />Let’s talk it through.</h3>
               <p>Tell us where you want to go. We’ll help you figure out the next step.</p>
-              <a href="tel:+18008070319" className={styles.button}>
+              <a href="tel:+18008070319" className={`${styles.button} site-cta`}>
                 Call our team <span aria-hidden="true">↗</span>
               </a>
             </div>

@@ -2,6 +2,7 @@ import Header from "../../components/layout/Header";
 import Footer from "../../components/layout/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import FeatureIcon from "@/src/components/ui/FeatureIcon";
 
 import whoweare1 from "../../../public/imgs/seo-box1.svg";
 import whoweare2 from "../../../public/imgs/seo-box2.svg";
@@ -105,32 +106,41 @@ const seoAeoCards = [
 const shorttext = [
     {
         title: "High-Quality Backlinks",
+        icon: "link",
     },
     {
         title: "Schema Markup",
+        icon: "code",
     },
     {
         title: "Rank 25-100+ Keywords",
+        icon: "growth",
     },
     {
         title: "Local SEO & Citations",
+        icon: "location",
     },
     {
         title: "Google Search Console",
+        icon: "search",
     },
     {
         title: "Video Reports",
+        icon: "video",
     },
     {
         title: "SEO Site Audits",
+        icon: "audit",
     },
     {
         title: "Google Analytics",
+        icon: "analytics",
     },
     {
         title: "Monthly Reporting",
+        icon: "report",
     },
-];
+] as const;
 
 const helpSteps = [
     {
@@ -323,7 +333,7 @@ export default function AboutPage() {
                                 <li className="font-inter">No Contract. No Commitment!</li>
                             </ul>
 
-                            <Link href="/about" className="seo-aeo-btn banner-btn font-inter">
+                            <Link href="/#who-we-are" className="seo-aeo-btn banner-btn font-inter">
                                 Free Site audit
                             </Link>
                         </div>
@@ -350,6 +360,7 @@ export default function AboutPage() {
                     <div className="seo-short-grid">
                         {shorttext.map((item) => (
                             <div className="seo-short-txt-box" key={item.title}>
+                                <FeatureIcon name={item.icon} />
                                 <h3 className="font-inter">
                                     {item.title}
                                 </h3>

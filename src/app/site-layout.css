@@ -1,0 +1,260 @@
+/* Shared layout limits, after the legacy route styles and motion styles. */
+:root {
+  --site-banner-size: clamp(32px, 4.5vw, 64px);
+  --site-heading-size: clamp(28px, 3.5vw, 46px);
+  --site-section-space: clamp(40px, 4.5vw, 64px);
+}
+
+.gsap-page-root main[class] > section[data-site-banner] {
+  height: auto !important;
+  min-height: 0;
+  margin-block: 0;
+  padding-top: clamp(112px, 9vw, 132px) !important;
+  padding-bottom: 48px !important;
+}
+
+.gsap-page-root main[class] > section[data-site-banner] > .container {
+  height: auto;
+  min-height: 0;
+}
+
+.gsap-page-root main[class] [data-site-banner] :is(.banner-content, .resp-web-ban-cont,
+  .landing-hero-content, .mobileapp-banner-content, .ai-solutions-content,
+  .work-banner-content, .blog-banner-content) {
+  height: auto;
+  min-height: 0;
+  padding: 0 !important;
+}
+
+.gsap-page-root main[class]:not(.page-shell) > section[data-site-banner] h1 {
+  width: 100%;
+  max-width: 1050px;
+  min-height: 0;
+  margin: 0 auto !important;
+  padding: 0;
+  font-size: var(--site-banner-size) !important;
+  line-height: 1.1 !important;
+  text-wrap: balance;
+}
+
+.gsap-page-root main[class] [data-site-banner] :is(.banner-content, .mobileapp-banner-content,
+  .landing-hero-content, .blog-banner-content) > p {
+  width: 100%;
+  max-width: 800px;
+  min-height: 0;
+  margin: 18px auto 0 !important;
+  line-height: 1.5 !important;
+}
+
+.gsap-page-root main[class] [data-site-banner] :is(.banner-btn, .landing-hero-button,
+  .mobileapp-banner-btn, .work-banner-button) {
+  margin-top: 24px;
+}
+
+.gsap-page-root main[class] [data-site-banner] .ai-solutions-label {
+  width: 100%;
+  margin: 0 0 16px;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+.gsap-page-root main[class] [data-site-banner] .ai-solutions-description {
+  margin-top: 20px;
+}
+
+.gsap-page-root main[class] [data-site-banner] .ai-solutions-description p:last-child {
+  margin-bottom: 0;
+}
+
+.gsap-page-root main[class] [data-site-banner] .mobileapp-services {
+  margin-top: 36px;
+  gap: 24px;
+}
+
+.gsap-page-root main[class] [data-site-banner] .work-banner-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.gsap-page-root main.home-page > section[data-site-banner] {
+  min-height: 580px;
+}
+
+.gsap-page-root main.home-page[class] > section[data-site-banner] h1 {
+  font-size: clamp(44px, 6vw, 80px) !important;
+  line-height: 1.02 !important;
+}
+
+.gsap-page-root main.home-page .hero-line { margin-bottom: 0; }
+.gsap-page-root main.home-page .hero-showcase { height: 370px; }
+.gsap-page-root main.home-page .hero-orbit { width: 340px; height: 340px; }
+.gsap-page-root main.home-page .hero-project-front { height: 240px; top: 100px; }
+.gsap-page-root main.home-page .hero-project-back { height: 210px; top: 40px; }
+.gsap-page-root main.home-page .hero-eyebrow { margin-bottom: 16px; }
+.gsap-page-root main.home-page .hero-proof { margin-top: 20px; }
+.gsap-page-root main.home-page .hero-proof p { font-size: 14px !important; }
+
+/* Sections stay in document flow, without overlapping the next section. */
+.gsap-page-root main[class] > section:not([data-site-banner]):not(.container):not(.partners-section):not(.technologies-section):not(.platforms-section) {
+  height: auto;
+  min-height: 0;
+  margin-block: 0;
+  padding-block: var(--site-section-space) !important;
+}
+
+.gsap-page-root main[class] .testimonials-heading { margin-top: 0; }
+.gsap-page-root main[class] .technology-cards-content {
+  transform: none;
+  margin-bottom: 0;
+}
+.gsap-page-root main[class] :is(.app-work-process, .custom-ai-grid,
+  .why-easyboyweb-ai-content, .platform-automation-layout, .easyboy-pro-card) {
+  margin-left: auto;
+  margin-right: auto;
+}
+.gsap-page-root main[class] .business-growth-icon { margin-top: 0; }
+.gsap-page-root main[class] .business-anywhere-screen { margin: 0 auto; }
+
+.gsap-page-root main[class] .we-focus-sections .container > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+}
+.gsap-page-root main[class] .we-focus-sections .container > div > div,
+.gsap-page-root main[class] .we-focus-main-txt :is(h2, p) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+.gsap-page-root main[class] .we-focus-sections .container > div > div > img {
+  width: 100%;
+  height: auto;
+}
+
+.gsap-page-root main.page-shell > .section-spacing {
+  padding-top: 120px;
+  padding-bottom: var(--site-section-space);
+}
+.gsap-page-root main.page-shell h1 { margin-bottom: 24px; }
+
+@media (max-width: 1000px) {
+  .gsap-page-root main[class] .we-focus-sections .container > div {
+    grid-template-columns: 1fr;
+  }
+  .gsap-page-root main[class] .we-focus-sections .container > div > div > img {
+    max-width: 560px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .gsap-page-root main.home-page > section[data-site-banner] { min-height: 0; }
+  .gsap-page-root main.home-page .hero-layout { gap: 24px; }
+  .gsap-page-root main.home-page .hero-showcase { height: 260px; }
+  .gsap-page-root main.home-page .hero-orbit { width: 240px; height: 240px; }
+  .gsap-page-root main.home-page .hero-project-front { height: 185px; top: 60px; }
+  .gsap-page-root main.home-page .hero-project-back { height: 165px; top: 0; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --site-copy-size: 16px;
+    --site-card-heading-size: 20px;
+    --site-cta-height: 52px;
+    --site-section-space: 40px;
+  }
+
+  .gsap-page-root main[class] > section[data-site-banner] {
+    padding-top: 104px !important;
+    padding-bottom: 32px !important;
+  }
+  .gsap-page-root main[class]:not(.page-shell) > section[data-site-banner] h1 {
+    font-size: clamp(32px, 6vw, 44px) !important;
+  }
+  .gsap-page-root main.home-page[class] > section[data-site-banner] h1 {
+    font-size: clamp(38px, 8vw, 54px) !important;
+  }
+  .gsap-page-root main.home-page .hero-showcase { height: 240px; }
+  .gsap-page-root main.home-page .hero-actions { margin-top: 20px; }
+  .gsap-page-root main.home-page .hero-proof { margin-top: 16px; }
+  .gsap-page-root main.home-page .hero-description { margin-top: 16px !important; }
+
+  .gsap-page-root main[class] [data-site-banner] .mobileapp-services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .gsap-page-root main[class] [data-site-banner] .mobileapp-icon,
+  .gsap-page-root main[class] [data-site-banner] .mobileapp-icon img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+  .gsap-page-root main[class] [data-site-banner] .mobileapp-service h3 {
+    min-height: 0;
+    margin-top: 10px;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+
+  .gsap-page-root main[class] :is(.help-process, .how-we-work-process) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    min-height: 0;
+    margin-top: 28px;
+  }
+  .gsap-page-root main[class] :is(.help-arrow-connector, .how-we-work-connector) { display: none; }
+  .gsap-page-root main[class] :is(.help-step, .how-we-work-step) {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: center;
+    gap: 6px 16px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 16px;
+    text-align: left;
+  }
+  .gsap-page-root main[class] :is(.help-step-visual, .how-we-work-visual) {
+    grid-row: 1 / span 2;
+    width: 72px;
+    height: 88px;
+    margin: 0;
+  }
+  .gsap-page-root main[class] :is(.help-big-hexagon, .how-we-work-big-hexagon) {
+    width: 72px;
+    height: 76px;
+    top: 12px;
+    left: 0;
+  }
+  .gsap-page-root main[class] :is(.help-big-hexagon-inner, .how-we-work-big-hexagon-inner) img {
+    width: 40px;
+    height: 44px;
+    object-fit: contain;
+  }
+  .gsap-page-root main[class] :is(.help-number-hexagon, .how-we-work-number) {
+    width: 28px;
+    height: 30px;
+    top: 0;
+    left: 22px;
+  }
+  .gsap-page-root main[class] :is(.help-number-hexagon-inner, .how-we-work-number-inner) { inset: 2px; }
+  .gsap-page-root main[class] :is(.help-number-hexagon-inner, .how-we-work-number-inner) span { font-size: 16px; }
+  .gsap-page-root main[class] :is(.help-step, .how-we-work-step) :is(h3, p) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+  .gsap-page-root main[class] :is(.help-step, .how-we-work-step) p { line-height: 1.5 !important; }
+
+  .gsap-page-root main[class] .site-header-container { padding-block: 12px; }
+  .gsap-page-root main.page-shell > .section-spacing { padding-top: 104px; }
+  .gsap-page-root main[class] :is(.easyboy-pro-content, .easyboy-pro-cta) h2 {
+    font-size: 28px !important;
+  }
+  .gsap-page-root main[class] .site-footer .footer-main { grid-template-columns: 1fr; }
+}

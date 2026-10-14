@@ -543,7 +543,7 @@
   }
 
   .website-crm-section {
-    padding: 105px 0;
+    padding: 25px 0;
   }
 
   .website-crm-heading {
@@ -599,7 +599,11 @@
   }
 
   .clients-serve-section {
-    padding: 105px 0 72px;
+    padding: 60px 0 20px;
+  }
+
+  .ai-solutions-section {
+    background-position: 60% 100%;
   }
 
   .clients-serve-heading {
@@ -1638,12 +1642,12 @@
   }
 
   @media (min-width: 769px) {
-    .responsive-website-page .resp-web-ban-cont {
+    /* .responsive-website-page .resp-web-ban-cont {
       width: min(1317px, 100%);
-    }
+    } */
 
     .responsive-website-page .resp-web-ban-cont h1 {
-      width: min(1317px, 100%);
+      /* width: min(1317px, 100%); */
       font-size: 78.15px;
       line-height: 94%;
     }
@@ -2033,12 +2037,12 @@
     min-height: 798px;
   }
 
-  .responsive-website-page .resp-web-ban-cont {
+  /* .responsive-website-page .resp-web-ban-cont {
     width: min(1317px, 100%);
-  }
+  } */
 
   .responsive-website-page .resp-web-ban-cont h1 {
-    width: min(1317px, 100%);
+    /* width: min(1317px, 100%); */
     font-size: 78.15px;
     line-height: 94%;
   }
@@ -4707,7 +4711,7 @@
   .custom-ai-grid {
     width: 100%;
     margin-left: 0;
-    column-gap: 50px;
+    column-gap: 10px;
   }
 }
 
@@ -6603,6 +6607,7 @@
 
   .custom-development-sec-section .container>.flex {
     grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
     gap: 18px;
   }
 
@@ -10158,7 +10163,7 @@
 }
 
 .responsive-website-page .resp-web-ban-cont {
-  width: min(780px, 100%);
+  /* width: min(780px, 100%); */
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -10524,7 +10529,7 @@
   margin: 0;
 }
 
-.responsive-website-page .we-focus-sections:not(.clr-bg-chng) .we-focus-main-txt ul {
+.responsive-website-page .we-focus-sections:not(.clr-bg-chng) .we-focus-main-txt ol {
   margin: 18px 0 0;
   padding-left: 22px;
 }
@@ -10687,12 +10692,12 @@
 }
 
 @media (min-width: 769px) {
-  .responsive-website-page .resp-web-ban-cont {
+  /* .responsive-website-page .resp-web-ban-cont {
     width: min(1317px, 100%);
-  }
+  } */
 
   .responsive-website-page .resp-web-ban-cont h1 {
-    width: min(1317px, 100%);
+    /* width: min(1317px, 100%); */
     font-size: 78.15px;
     line-height: 94%;
   }

@@ -41,7 +41,7 @@ export default function AgencyShowcase({ variant }: AgencyShowcaseProps) {
   return (
     <div className={`agency-showcase ${styles.showcase} ${styles.project}`}>
       <div className={styles.projectHeading}>
-        <span className={styles.eyebrow}>Made by EasyBoyWeb</span>
+        {/* <span className={styles.eyebrow}>Made by EasyBoyWeb</span> */}
         <span className={styles.discipline}>Design + Development</span>
       </div>
       <div className={styles.browser}>

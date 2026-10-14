@@ -65,9 +65,9 @@ export default function CustomSoftwareDevelopment() {
     }, [selectedLogo]);
 
     return (
-       <main className="digital-marketing-page">
+        <main className="digital-marketing-page">
             <Header />
-            <section className="custom-development-banner digital-banner">
+            <section className="custom-development-banner digital-banner" data-site-banner>
                 <div className="container">
                     <div className="banner-content resp-web-ban-cont flex flex-col items-center justify-center text-center">
                         <h1 className="font-aloevera">
@@ -102,11 +102,11 @@ export default function CustomSoftwareDevelopment() {
                 </div>
             </section>
 
-<Process />
+            <Process />
 
             <section className="our-work-section">
                 <div className="container">
-                    <h2 className="our-work-heading font-aloevera">
+                    <h2 className="our-work-heading font-aloevera" style={{ color: "#fff" }}>
                         Our Work
                     </h2>
 
@@ -128,10 +128,11 @@ export default function CustomSoftwareDevelopment() {
                             </button>
                         ))}
                     </div>
-
-                    <a href="/Work" className="our-work-button font-inter">
-                        Learn More
-                    </a>
+                    <div className="cent-btn">
+                        <a href="/Work" className="our-work-button font-inter">
+                            Learn More
+                        </a>
+                    </div>
                 </div>
                 {selectedLogo && (
                     <div
@@ -168,10 +169,10 @@ export default function CustomSoftwareDevelopment() {
             </section>
 
 
-<Faq/>
-            
+            <Faq />
+
             <Testimonials />
-            
+
             <EasyBoyWebPro />
             <Footer />
         </main>

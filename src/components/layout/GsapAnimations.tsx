@@ -17,6 +17,8 @@ const revealGroups = [
   ".need-more-grid", ".pricing-plans-grid", ".services-slider", "[data-reveal-group]",
 ].join(", ");
 
+const standaloneCards = "[data-reveal-card]";
+
 /** Stable motion families: the same component keeps its effect on every route. */
 function cardEntrance(group: HTMLElement, index: number, desktop: boolean) {
   if (group.matches(".prnt-thrd-box, .services-slider, [data-reveal-group='services']")) {
@@ -92,7 +94,7 @@ export default function GsapAnimations({ children }: { children: ReactNode }) {
         const targets = gsap.utils.toArray<HTMLElement>("section h2, section p, section .banner-btn, .agency-showcase, .footer-main", root);
         targets.forEach((target) => {
           // Moving tracks own their transforms; cards reveal as one unit.
-          if (heroSection?.contains(target) || target.closest(`${revealGroups}, .services-slider, .portfolio-slider, .testimonials-slider, .subscription-logo-sliders, .agency-showcase`)) {
+          if (heroSection?.contains(target) || target.closest(`${revealGroups}, ${standaloneCards}, .services-slider, .portfolio-slider, .testimonials-slider, .subscription-logo-sliders, .agency-showcase`)) {
             if (!target.matches(".agency-showcase")) return;
           }
           if (target.closest("footer") && !target.matches(".footer-main")) return;
@@ -103,6 +105,10 @@ export default function GsapAnimations({ children }: { children: ReactNode }) {
           Array.from(group.children).forEach((card, index) => {
             gsap.from(card, { ...reveal, ...cardEntrance(group, index, Boolean(desktop)), clearProps: "transform,opacity,translate,rotate,scale", delay: (index % 4) * 0.1, scrollTrigger: { trigger: card, start: "top 92%", once: true } });
           });
+        });
+
+        root.querySelectorAll<HTMLElement>(standaloneCards).forEach((card) => {
+          gsap.from(card, { ...reveal, ...cardEntrance(card, 0, Boolean(desktop)), clearProps: "transform,opacity,translate,rotate,scale", scrollTrigger: { trigger: card, start: "top 92%", once: true } });
         });
 
         if (desktop) {

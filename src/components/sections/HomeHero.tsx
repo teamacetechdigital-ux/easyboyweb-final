@@ -35,7 +35,7 @@ export default function HomeHero() {
   }, []);
 
   return (
-    <section className="banner studio-hero" ref={sectionRef} aria-labelledby="hero-heading">
+    <section className="banner studio-hero" data-site-banner ref={sectionRef} aria-labelledby="hero-heading">
       <video ref={videoRef} className="banner-video" src="/imgs/banner-video.mp4" muted loop playsInline preload="metadata" aria-hidden="true" />
       <div className="banner-overlay" />
       <div className="hero-grid" aria-hidden="true" />

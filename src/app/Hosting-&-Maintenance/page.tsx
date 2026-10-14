@@ -145,7 +145,7 @@ export default function CustomSoftwareDevelopment() {
     return (
         <main className="responsive-website-page">
             <Header />
-            <section className="custom-development-banner resp-web-deveplop">
+            <section className="custom-development-banner resp-web-deveplop" data-site-banner>
                 <div className="container">
                     <div className="banner-content resp-web-ban-cont flex flex-col items-center justify-center text-center">
                         <h1 className="font-aloevera">
@@ -262,9 +262,11 @@ export default function CustomSoftwareDevelopment() {
                             ))}
                         </div>
                     </div>
-                    <Link href="tel:+18008070319" className="top-notch-cta site-cta font-inter">
-                        get a free estimate
-                    </Link>
+                    <div className="cent-btn">
+                        <Link href="tel:+18008070319" className="top-notch-cta site-cta font-inter">
+                            get a free estimate
+                        </Link>
+                    </div>
                 </div>
             </section>
 
@@ -282,7 +284,7 @@ export default function CustomSoftwareDevelopment() {
 
                             <p className="font-inter">Our goal is to support the growth of your business and ensure your clients are happy. The cost of monthly website maintenance depends on the size and kind of your site. Contact us with your business needs for a personalized quote.</p>
 
-                            <ul className="pt-5 font-inter">
+                            <ol className="pt-5 font-inter">
                                 <li>Regular updates for content, images, pages, links, news, blog, etc.</li>
                                 <li>Site Security Updates (HTTPS, PCI Compliance)</li>
                                 <li>Page Speed Optimization</li>
@@ -294,7 +296,7 @@ export default function CustomSoftwareDevelopment() {
                                 <li>Bug fixing & troubleshooting</li>
                                 <li>Cross browser compatibility check</li>
                                 <li>Website audit and broken link fixing</li>
-                            </ul>
+                            </ol>
                             <Link
                                 href="/contact"
                                 className="banner-btn font-inter"
@@ -332,7 +334,7 @@ export default function CustomSoftwareDevelopment() {
                     </div>
                 </div>
             </section>
-            <Faq />            
+            <Faq />
             <Testimonials />
             <EasyBoyWebPro />
             <Footer />

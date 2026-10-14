@@ -103,35 +103,6 @@ const callAgentCards: CallAgentCard[] = [
     note: "Your business never misses a call day or night.",
   },
   {
-    title: "Qualified Lead Detection (AI Logic)",
-    icon: "qualification",
-    points: [
-      {
-        text: "Automated qualification questions on every call",
-      },
-      {
-        text: "Intelligent validation of caller responses",
-      },
-      {
-        text: "Automatic categorization:",
-        subPoints: [
-          "Qualified",
-          "Not Qualified",
-          "Needs More Information",
-        ],
-      },
-      {
-        text: "100% call coverage no missed opportunities",
-      },
-      {
-        text: "Smart call transfer rules",
-      },
-      {
-        text: "Instant transfer of qualified callers to assigned team members (sales, support, legal, etc.)",
-      },
-    ],
-  },
-  {
     title: "Handling Non-Qualified Callers",
     icon: "message",
     points: [
@@ -183,6 +154,35 @@ const callAgentCards: CallAgentCard[] = [
       },
     ],
     note: "Your AI sounds like your brand.",
+  },
+  {
+    title: "Qualified Lead Detection (AI Logic)",
+    icon: "qualification",
+    points: [
+      {
+        text: "Automated qualification questions on every call",
+      },
+      {
+        text: "Intelligent validation of caller responses",
+      },
+      {
+        text: "Automatic categorization:",
+        subPoints: [
+          "Qualified",
+          "Not Qualified",
+          "Needs More Information",
+        ],
+      },
+      {
+        text: "100% call coverage no missed opportunities",
+      },
+      {
+        text: "Smart call transfer rules",
+      },
+      {
+        text: "Instant transfer of qualified callers to assigned team members (sales, support, legal, etc.)",
+      },
+    ],
   },
   {
     title: "Knowledge Base Integration",
@@ -254,7 +254,7 @@ function Custom_Ai_Developement(){
 
 
 
-<section className="ai-solutions-section">
+<section className="ai-solutions-section" data-site-banner>
   <div className="container ai-solutions-container">
     <div className="ai-solutions-content">
       <p className="ai-solutions-label font-aloevera">

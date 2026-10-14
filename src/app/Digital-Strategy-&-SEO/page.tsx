@@ -147,28 +147,28 @@ const helpSteps = [
         id: "seo-help-step-onboarding",
         number: "1",
         title: "Onboarding",
-        description: "Begin your complimentary trial now to dive into our SEO software, receive personalized keyword suggestions, access in-depth audits, and snag a custom article crafted by our content squad. We're eager to tailor our offerings to your preferences and hear your thoughts. Let's get this trial rolling!",
+        description: "Start your free trial with SEO software access, personalized keyword suggestions, detailed audits, and a custom article. We'll tailor everything to your needs and feedback.",
         icon: seoprocess1,
     },
     {
         id: "seo-help-step-scheduling",
         number: "2",
         title: "Scheduling",
-        description: "We'll handle scheduling our weekly content, optimization, and outreach efforts. It's all taken care of by our team, but hey, feel free to collaborate with us or simply leave it in our capable hands.",
+        description: "Our team handles weekly content, SEO optimization, and outreach scheduling. You can collaborate with us or leave everything in our hands.",
         icon: seoprocess2,
     },
     {
         id: "seo-help-step-deliverables-content",
         number: "3",
         title: "Deliverables",
-        description: "Here's what you can expect from us: Each week, we'll publish fresh content on your site. By the end of the first month, your site will be fully optimized, and our outreach links will be live. It's a straightforward, recurring process that's easy to keep tabs on.",
+        description: "Get fresh weekly content, complete website optimization within the first month, and live outreach backlinks with a simple, consistent process.",
         icon: seoprocess3,
     },
     {
         id: "seo-help-step-deliverables-reporting",
         number: "4",
         title: "Deliverables",
-        description: "Let's chat about progress! At the close of each month, we'll touch base with a rundown of what we've accomplished and give you a heads-up on what's in store for the next steps.",
+        description: "Receive monthly progress updates covering completed work, SEO improvements, and upcoming strategies to keep your campaign moving forward.",
         icon: seoprocess4,
     },
 ];
@@ -178,7 +178,7 @@ export default function AboutPage() {
         <main className="seo-page">
             <Header />
 
-            <section className="seo-banner">
+            <section className="seo-banner" data-site-banner>
                 <div className="container">
                     <div className="banner-content flex flex-col items-center justify-center text-center">
                         <h1 className="font-aloevera">
@@ -223,7 +223,7 @@ export default function AboutPage() {
             </section>
 
 
-            <section className="seo-third-section">
+            <section className="seo-third-section" style={{ padding: "30px 0 120px !important" }}>
                 <div className="container">
 
                     <div className="seo-top-txt flex items-center justify-center flex-col">

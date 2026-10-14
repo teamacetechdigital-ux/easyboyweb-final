@@ -168,7 +168,7 @@
   flex-direction: column;
   width: 100%;
   height: auto;
-  padding-bottom: 28px;
+  padding: 0 0 28px;
 }
 .gsap-page-root main.landing-page.pro-page .pricing-plan-header { width: auto; height: auto; margin: 9px; padding: 28px 20px; }
 .gsap-page-root main.landing-page.pro-page .pricing-plan-price { flex-wrap: wrap; }

@@ -34,7 +34,7 @@ export default function Page() {
   return (
     <main className="work-page">
       <Header />
-      <section className="work-banner-section">
+      <section className="work-banner-section" data-site-banner>
   <div className="container">
     <div className="work-banner-content">
       <svg

@@ -122,7 +122,7 @@ function Custom_Mobile_app() {
     <main className="mobile-apps-page">
       <Header />
 
-      <section className="custom-mobileapp-banner">
+      <section className="custom-mobileapp-banner" data-site-banner>
         <div className="container">
           <div className="mobileapp-banner-content">
             <h1 className="font-aloevera">

@@ -43,7 +43,7 @@ export default function BlogPage() {
     <main className="blog-index-page">
       <Header />
 
-      <section className="blog-banner-section blog-hero">
+      <section className="blog-banner-section blog-hero" data-site-banner>
         <div className="container">
           <div className="work-banner-content blog-hero-copy">
             <div className="blog-banner-content blog-hero-copy-group">

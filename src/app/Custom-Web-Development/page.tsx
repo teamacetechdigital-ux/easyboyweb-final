@@ -77,7 +77,7 @@ export default function CustomSoftwareDevelopment() {
     return (
         <main className="custom-web-development-page">
             <Header />
-            <section className="custom-development-banner cust-web-deveplop">
+            <section className="custom-development-banner cust-web-deveplop" data-site-banner>
                 <div className="container">
                     <div className="banner-content flex flex-col items-center justify-center text-center">
                         <h1 className="font-aloevera">

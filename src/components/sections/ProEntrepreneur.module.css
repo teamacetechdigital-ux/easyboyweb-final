@@ -1,0 +1,157 @@
+.section {
+  background: #fff;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  color: #101a28;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.introduction { min-width: 0; }
+
+.content .heading {
+  margin: 0;
+  font-size: clamp(26px, 2.6vw, 38px) !important;
+  font-weight: 800;
+  line-height: 1.12 !important;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-wrap: initial;
+}
+
+.content .description {
+  max-width: 490px;
+  margin: 16px 0 0;
+  color: #4a5564;
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+}
+
+.credits {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 18px;
+}
+
+.creditCard {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #cee2ef;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #eef8ff, #e9f4fc);
+  box-shadow: 0 8px 18px #183e6510;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  color: #239acd;
+  background: #e0f4ff;
+}
+
+.coinIcon {
+  color: #d5b338;
+  background: #fff;
+  box-shadow: 0 3px 12px #1c46700c;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cardTitleRow .icon { margin: 0; }
+
+.content .cardHeading {
+  margin: 0 0 8px;
+  font-size: 15px !important;
+  font-weight: 700;
+  line-height: 1.3 !important;
+  text-transform: uppercase;
+}
+
+.cardTitleRow .cardHeading { margin: 0; }
+
+.content .cardDescription {
+  margin: 0;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+.creditValues {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.creditValues li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 4px 9px;
+  border: 1px solid #cce3ee;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.creditValues svg { width: 14px; height: 14px; flex-shrink: 0; color: #647c8a; }
+
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 44px auto;
+  padding: 17px 24px;
+  border: 1px solid #dce1e9;
+  border-radius: 24px;
+  background: #f7f8fc;
+  text-align: center;
+}
+
+.note > svg { flex-shrink: 0; color: #536273; width: 26px; height: 26px; }
+.content .note p { margin: 0; font-size: 14px !important; line-height: 1.5 !important; }
+.note strong { font-weight: 600; }
+.content .note .noteDetail { margin-top: 3px !important; color: #637080; font-size: 12px !important; }
+
+@media (max-width: 1000px) {
+  .top { grid-template-columns: 1fr; gap: 28px; }
+  .introduction { max-width: 600px; }
+  .credits { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 700px) {
+  .note { margin-block: 32px; padding: 16px; gap: 12px; border-radius: 18px; text-align: left; }
+}
+
+@media (max-width: 480px) {
+  .credits { grid-template-columns: 1fr; gap: 14px; }
+  .content .heading { font-size: 26px !important; letter-spacing: -.6px; }
+  .creditCard { padding: 22px; }
+}

@@ -51,9 +51,17 @@
 }
 
 .gsap-page-root main[class] :is(.custom-ai-card, .ai-call-agent-card, .business-growth-card,
-  .business-tool-card, .need-more-card, .pricing-plan-card) {
+  .business-tool-card, .need-more-card, .pricing-plan-card, [data-card-motion="product"]) {
   transition: transform 450ms var(--site-motion-ease),
     box-shadow 450ms ease, border-color 450ms ease;
+}
+
+.gsap-page-root main.pro-page :is(.landing-benefit-icon, .business-tool-icon, .need-more-icon, [data-card-icon]) {
+  transition: transform 450ms var(--site-motion-ease);
+}
+
+.gsap-page-root main.pro-page :is([data-card-motion], [data-reveal-card])[style*="opacity"] {
+  transition: none;
 }
 
 .gsap-page-root main[class] :is(.portfolio-slide, .our-work-card, .technology-blog-card) {
@@ -70,6 +78,7 @@
   rotate: none !important;
   scale: none !important;
   transform: none;
+  padding: 20px;
 }
 
 /* GSAP owns the entrance; CSS transitions resume when it clears inline opacity. */
@@ -130,9 +139,13 @@
 
   /* Product/pricing: a restrained zoom with a deeper shadow. */
   .gsap-page-root main[class] :is(.custom-ai-card, .ai-call-agent-card, .business-growth-card,
-    .business-tool-card, .need-more-card, .pricing-plan-card):is(:hover, :focus-within) {
+    .business-tool-card, .need-more-card, .pricing-plan-card, [data-card-motion="product"]):is(:hover, :focus-within) {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 22px 42px #10253822;
+  }
+
+  .gsap-page-root main.pro-page :is(.business-tool-card, .need-more-card, [data-card-motion="product"]):is(:hover, :focus-within) :is(.landing-benefit-icon, .business-tool-icon, .need-more-icon, [data-card-icon]) {
+    transform: translateY(-3px) scale(1.08);
   }
 
   /* Project images retain their own zoom/shine and gain a small card lift. */
@@ -148,11 +161,16 @@
     .hosting-service-card, .digital-benefit-card, .seo-box, .seo-short-txt-box,
     .easy-point, .website-crm-card, .help-step, .how-we-work-step, .custom-ai-card,
     .ai-call-agent-card, .business-growth-card, .business-tool-card, .need-more-card,
-    .pricing-plan-card, .portfolio-slide, .our-work-card, .technology-blog-card) {
+    .pricing-plan-card, .portfolio-slide, .our-work-card, .technology-blog-card, [data-card-motion], [data-reveal-card]) {
     translate: none !important;
     rotate: none !important;
     scale: none !important;
     transform: none !important;
+  }
+
+  .gsap-page-root main.pro-page :is(.landing-benefit-icon, .business-tool-icon, .need-more-icon, [data-card-icon]) {
+    transition: none;
+    transform: none;
   }
 
   .gsap-page-root main[class] :is(.skill-box, .service-slider-card, .service-index-card)::after {

@@ -112,12 +112,12 @@ export default function WebsiteCRM() {
           </div>
         </div>
 
-        <div className="website-crm-strip">
+        {/* <div className="website-crm-strip">
           <p className="font-aloevera">
             We Don&apos;t Just Build Websites. We Build Lead Generation
             Engines.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

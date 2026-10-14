@@ -3,8 +3,8 @@
 :root {
   --site-banner-size: clamp(44px, 7.8vw, 112px);
   --site-heading-size: clamp(32px, 4.3vw, 56px);
-  --site-card-heading-size: 24px;
-  --site-copy-size: 22px;
+  --site-card-heading-size: 22px;
+  --site-copy-size: 18px;
   --site-small-size: 16px;
   --site-button-size: 17px;
   --site-cta-height: 58px;
@@ -99,7 +99,7 @@ body {
   height: auto;
   text-transform: none !important;
   overflow-wrap: break-word;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .gsap-page-root p+p {
@@ -185,6 +185,7 @@ body {
 .gsap-page-root main :is(.faq-question, .faq-question-text) {
   font-size: var(--site-card-heading-size);
   line-height: 1.4;
+  letter-spacing: 1.5px;
 }
 
 .gsap-page-root main :is(input, textarea) {

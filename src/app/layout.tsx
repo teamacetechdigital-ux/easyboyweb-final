@@ -5,6 +5,7 @@ import "./motion.css";
 import "./quality.css";
 import "./consistency.css";
 import "./card-motion.css";
+import "./site-layout.css";
 import GsapAnimations from "../components/layout/GsapAnimations";
 
 export const metadata: Metadata = {

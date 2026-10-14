@@ -60,7 +60,7 @@ export default function ServicesPage() {
   return (
     <main className={styles.page}>
       <Header />
-      <section className={styles.hero}>
+      <section className={styles.hero} data-site-banner>
         <div className={styles.container}>
           <p className={styles.eyebrow}>What we do</p>
           <h1>One team.<br />From idea to <span>launch.</span></h1>

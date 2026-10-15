@@ -1,0 +1,22 @@
+.growthContent .benefits {
+  list-style: none;
+  padding-left: 0;
+}
+
+.benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.benefits svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  margin-top: 0.15em;
+  color: #029cf5;
+}
+
+.benefits span {
+  min-width: 0;
+}

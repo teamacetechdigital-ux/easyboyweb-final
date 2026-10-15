@@ -14,12 +14,13 @@ import Platforms from "@/src/components/sections/platforms"
 import WebsiteCRM from "@/src/components/sections/WebsiteCRM";
 import Process from "@/src/components/sections/Process";
 import OurWork from "@/src/components/sections/OurWork";
+import styles from "./web-development.module.css";
 
 
 const seoCards = [
     {
         title: "Peace of Mind Cloud Hosting",
-        para: "Remove the stress of hosting and managing your website by choosing our reliable and fast web hosting servers. Enjoy the peace of mind that comes with expert technical support & maintenance plans, backups & security, ensuring your site runs smoothly around the clock.",
+        para: "Stop stressing over website hosting and maintenance. Our fast, reliable servers backed by 24/7 technical support, security, and automated backups keep your site running smoothly around the clock.",
         icon: grwo1,
     },
     {
@@ -83,8 +84,10 @@ export default function CustomSoftwareDevelopment() {
                         <h1 className="font-aloevera">
                             Custom Web<br /> Development
                         </h1>
-                        <p className="font-inter">
-                            Fast Loading Mobile Ready Search Engine Friendly
+                        <p className={`font-inter ${styles.heroFeatures}`}>
+                            <span><FeatureIcon name="speed" />Fast Loading</span>
+                            <span><FeatureIcon name="mobile" />Mobile Ready</span>
+                            <span><FeatureIcon name="search" />Search Engine Friendly</span>
                         </p>
                         <Link
                             href="/contact"
@@ -171,7 +174,7 @@ export default function CustomSoftwareDevelopment() {
                         <h2 className="font-aloevera">
                             Custom Solutions to Fit Your Needs
                         </h2>
-                        <p className="font-inter">WordPress is one of the most widely used content management systems (CMS), known for its speed, user-friendly interface, exstensibility, and ease of management and updates. We provide tailored, secure and optimized WordPress development solutions. At Easyboyweb, we make having a WordPress website “easy.”</p>
+                        <p className="font-inter">WordPress is one of the most widely used content management systems (CMS), known for its speed, user-friendly interface, extensibility, and ease of management and updates. We provide tailored, secure and optimized WordPress development solutions. At Easyboyweb, we make having a WordPress website “easy.”</p>
                     </div>
                     <div className="grid grid-cols-3 grid-rows-3 items-center justify-center gap-x-8 gap-y-4 pt-14">
                         {shorttext.map((item) => (

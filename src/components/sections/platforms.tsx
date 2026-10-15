@@ -2,6 +2,7 @@ import LogoStrip from "./LogoStrip";
 
 const platforms = [
   { src: "/imgs/platform3.svg", name: "Shopify" },
+  { src: "/imgs/platform-stripe.svg", name: "Stripe" },
   { src: "/imgs/platform5.svg", name: "Google Analytics" },
   { src: "/imgs/platform-nextjs.svg", name: "Next.js" },
   // { src: "/imgs/.svg", name: "WooCommerce" },

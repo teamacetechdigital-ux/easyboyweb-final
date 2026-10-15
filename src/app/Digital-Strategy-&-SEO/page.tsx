@@ -3,6 +3,7 @@ import Footer from "../../components/layout/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import FeatureIcon from "@/src/components/ui/FeatureIcon";
+import styles from "./seo.module.css";
 
 import whoweare1 from "../../../public/imgs/seo-box1.svg";
 import whoweare2 from "../../../public/imgs/seo-box2.svg";
@@ -316,7 +317,7 @@ export default function AboutPage() {
             <section className="seo-fifth-section">
                 <div className="container">
                     <div className="seo-growth-row">
-                        <div className="growth-content seo-fifth-sect-txt w-1/2">
+                        <div className={`growth-content seo-fifth-sect-txt w-1/2 ${styles.growthContent}`}>
                             <h3 className="font-inter pb-3">
                                 Transparent & Effective SEO
                             </h3>
@@ -324,13 +325,13 @@ export default function AboutPage() {
                                 INCREASE VISITS. INCREASE SALES.
                             </h2>
 
-                            <ul className="seo-lst">
-                                <li className="font-inter">Fresh Weekly Blog Content</li>
-                                <li className="font-inter">Keyword Research</li>
-                                <li className="font-inter">Monthly Reports</li>
-                                <li className="font-inter">On Page Optimization</li>
-                                <li className="font-inter">Quality Backlinks!</li>
-                                <li className="font-inter">No Contract. No Commitment!</li>
+                            <ul className={`seo-lst ${styles.benefits}`} role="list">
+                                <li className="font-inter"><FeatureIcon name="content" /><span>Fresh Weekly Blog Content</span></li>
+                                <li className="font-inter"><FeatureIcon name="search" /><span>Keyword Research</span></li>
+                                <li className="font-inter"><FeatureIcon name="report" /><span>Monthly Reports</span></li>
+                                <li className="font-inter"><FeatureIcon name="settings" /><span>On Page Optimization</span></li>
+                                <li className="font-inter"><FeatureIcon name="link" /><span>Quality Backlinks!</span></li>
+                                <li className="font-inter"><FeatureIcon name="uptime" /><span>No Contract. No Commitment!</span></li>
                             </ul>
 
                             <Link href="/#who-we-are" className="seo-aeo-btn banner-btn font-inter">

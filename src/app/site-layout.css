@@ -180,6 +180,36 @@
   margin: calc(var(--process-hex-top) + var(--process-hex-size) / 2 - 12px) 0 0;
 }
 
+/* Share caption rows so every description starts below the tallest title. */
+@media (min-width: 769px) {
+  .gsap-page-root main[class] .how-we-work-process {
+    grid-template-rows: calc(var(--process-hex-top) + var(--process-hex-size)) auto auto;
+    row-gap: 22px;
+  }
+  .gsap-page-root main[class] .how-we-work-process .how-we-work-step {
+    display: grid;
+    grid-row: 1 / span 3;
+    grid-template-rows: subgrid;
+  }
+  .gsap-page-root main[class] .how-we-work-process .how-we-work-step :is(h3, p) {
+    min-height: 0;
+    margin-block: 0;
+  }
+  .gsap-page-root main[class] .how-we-work-process .how-we-work-step h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gsap-page-root main[class] .how-we-work-process .how-we-work-connector {
+    grid-row: 1;
+  }
+}
+
+/* Keep the steps on their shared axes while the number badge animates. */
+.gsap-page-root main[class] .how-we-work-process .how-we-work-step:is(:hover, :focus-within) {
+  transform: none;
+}
+
 @media (min-width: 769px) and (max-width: 1200px) {
   .gsap-page-root main[class] .how-we-work-process {
     --process-hex-size: 170px;

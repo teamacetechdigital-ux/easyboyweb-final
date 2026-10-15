@@ -789,7 +789,7 @@ function Landing_page() {
                 href="/contact?service=pro"
                 className="subscription-cta font-inter"
               >
-                Get Started With Easy Boyweb
+                Get Started With EasyBoyweb
               </a>
             </div>
             <h3 className="subscription-secondary-heading font-inter">
@@ -885,7 +885,7 @@ function Landing_page() {
                 href="/contact?service=pro"
                 className="getting-started-button font-inter"
               >
-                Get Started With Easy Boyweb
+                Get Started With EasyBoyweb
               </a>
             </div>
           </div>
@@ -1065,6 +1065,7 @@ function Landing_page() {
       <footer className="easyboyweb-footer">
         <div className="container">
           <div className="easyboyweb-footer-content">
+            <Link href="/">    
             <Image
               src="/imgs/logo.svg"
               alt="EasyBoyWeb"
@@ -1072,7 +1073,7 @@ function Landing_page() {
               height={75}
               className="easyboyweb-footer-logo"
             />
-
+            </Link>
             <p className="easyboyweb-footer-description font-inter">
               We’re a team of entrepreneurs, engineers, and designers who
               love solving tough problems. We believe everyone’s got a

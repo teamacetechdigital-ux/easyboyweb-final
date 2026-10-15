@@ -3,7 +3,7 @@
 :root {
   --site-banner-size: clamp(44px, 7.8vw, 112px);
   --site-heading-size: clamp(32px, 4.3vw, 56px);
-  --site-card-heading-size: 22px;
+  --site-card-heading-size: 28px;
   --site-copy-size: 18px;
   --site-small-size: 16px;
   --site-button-size: 17px;

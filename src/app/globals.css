@@ -2406,8 +2406,8 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .footer-phone img {
-  width: 18px;
-  height: 18px;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
 }
 
@@ -2745,9 +2745,9 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 }
 
 .seo-page .seo-feature-group {
-  width: 236px;
+  width: 280px;
   min-width: 0;
-  max-width: 236px;
+  max-width: 280px;
   /* height: 228.71px; */
   min-height: 228.71px;
   padding: 0;
@@ -2820,6 +2820,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .seo-page .seo-comparison-copy .pr-brdr {
   margin-bottom: 18px;
+  font-weight: 600;
 }
 
 .seo-page .seo-comparison-image {

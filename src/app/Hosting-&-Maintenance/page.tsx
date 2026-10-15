@@ -215,10 +215,12 @@ export default function CustomSoftwareDevelopment() {
                                     key={card.title}
                                     className="maintenance-benefit-card"
                                 >
-                                    <FeatureIcon name={card.icon} />
-                                    <h3 className="mb-3 text-[20px] font-inter font-semibold leading-tight">
-                                        {card.title}
-                                    </h3>
+                                    <div className="maintenance-benefit-title">
+                                        <FeatureIcon name={card.icon} />
+                                        <h3 className="text-[20px] font-inter font-semibold leading-tight">
+                                            {card.title}
+                                        </h3>
+                                    </div>
 
                                     <p className="text-[16px] font-inter leading-[1.65] text-white/90">
                                         {card.description}
@@ -250,10 +252,12 @@ export default function CustomSoftwareDevelopment() {
                                     key={card.title}
                                     className="maintenance-benefit-card"
                                 >
-                                    <FeatureIcon name={card.icon} />
-                                    <h3 className="mb-3 text-[20px] font-inter font-semibold leading-tight">
-                                        {card.title}
-                                    </h3>
+                                    <div className="maintenance-benefit-title">
+                                        <FeatureIcon name={card.icon} />
+                                        <h3 className="text-[20px] font-inter font-semibold leading-tight">
+                                            {card.title}
+                                        </h3>
+                                    </div>
 
                                     <p className="text-[16px] font-inter leading-[1.65] text-white/90">
                                         {card.description}
@@ -264,7 +268,7 @@ export default function CustomSoftwareDevelopment() {
                     </div>
                     <div className="cent-btn">
                         <Link href="tel:+18008070319" className="top-notch-cta site-cta font-inter">
-                            get a free estimate
+                            Get a Free Estimate
                         </Link>
                     </div>
                 </div>
@@ -326,7 +330,9 @@ export default function CustomSoftwareDevelopment() {
                     <div className="hosting-services-grid">
                         {hostingServices.map((item) => (
                             <article className="hosting-service-card" key={item.title}>
-                                <Image src={item.icon} alt={`${item.title} icon`} />
+                                <span className="hosting-card-icon">
+                                    <Image src={item.icon} alt="" />
+                                </span>
                                 <h3 className="font-inter">{item.title}</h3>
                                 <p className="font-inter">{item.para}</p>
                             </article>

@@ -115,20 +115,24 @@
 }
 .gsap-page-root main[class] .business-growth-icon { margin-top: 0; }
 .gsap-page-root main[class] .business-anywhere-screen { margin: 0 auto; }
+.gsap-page-root main[class] :is(.help-step, .how-we-work-step) p {
+  width: 100%;
+  max-width: 100%;
+}
 
-.gsap-page-root main[class] .we-focus-sections .container > div {
+.gsap-page-root main[class] .we-focus-sections .container > .flex {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   gap: clamp(24px, 4vw, 56px);
 }
-.gsap-page-root main[class] .we-focus-sections .container > div > div,
+.gsap-page-root main[class] .we-focus-sections .container > .flex > div,
 .gsap-page-root main[class] .we-focus-main-txt :is(h2, p) {
   width: 100%;
   min-width: 0;
   max-width: 100%;
 }
-.gsap-page-root main[class] .we-focus-sections .container > div > div > img {
+.gsap-page-root main[class] .we-focus-sections .container > .flex > div > img {
   width: 100%;
   height: auto;
 }
@@ -140,10 +144,10 @@
 .gsap-page-root main.page-shell h1 { margin-bottom: 24px; }
 
 @media (max-width: 1000px) {
-  .gsap-page-root main[class] .we-focus-sections .container > div {
+  .gsap-page-root main[class] .we-focus-sections .container > .flex {
     grid-template-columns: 1fr;
   }
-  .gsap-page-root main[class] .we-focus-sections .container > div > div > img {
+  .gsap-page-root main[class] .we-focus-sections .container > .flex > div > img {
     max-width: 560px;
     margin-inline: auto;
   }
@@ -257,4 +261,22 @@
     font-size: 28px !important;
   }
   .gsap-page-root main[class] .site-footer .footer-main { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .gsap-page-root main.home-page .hero-layout { gap: 16px; }
+  .gsap-page-root main.home-page .hero-showcase { height: 180px; margin-top: 0; }
+  .gsap-page-root main.home-page .hero-orbit { width: 180px; height: 180px; }
+  .gsap-page-root main.home-page .hero-project-front { height: 132px; top: 40px; }
+  .gsap-page-root main.home-page .hero-project-back { height: 120px; top: 0; }
+  .gsap-page-root main.home-page .hero-eyebrow { margin-bottom: 12px; }
+  .gsap-page-root main.home-page .hero-actions { gap: 12px; margin-top: 16px; }
+  .gsap-page-root main.home-page .hero-proof { margin-top: 12px; }
+  .gsap-page-root main.home-page [data-site-banner] .hero-primary {
+    min-width: 124px;
+    gap: 8px;
+    padding: 12px !important;
+    font-size: 14px !important;
+  }
+  .gsap-page-root main.home-page [data-site-banner] .hero-secondary { font-size: 14px !important; }
 }

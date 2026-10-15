@@ -15,9 +15,9 @@ import opt2 from "../../../public/imgs/opt2.svg";
 import opt3 from "../../../public/imgs/opt3.svg";
 import opt4 from "../../../public/imgs/opt4.svg";
 
-import seoimg1 from "../../../public/imgs/seo-img1.png";
-import seoimg2 from "../../../public/imgs/seo-img2.png";
-import seoimg3 from "../../../public/imgs/seo-img3.png";
+import seoimg1 from "../../../public/imgs/seo-img1.webp";
+import seoimg2 from "../../../public/imgs/seo-img2.webp";
+import seoimg3 from "../../../public/imgs/seo-img3.webp";
 
 import seoprocess1 from "../../../public/imgs/seo-process1.svg";
 import seoprocess2 from "../../../public/imgs/seo-process2.svg";
@@ -160,14 +160,14 @@ const helpSteps = [
     {
         id: "seo-help-step-deliverables-content",
         number: "3",
-        title: "Deliverables",
+        title: "EXECUTION & DELIVERABLES",
         description: "Get fresh weekly content, complete website optimization within the first month, and live outreach backlinks with a simple, consistent process.",
         icon: seoprocess3,
     },
     {
         id: "seo-help-step-deliverables-reporting",
         number: "4",
-        title: "Deliverables",
+        title: "REPORTING & STRATEGY",
         description: "Receive monthly progress updates covering completed work, SEO improvements, and upcoming strategies to keep your campaign moving forward.",
         icon: seoprocess4,
     },

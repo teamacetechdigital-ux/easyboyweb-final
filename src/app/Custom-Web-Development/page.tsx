@@ -29,7 +29,7 @@ const seoCards = [
     },
     {
         title: "E-Commerce Solutions",
-        para: "Let’s start selling!From Shopify to WooCommerce or Custom Web App, we choose the right e-commerce solutions to fit your needs. Apple Pay, Paypal Merchant Gateways",
+        para: "Let’s start selling! From Shopify to or Custom Web App, we choose the right e-commerce solutions to fit your needs. Apple Pay, Paypal Merchant Gateways",
         icon: grwo3,
     },
 ];

@@ -163,7 +163,7 @@ body {
   font-weight: 600;
   line-height: 1.4 !important;
   letter-spacing: 0;
-  text-transform: none;
+  text-transform: capitalize;
   text-decoration: none;
   text-align: center;
   white-space: normal;

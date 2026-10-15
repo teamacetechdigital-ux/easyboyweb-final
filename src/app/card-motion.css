@@ -177,3 +177,127 @@
     display: none;
   }
 }
+
+/* Hosting features: three balanced cards with a soft blue highlight. */
+.gsap-page-root main.responsive-website-page .hosting-focus-section .hosting-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  justify-content: flex-start;
+  gap: 18px;
+  padding: 28px;
+  border: 1px solid #96cde52b;
+  border-image: none;
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 100% 0%, #0393e719, transparent 65%), linear-gradient(145deg, #ffffff0c, #ffffff03);
+  box-shadow: 0 8px 24px #10233518;
+  transition: transform 450ms var(--site-motion-ease), border-color 450ms ease, box-shadow 450ms ease;
+}
+
+.gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card[style*="opacity"] {
+  transition: none;
+}
+
+.gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  border: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 25%, #8edcff12 45%, #ffffff16 50%, transparent 72%);
+  opacity: 0;
+  transform: translateX(-130%);
+  transition: transform 850ms var(--site-motion-ease), opacity 250ms ease;
+}
+
+.gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border: 1px solid #8bd8ff38;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #0393e72b, #0393e70a);
+  box-shadow: inset 0 1px 0 #ffffff16;
+  transition: transform 450ms var(--site-motion-ease), box-shadow 450ms ease;
+}
+
+.gsap-page-root main.responsive-website-page .hosting-card-icon img {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 450ms var(--site-motion-ease), rotate 450ms ease;
+}
+
+.gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card h3 {
+  margin: 0;
+  font-size: 20px !important;
+  line-height: 1.35 !important;
+  font-weight: 600;
+  color: #fff;
+}
+
+.gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card p {
+  max-width: 36ch;
+  margin: 0;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  font-weight: 400;
+  color: #e0eaf2;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card:is(:hover, :focus-within) {
+    transform: translateY(-8px);
+    border-color: #53c7ff99;
+    box-shadow: 0 18px 36px #10233540, 0 0 24px #0393e71f;
+  }
+  .gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card:is(:hover, :focus-within)::before {
+    opacity: 1;
+    transform: translateX(130%);
+  }
+  .gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card:is(:hover, :focus-within) .hosting-card-icon {
+    transform: translateY(-3px) rotate(-4deg);
+    box-shadow: 0 8px 20px #0393e733, inset 0 1px 0 #ffffff26;
+  }
+}
+
+@media (max-width: 1100px) {
+  .gsap-page-root main.responsive-website-page .hosting-focus-section .hosting-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gsap-page-root main.responsive-website-page .hosting-focus-section .hosting-services-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card { padding: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gsap-page-root main.responsive-website-page .hosting-services-grid .hosting-service-card::before { display: none; }
+  .gsap-page-root main.responsive-website-page .hosting-card-icon { transition: none; }
+}

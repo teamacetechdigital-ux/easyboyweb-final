@@ -9,8 +9,8 @@ import arrowIcon from "../../../public/imgs/arrow_icon.svg";
 const workSteps = [
   {
     number: "1",
-    title: "Collecting Data",
-    para: "We understand your vision and goals for your website, and collect/create content.",
+    title: "Gathering Insights",
+    para: "We understand your vision and goals to gather key insights and craft tailored content.",
     icon: process1,
   },
   {

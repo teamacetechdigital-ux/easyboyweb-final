@@ -21,6 +21,9 @@ const standaloneCards = "[data-reveal-card]";
 
 /** Stable motion families: the same component keeps its effect on every route. */
 function cardEntrance(group: HTMLElement, index: number, desktop: boolean) {
+  if (group.matches(".hosting-services-grid")) {
+    return { y: desktop ? 36 : 20, scale: 0.96, duration: 0.9, ease: "power3.out" };
+  }
   if (group.matches(".prnt-thrd-box, .services-slider, [data-reveal-group='services']")) {
     return { y: desktop ? 44 : 24, scale: 0.94, duration: 0.9, ease: "power3.out" };
   }
@@ -103,7 +106,7 @@ export default function GsapAnimations({ children }: { children: ReactNode }) {
 
         root.querySelectorAll<HTMLElement>(revealGroups).forEach((group) => {
           Array.from(group.children).forEach((card, index) => {
-            gsap.from(card, { ...reveal, ...cardEntrance(group, index, Boolean(desktop)), clearProps: "transform,opacity,translate,rotate,scale", delay: (index % 4) * 0.1, scrollTrigger: { trigger: card, start: "top 92%", once: true } });
+            gsap.from(card, { ...reveal, ...cardEntrance(group, index, Boolean(desktop)), clearProps: "transform,opacity,translate,rotate,scale", delay: group.matches(".hosting-services-grid") ? (index % 3) * 0.12 : (index % 4) * 0.1, scrollTrigger: { trigger: card, start: "top 92%", once: true } });
           });
         });
 

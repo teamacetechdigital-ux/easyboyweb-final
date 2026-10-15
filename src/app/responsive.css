@@ -293,10 +293,10 @@
     height: 140px;
   }
 
-  .getting-step-circle::before {
+  /* .getting-step-circle::before {
     width: 146px;
     height: 146px;
-  }
+  } */
 
   .getting-step-circle span {
     font-size: 62px;

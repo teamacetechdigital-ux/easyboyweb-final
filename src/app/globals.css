@@ -2738,9 +2738,9 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 
 .seo-page .seo-feature-groups {
   display: grid;
-  grid-template-columns: repeat(4, 236px);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;
-  gap: 32px;
+  gap: 22px;
   align-items: start;
 }
 

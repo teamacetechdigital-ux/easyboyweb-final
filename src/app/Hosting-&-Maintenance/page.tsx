@@ -149,7 +149,7 @@ export default function CustomSoftwareDevelopment() {
                 <div className="container">
                     <div className="banner-content resp-web-ban-cont flex flex-col items-center justify-center text-center">
                         <h1 className="font-aloevera">
-                            WordPress Website<br /> Hosting, Maintenance, Security,<br /> Updates & Support
+                            WordPress Hosting, Maintenance, Security, Updates & Support
                         </h1>
                         <Link
                             href="/contact"

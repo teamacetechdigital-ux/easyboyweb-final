@@ -115,9 +115,83 @@
 }
 .gsap-page-root main[class] .business-growth-icon { margin-top: 0; }
 .gsap-page-root main[class] .business-anywhere-screen { margin: 0 auto; }
-.gsap-page-root main[class] :is(.help-step, .how-we-work-step) p {
+/* Keep process artwork, badges, captions and connectors on the same axes.
+   Positioning uses offsets so the badge hover rotation stays centered. */
+.gsap-page-root main[class] :is(.help-process, .how-we-work-process) {
+  --process-hex-size: 199px;
+  --process-number-size: 67px;
+  --process-hex-top: 25px;
+  display: grid;
+  align-items: start;
+  justify-items: stretch;
+  gap: 0;
+  min-height: 0;
+  transform: none;
+}
+.gsap-page-root main[class] .how-we-work-process {
+  max-width: 900px;
+  grid-template-columns: minmax(0, 1fr) minmax(40px, 0.4fr) minmax(0, 1fr) minmax(40px, 0.4fr) minmax(0, 1fr);
+}
+.gsap-page-root main[class] .help-process {
+  max-width: 1414px;
+  grid-template-columns: minmax(0, 1fr) minmax(32px, 0.45fr) minmax(0, 1fr) minmax(32px, 0.45fr) minmax(0, 1fr) minmax(32px, 0.45fr) minmax(0, 1fr);
+}
+.gsap-page-root main[class] :is(.help-step, .how-we-work-step) {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-width: 0;
+  padding: 0;
+  text-align: center;
+}
+.gsap-page-root main[class] :is(.help-step-visual, .how-we-work-visual) {
+  width: 100%;
+  max-width: none;
+  height: calc(var(--process-hex-top) + var(--process-hex-size));
+  margin-inline: auto;
+}
+.gsap-page-root main[class] :is(.help-big-hexagon, .how-we-work-big-hexagon) {
+  width: var(--process-hex-size);
+  height: var(--process-hex-size);
+  top: var(--process-hex-top);
+  left: calc((100% - var(--process-hex-size)) / 2);
+  transform: none;
+}
+.gsap-page-root main[class] :is(.help-number-hexagon, .how-we-work-number) {
+  width: var(--process-number-size);
+  height: var(--process-number-size);
+  top: 0;
+  left: calc((100% - var(--process-number-size)) / 2);
+  transform: none;
+}
+.gsap-page-root main[class] :is(.help-step, .how-we-work-step) :is(h3, p) {
   width: 100%;
   max-width: 100%;
+  margin-inline: auto;
+}
+.gsap-page-root main[class] :is(.clr-step-chng, .seo-seventh-section .help-step) h3 {
+  min-height: 2.58em;
+  padding-bottom: 0;
+}
+.gsap-page-root main[class] :is(.help-arrow-connector, .how-we-work-connector) {
+  display: flex;
+  width: 100%;
+  height: 24px;
+  margin: calc(var(--process-hex-top) + var(--process-hex-size) / 2 - 12px) 0 0;
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .gsap-page-root main[class] .how-we-work-process {
+    --process-hex-size: 170px;
+    --process-number-size: 58px;
+    max-width: 710px;
+  }
+  .gsap-page-root main[class] .help-process {
+    max-width: 750px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+  }
+  .gsap-page-root main[class] .help-arrow-connector { display: none; }
 }
 
 .gsap-page-root main[class] .we-focus-sections .container > .flex {
@@ -204,6 +278,9 @@
   }
 
   .gsap-page-root main[class] :is(.help-process, .how-we-work-process) {
+    --process-hex-size: 72px;
+    --process-number-size: 28px;
+    --process-hex-top: 12px;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
@@ -248,10 +325,18 @@
   .gsap-page-root main[class] :is(.help-number-hexagon-inner, .how-we-work-number-inner) { inset: 2px; }
   .gsap-page-root main[class] :is(.help-number-hexagon-inner, .how-we-work-number-inner) span { font-size: 16px; }
   .gsap-page-root main[class] :is(.help-step, .how-we-work-step) :is(h3, p) {
+    grid-column: 2;
     width: 100%;
     max-width: 100%;
+    min-height: 0;
     margin: 0;
     text-align: left;
+  }
+  .gsap-page-root main[class] :is(.help-step, .how-we-work-step):not(:has(> p)) h3 {
+    grid-row: 1 / span 2;
+  }
+  .gsap-page-root main[class] :is(.clr-step-chng, .seo-seventh-section .help-step) h3 {
+    min-height: 0;
   }
   .gsap-page-root main[class] :is(.help-step, .how-we-work-step) p { line-height: 1.5 !important; }
 

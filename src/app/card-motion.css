@@ -243,7 +243,7 @@
   height: 40px;
   margin: 0;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: none;
   transition: transform 450ms var(--site-motion-ease), rotate 450ms ease;
 }
 

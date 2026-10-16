@@ -5674,13 +5674,11 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   user-select: none;
 }
 
-/* appscreen1 is already the correct size */
 .recent-work-screen-one {
   transform: scale(1);
   transform-origin: center center;
 }
 
-/* appscreen2 large screens fixed to match appscreen1 */
 .recent-work-screen-two {
   transform: scale(0.68);
   transform-origin: center center;

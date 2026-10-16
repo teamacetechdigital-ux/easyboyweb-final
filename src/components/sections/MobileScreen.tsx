@@ -2,12 +2,32 @@ import ProjectGallery from "./ProjectGallery";
 
 const mobileProjects = [
   {
-    image: "/imgs/gallery/appscreen1.png",
-    alt: "Nairobi Professional and Sheen Magazine mobile apps, showing all four app screens",
+    image: "/imgs/app1.png",
+    alt: "Nairobi Professional app welcome screen",
   },
   {
-    image: "/imgs/gallery/appscreen2.png",
-    alt: "Black Enlightenment, Atlanta guide, and Nairobi Professional mobile apps, showing all three app screens",
+    image: "/imgs/app2.png",
+    alt: "Nairobi Professional app sign-in screen",
+  },
+  {
+    image: "/imgs/app3.png",
+    alt: "Sheen Magazine app welcome screen",
+  },
+  {
+    image: "/imgs/app4.png",
+    alt: "Sheen Magazine app issues screen",
+  },
+  {
+    image: "/imgs/app5.png",
+    alt: "Black Enlightenment app welcome screen",
+  },
+  {
+    image: "/imgs/app6.png",
+    alt: "Atlanta guide app local listings screen",
+  },
+  {
+    image: "/imgs/app7.png",
+    alt: "Nairobi Professional app splash screen",
   },
 ];
 

@@ -59,11 +59,11 @@ export default function HomeHero() {
           <div className="hero-project-stack">
             <div className="hero-project hero-project-back">
               <div className="hero-browser-bar"><i /><i /><i /><span>Thoughtfully designed.</span></div>
-              <div className="hero-project-image"><Image src="/imgs/screen-2.png" alt="" fill sizes="(max-width: 760px) 60vw, 340px" /></div>
+              <div className="hero-project-image"><Image src="/imgs/screen-2.png" alt="" fill sizes="(max-width: 540px) 81vw, (max-width: 900px) 420px, 46vw" /></div>
             </div>
             <div className="hero-project hero-project-front">
               <div className="hero-browser-bar"><i /><i /><i /><span>Beautifully built.</span><b>↗</b></div>
-              <div className="hero-project-image"><Image src="/imgs/screen-1.png" alt="Website design from the Easyboyweb portfolio" fill sizes="(max-width: 760px) 65vw, 390px" preload /></div>
+              <div className="hero-project-image"><Image src="/imgs/screen-1.png" alt="Website design from the Easyboyweb portfolio" fill sizes="(max-width: 540px) 89vw, (max-width: 900px) 460px, 50vw" preload /></div>
             </div>
             {/* <div className="hero-project hero-project-mobile"><Image src="/imgs/mobile_screen.svg" alt="" fill sizes="(max-width: 760px) 100px, 140px" /></div> */}
             {/* <div className="hero-project-tag"><span aria-hidden="true">✳</span> Made to make<br />an impression.</div> */}

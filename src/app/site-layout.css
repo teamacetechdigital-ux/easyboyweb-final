@@ -78,7 +78,7 @@
 }
 
 .gsap-page-root main.home-page > section[data-site-banner] {
-  min-height: 580px;
+  min-height: 900px;
 }
 
 .gsap-page-root main.home-page[class] > section[data-site-banner] h1 {
@@ -87,13 +87,24 @@
 }
 
 .gsap-page-root main.home-page .hero-line { margin-bottom: 0; }
-.gsap-page-root main.home-page .hero-showcase { height: 370px; }
-.gsap-page-root main.home-page .hero-orbit { width: 340px; height: 340px; }
-.gsap-page-root main.home-page .hero-project-front { height: 240px; top: 100px; }
-.gsap-page-root main.home-page .hero-project-back { height: 210px; top: 40px; }
+.gsap-page-root main.home-page .hero-showcase { height: 600px; }
+.gsap-page-root main.home-page .hero-orbit { width: 520px; height: 520px; }
+.gsap-page-root main.home-page .hero-project-front { width: 92%; height: 400px; top: 160px; }
+.gsap-page-root main.home-page .hero-project-back { width: 84%; height: 350px; top: 35px; right: 4%; }
 .gsap-page-root main.home-page .hero-eyebrow { margin-bottom: 16px; }
 .gsap-page-root main.home-page .hero-proof { margin-top: 20px; }
 .gsap-page-root main.home-page .hero-proof p { font-size: 14px !important; }
+.gsap-page-root main.home-page .hero-actions { flex-wrap: wrap; }
+.gsap-page-root main.home-page .hero-actions > a {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 901px) {
+  .gsap-page-root main.home-page .hero-layout {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
 
 /* Sections stay in document flow, without overlapping the next section. */
 .gsap-page-root main[class] > section:not([data-site-banner]):not(.container):not(.partners-section):not(.technologies-section):not(.platforms-section) {
@@ -259,11 +270,11 @@
 
 @media (max-width: 900px) {
   .gsap-page-root main.home-page > section[data-site-banner] { min-height: 0; }
-  .gsap-page-root main.home-page .hero-layout { gap: 24px; }
-  .gsap-page-root main.home-page .hero-showcase { height: 260px; }
-  .gsap-page-root main.home-page .hero-orbit { width: 240px; height: 240px; }
-  .gsap-page-root main.home-page .hero-project-front { height: 185px; top: 60px; }
-  .gsap-page-root main.home-page .hero-project-back { height: 165px; top: 0; }
+  .gsap-page-root main.home-page .hero-layout { gap: 44px; }
+  .gsap-page-root main.home-page .hero-showcase { height: 410px; }
+  .gsap-page-root main.home-page .hero-orbit { width: 360px; height: 360px; }
+  .gsap-page-root main.home-page .hero-project-front { height: 290px; top: 100px; }
+  .gsap-page-root main.home-page .hero-project-back { height: 255px; top: 0; }
 }
 
 @media (max-width: 768px) {
@@ -284,7 +295,7 @@
   .gsap-page-root main.home-page[class] > section[data-site-banner] h1 {
     font-size: clamp(38px, 8vw, 54px) !important;
   }
-  .gsap-page-root main.home-page .hero-showcase { height: 240px; }
+  .gsap-page-root main.home-page .hero-showcase { height: 410px; }
   .gsap-page-root main.home-page .hero-actions { margin-top: 20px; }
   .gsap-page-root main.home-page .hero-proof { margin-top: 16px; }
   .gsap-page-root main.home-page .hero-description { margin-top: 16px !important; }
@@ -379,11 +390,11 @@
 }
 
 @media (max-width: 480px) {
-  .gsap-page-root main.home-page .hero-layout { gap: 16px; }
-  .gsap-page-root main.home-page .hero-showcase { height: 180px; margin-top: 0; }
-  .gsap-page-root main.home-page .hero-orbit { width: 180px; height: 180px; }
-  .gsap-page-root main.home-page .hero-project-front { height: 132px; top: 40px; }
-  .gsap-page-root main.home-page .hero-project-back { height: 120px; top: 0; }
+  .gsap-page-root main.home-page .hero-layout { gap: 36px; }
+  .gsap-page-root main.home-page .hero-showcase { height: 330px; margin-top: 0; }
+  .gsap-page-root main.home-page .hero-orbit { width: 270px; height: 270px; }
+  .gsap-page-root main.home-page .hero-project-front { height: 210px; top: 75px; }
+  .gsap-page-root main.home-page .hero-project-back { height: 185px; top: 0; }
   .gsap-page-root main.home-page .hero-eyebrow { margin-bottom: 12px; }
   .gsap-page-root main.home-page .hero-actions { gap: 12px; margin-top: 16px; }
   .gsap-page-root main.home-page .hero-proof { margin-top: 12px; }

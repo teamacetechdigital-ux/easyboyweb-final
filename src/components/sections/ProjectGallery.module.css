@@ -153,11 +153,16 @@
 }
 
 .mobile .card {
-  flex-basis: 100%;
+  flex-basis: calc((100% - 48px) / 3);
+  scroll-snap-stop: always;
+}
+
+.mobile .viewport {
+  scroll-snap-type: x mandatory;
 }
 
 .mobile .preview {
-  aspect-ratio: 1.95 / 1;
+  aspect-ratio: 3 / 5;
   border: 0;
   background: transparent;
 }
@@ -229,8 +234,8 @@
     padding: 8px;
   }
 
-  .mobile .preview {
-    aspect-ratio: 1.6 / 1;
+  .mobile .card {
+    flex-basis: calc((100% - 32px) / 3);
   }
 
   .logos .card {

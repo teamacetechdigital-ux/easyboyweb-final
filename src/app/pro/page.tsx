@@ -618,7 +618,7 @@ function Landing_page() {
 
             <div className="multiple-tools-visual">
               <Image
-                src="/imgs/AI_Developement.svg"
+                src="/imgs/dash-tool.png"
                 alt="EasyBoyWeb AI development dashboard"
                 width={720}
                 height={478}
@@ -1043,7 +1043,7 @@ function Landing_page() {
             </div>
 
             <Image
-              src="/imgs/screen_landing.png"
+              src="/imgs/mobile-screens-ai.png"
               alt="EasyBoyWeb mobile application screens"
               width={825}
               height={693}

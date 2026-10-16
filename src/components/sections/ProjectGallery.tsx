@@ -28,7 +28,7 @@ export default function ProjectGallery({ title, projects, variant = "screens" }:
           {projects.map((project) => (
             <article key={project.image} data-gallery-slide className={styles.card}>
               <div className={styles.preview}>
-                <Image src={project.image} alt={project.alt} fill sizes={variant === "mobile" ? "(max-width: 900px) 92vw, 900px" : "(max-width: 680px) 90vw, (max-width: 1100px) 46vw, 640px"} draggable={false} />
+                <Image src={project.image} alt={project.alt} fill sizes={variant === "mobile" ? "(max-width: 680px) calc((100vw - 64px) / 3), (max-width: 1048px) calc((100vw - 96px) / 3), 318px" : "(max-width: 680px) 90vw, (max-width: 1100px) 46vw, 640px"} draggable={false} />
               </div>
             </article>
           ))}

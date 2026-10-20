@@ -1,0 +1,65 @@
+:global(.gsap-page-root) main[class] .identityGrid {
+  width: 100%;
+  max-width: 1340px;
+  margin: 44px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+}
+
+:global(.gsap-page-root) main[class] .identityGrid .identityCard {
+  height: 100%;
+  min-height: 240px;
+  padding: 28px 16px;
+  justify-content: center;
+  gap: 24px;
+}
+
+.identityGrid .identityCard .identityIcon {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+}
+
+.identityGrid .identityCard h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px;
+  min-height: 2.7em;
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 22px) !important;
+  line-height: 1.35 !important;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 1100px) {
+  :global(.gsap-page-root) main[class] .identityGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  :global(.gsap-page-root) main[class] .identityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  :global(.gsap-page-root) main[class] .identityGrid {
+    max-width: 360px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  :global(.gsap-page-root) main[class] .identityGrid .identityCard {
+    min-height: 210px;
+    gap: 20px;
+  }
+
+  .identityGrid .identityCard h3 {
+    font-size: 20px !important;
+  }
+}

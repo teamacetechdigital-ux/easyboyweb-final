@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import FeatureIcon from "../ui/FeatureIcon";
+import styles from "./WhoWeAre.module.css";
 
 import whoweare1 from "../../../public/imgs/whoweare1.svg";
 import whoweare2 from "../../../public/imgs/whoweare2.svg";
@@ -146,10 +147,10 @@ export default function WhoWeAre() {
           Who We Are
         </h2>
 
-        <div className="identity-cards">
+        <div className={`identity-cards ${styles.identityGrid}`}>
           {identityCards.map((item) => (
-            <article className="identity-card" key={item.title}>
-              <div className="identity-icon">
+            <article className={`identity-card ${styles.identityCard}`} key={item.title}>
+              <div className={`identity-icon ${styles.identityIcon}`}>
                 <Image
                   src={item.icon}
                   alt={`${item.title} icon`}

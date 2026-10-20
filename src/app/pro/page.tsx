@@ -7,6 +7,7 @@ import FooterWatermark from "@/src/components/layout/FooterWatermark";
 import Faq from '@/src/components/sections/Faq'
 import "./pro-layout.css";
 import ProEntrepreneur from "@/src/components/sections/ProEntrepreneur";
+import FeatureIcon from "@/src/components/ui/FeatureIcon";
 
 
 const subscriptionLogoRows = [
@@ -601,11 +602,11 @@ function Landing_page() {
                 You’re not just wasting time you’re losing revenue.
               </p>
 
-              <ul className="multiple-tools-list font-inter">
-                <li>Missed leads due to slow response</li>
-                <li>Disconnected systems</li>
-                <li>High monthly software costs</li>
-                <li>Manual follow-ups</li>
+              <ul className="multiple-tools-list font-inter" role="list">
+                <li><FeatureIcon name="speed" /><span>Missed leads due to slow response</span></li>
+                <li><FeatureIcon name="connect" /><span>Disconnected systems</span></li>
+                <li><FeatureIcon name="payments" /><span>High monthly software costs</span></li>
+                <li><FeatureIcon name="message" /><span>Manual follow-ups</span></li>
               </ul>
 
               <a

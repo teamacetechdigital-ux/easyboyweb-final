@@ -18,3 +18,25 @@
   height: 22px;
   flex: 0 0 22px;
 }
+
+@media (min-width: 1024px) {
+  :global(.gsap-page-root) main[class] .solutionGrid .solutionCard {
+    min-width: 0;
+    gap: 12px;
+    padding-inline: 16px;
+  }
+
+  .solutionGrid .solutionCard h3 {
+    /* Override the shared heading size so longer feature titles fit. */
+    font-size: clamp(16px, 1.5vw, 24px) !important;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .solutionGrid .solutionCard > svg {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+}

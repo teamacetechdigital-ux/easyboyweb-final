@@ -21,8 +21,8 @@ const workSteps = [
   },
   {
     number: "3",
-    title: "Launch",
-    para: "After you approve the design, we push your website live for the world to see.",
+    title: "Website Launch",
+    para: "After your final approval, we launch your website so customers can find your business online.",
     icon: helpIcon3,
   },
 ];

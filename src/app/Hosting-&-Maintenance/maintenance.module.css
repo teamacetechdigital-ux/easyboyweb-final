@@ -1,0 +1,7 @@
+@media (min-width: 1024px) {
+  .serviceGrid > :global(.maintenance-service-card) > h3 {
+    /* Fit longer titles without shifting the paragraphs below them. */
+    font-size: clamp(18px, 1.8vw, 26px) !important;
+    white-space: nowrap;
+  }
+}

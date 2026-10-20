@@ -47,6 +47,36 @@ body {
   height: auto;
 }
 
+/* Keep feature titles on one line at laptop widths. */
+@media (min-width: 1024px) {
+  .gsap-page-root main.mobile-apps-page[class] .business-growth-card {
+    gap: 12px;
+  }
+
+  .gsap-page-root main.mobile-apps-page[class] .business-growth-card > span {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .gsap-page-root main.mobile-apps-page[class] .business-growth-card {
+    padding-inline: 12px;
+    font-size: clamp(16px, 1.4vw, 20px);
+  }
+
+  .gsap-page-root main.mobile-apps-page[class] .business-growth-card > .feature-icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+}
+
+@media (min-width: 787px) and (max-width: 1023px) {
+  .gsap-page-root main.mobile-apps-page .business-growth-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 600px) {
   .gsap-page-root main[class] :is(.easy-point, .seo-short-txt-box, .business-growth-card) {
     flex-direction: column;

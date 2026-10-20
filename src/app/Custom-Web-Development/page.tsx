@@ -176,9 +176,9 @@ export default function CustomSoftwareDevelopment() {
                         </h2>
                         <p className="font-inter">WordPress is one of the most widely used content management systems (CMS), known for its speed, user-friendly interface, extensibility, and ease of management and updates. We provide tailored, secure and optimized WordPress development solutions. At Easyboyweb, we make having a WordPress website “easy.”</p>
                     </div>
-                    <div className="grid grid-cols-3 grid-rows-3 items-center justify-center gap-x-8 gap-y-4 pt-14">
+                    <div className={`grid grid-cols-3 grid-rows-3 items-center justify-center gap-x-8 gap-y-4 pt-14 ${styles.solutionGrid}`}>
                         {shorttext.map((item) => (
-                            <div className="seo-short-txt-box" key={item.title}>
+                            <div className={`seo-short-txt-box ${styles.solutionCard}`} key={item.title}>
                                 <FeatureIcon name={item.icon} />
                                 <h3 className="font-inter">
                                     {item.title}

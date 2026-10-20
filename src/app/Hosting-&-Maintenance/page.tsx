@@ -16,37 +16,38 @@ import maintenanceIcon6 from "../../../public/imgs/main6.svg";
 import innerImg from "../../../public/imgs/center-img.png";
 import crmImg from "../../../public/imgs/sec-focus-crm-img.png";
 import crmImg2 from "../../../public/imgs/crm2.png";
+import styles from "./maintenance.module.css";
 
 
 const maintenanceServices = [
     {
         title: "WordPress Maintenance",
-        para: "WordPress maintenance services include updating plugins, themes, creating daily backups, optimizing SEO, enhancing performance, fixing bugs, and maintaining the seamless operation of your website.",
+        para: "Full maintenance for your WordPress site. We update themes, plugins, perform daily backups, optimize SEO, enhance speed, fix bugs, and ensure seamless operation.",
         icon: maintenanceIcon1,
     },
     {
         title: "Website Content Updates",
-        para: "Are you too busy to maintain the content of your website? Is there any content you need to add, remove, or edit? Let us handle it for you!",
+        para: "Too busy for content? We handle all your site additions, removals, and edits for you, ensuring your site is always up-to-date.",
         icon: maintenanceIcon2,
     },
     {
         title: "Site Speed Improvements",
-        para: "We enhance your website’s loading times by optimizing images, streamlining code, and using caching. This results in a faster site, leading to better user experience, improved SEO, and higher conversions.",
+        para: "We boost your site's speed. Our service optimizes images, streamlines code, and uses caching, resulting in a faster site, better user experience, and improved SEO.",
         icon: maintenanceIcon3,
     },
     {
         title: "Site Updates & Repairs",
-        para: "Ensuring smooth website operation involves addressing issues and applying the latest features and security patches, which prevent downtime, enhance performance, and maintain security and reliability.",
+        para: "Seamless operation, guaranteed. We address issues, apply latest features and security patches to prevent downtime, and maintain high performance and reliability.",
         icon: maintenanceIcon4,
     },
     {
         title: "SEO Errors & Updates",
-        para: "Identifying and fixing SEO errors is key to improving your website’s search engine visibility. Regular updates ensure your site stays optimized for the latest search algorithms, driving more organic traffic and improving rankings.",
+        para: "Improve visibility. We identify and fix SEO errors, providing regular updates to ensure your site is optimized for the latest search algorithms and organic traffic.",
         icon: maintenanceIcon5,
     },
     {
         title: "New Tools, APIs & Integrations",
-        para: "Upgrading your website with new tools, APIs, and integrations enhances functionality, streamlines processes, and improves user experience while expanding your site’s capabilities.",
+        para: "Enhance functionality. We upgrade your site with new tools, APIs, and integrations, streamlining processes and expanding capabilities for a better user experience.",
         icon: maintenanceIcon6,
     },
 ];
@@ -169,7 +170,7 @@ export default function CustomSoftwareDevelopment() {
                         <p className="font-inter">Companies often ask about what “regular updates” mean when it comes to website maintenance. It’s a very important question, and the answer differs from one provider to another. Our maintenance program guarantees the security and timely updates of your website, providing valuable resources that benefit your business.</p>
                     </div>
 
-                    <div className="maintenance-services-grid">
+                    <div className={`maintenance-services-grid ${styles.serviceGrid}`}>
                         {maintenanceServices.map((item) => (
                             <article
                                 className="maintenance-service-card flex flex-col items-start gap-4"

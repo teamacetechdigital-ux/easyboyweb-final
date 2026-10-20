@@ -30,10 +30,6 @@ export default function AgencyShowcase({ variant }: AgencyShowcaseProps) {
             </li>
           ))}
         </ol>
-        <div className={styles.processFooter}>
-          <span>One team. Every detail.</span>
-          <span aria-hidden="true">↗</span>
-        </div>
       </div>
     );
   }

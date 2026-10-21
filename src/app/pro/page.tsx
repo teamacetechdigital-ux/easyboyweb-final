@@ -477,7 +477,7 @@ function Landing_page() {
 
       {/* Benefits Section */}
 
-      <section className="landing-benefits-section" style={{ padding: "30px 0 120px !important" }}>
+      <section className="landing-benefits-section">
         <div className="container">
           <div className="landing-benefits-list" data-reveal-group="product">
             {landingBenefits.map((benefit) => (

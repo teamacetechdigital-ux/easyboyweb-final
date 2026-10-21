@@ -174,6 +174,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
 .site-nav a,
 .services-trigger {
   color: inherit;
+  text-decoration: none;
   white-space: nowrap;
 }
 
@@ -229,6 +230,7 @@ body:has(.custom-ai-section) .site-header .menu-toggle span {
   padding: 11px 13px;
   border-radius: 5px;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .services-dropdown a:hover,

@@ -33,12 +33,16 @@
   max-width: 800px;
   margin: 28px auto 0;
 }
+.gsap-page-root main.landing-page.pro-page .landing-benefits-section {
+  --section-padding-block: 75px;
+}
 .gsap-page-root main.landing-page.pro-page .landing-benefits-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
   width: 100%;
   height: auto;
+  top: auto;
 }
 .gsap-page-root main.landing-page.pro-page .landing-benefit-item {
   width: 100%;

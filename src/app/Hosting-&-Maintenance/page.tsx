@@ -14,7 +14,7 @@ import maintenanceIcon4 from "../../../public/imgs/main4.svg";
 import maintenanceIcon5 from "../../../public/imgs/main5.svg";
 import maintenanceIcon6 from "../../../public/imgs/main6.svg";
 import innerImg from "../../../public/imgs/center-img.png";
-import crmImg from "../../../public/imgs/sec-focus-crm-img.png";
+import crmImg from "../../../public/imgs/sec-focus-crm-img-clean.png";
 import crmImg2 from "../../../public/imgs/crm2.png";
 import styles from "./maintenance.module.css";
 

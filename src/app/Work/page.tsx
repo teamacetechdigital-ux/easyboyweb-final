@@ -5,11 +5,17 @@ import MobileScreen from "@/src/components/sections/MobileScreen";
 import ProjectGallery from "@/src/components/sections/ProjectGallery";
 
 const websiteProjects = [
-  { image: "/imgs/screen (1).svg", alt: "Website project one" },
-  { image: "/imgs/screen (2).svg", alt: "Website project two" },
-  { image: "/imgs/screen (3).svg", alt: "Website project three" },
-  { image: "/imgs/screen (4).svg", alt: "Website project four" },
-  { image: "/imgs/screen (5).svg", alt: "Website project five" },
+  { image: "/imgs/screen1slide.png", alt: "Website project one" },
+  { image: "/imgs/screen2slide.png", alt: "Website project two" },
+  { image: "/imgs/screen3slide.png", alt: "Website project three" },
+  { image: "/imgs/screen4slide.png", alt: "Website project four" },
+  { image: "/imgs/screen5slide.png", alt: "Website project five" },
+  { image: "/imgs/screen6slide.png", alt: "Website project six" },
+  { image: "/imgs/screen7slide.png", alt: "Website project seven" },
+  { image: "/imgs/screen8slide.png", alt: "Website project eight" },
+  { image: "/imgs/screen9slide.png", alt: "Website project nine" },
+  { image: "/imgs/screen10slide.png", alt: "Website project ten" },
+  { image: "/imgs/screen11slide.png", alt: "Website project eleven" }
 ];
 
 const logoProjects = [
@@ -24,10 +30,12 @@ const logoProjects = [
 ];
 
 const webAppProjects = [
-  { image: "/imgs/gallery/Creativescreen1.png", alt: "Lowe's capacity management application" },
-  { image: "/imgs/gallery/Creativescreen2.png", alt: "Web application project two, full screen preview" },
-  { image: "/imgs/gallery/Creativescreen3.png", alt: "Web application project three, full screen preview" },
-  { image: "/imgs/gallery/Creativescreen4.png", alt: "Web application project four, full screen preview" },
+  { image: "/imgs/Creativescreen1.png", alt: "Lowe's capacity management application" },
+  { image: "/imgs/Creativescreen2.png", alt: "Web application project two, full screen preview" },
+  { image: "/imgs/Creativescreen3.png", alt: "Web application project three, full screen preview" },
+  { image: "/imgs/Creativescreen4.png", alt: "Web application project four, full screen preview" },
+  { image: "/imgs/Creativescreen5.png", alt: "Web application project five, full screen preview" },
+  { image: "/imgs/Creativescreen6.png", alt: "Web application project six, full screen preview" },
 ];
 
 export default function Page() {

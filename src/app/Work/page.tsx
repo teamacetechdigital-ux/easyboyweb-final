@@ -19,14 +19,13 @@ const websiteProjects = [
 ];
 
 const logoProjects = [
-  { image: "/imgs/ourwork_1.svg", alt: "Brand logo one" },
-  { image: "/imgs/ourwork_2.svg", alt: "Brand logo two" },
-  { image: "/imgs/ourwork_3.svg", alt: "Brand logo three" },
-  { image: "/imgs/ourwork_4.svg", alt: "Brand logo four" },
-  { image: "/imgs/ourwork_5.svg", alt: "Brand logo five" },
-  { image: "/imgs/ourwork_6.svg", alt: "Brand logo six" },
-  { image: "/imgs/ourwork_7.svg", alt: "Brand logo seven" },
-  { image: "/imgs/ourwork_8.svg", alt: "Brand logo eight" },
+  { image: "/imgs/ourwork_1.png", alt: "Brand logo one" },
+  { image: "/imgs/ourwork_2.png", alt: "Brand logo two" },
+  { image: "/imgs/ourwork_3.png", alt: "Brand logo three" },
+  { image: "/imgs/ourwork_4.png", alt: "Brand logo four" },
+  { image: "/imgs/ourwork_5.png", alt: "Brand logo five" },
+  { image: "/imgs/ourwork_6.png", alt: "Brand logo six" },
+  { image: "/imgs/ourwork_7.png", alt: "Brand logo seven" },
 ];
 
 const webAppProjects = [

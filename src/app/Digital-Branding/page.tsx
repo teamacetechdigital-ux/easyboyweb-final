@@ -14,14 +14,13 @@ import digitalIcon2 from "../../../public/imgs/brand2.svg";
 import digitalIcon3 from "../../../public/imgs/brand3.svg"
 
 const workImages = [
-    "/imgs/ourwork_1.svg",
-    "/imgs/ourwork_2.svg",
-    "/imgs/ourwork_3.svg",
-    "/imgs/ourwork_4.svg",
-    "/imgs/ourwork_5.svg",
-    "/imgs/ourwork_6.svg",
-    "/imgs/ourwork_7.svg",
-    "/imgs/ourwork_8.svg",
+    "/imgs/ourwork_1.png",
+    "/imgs/ourwork_2.png",
+    "/imgs/ourwork_3.png",
+    "/imgs/ourwork_4.png",
+    "/imgs/ourwork_5.png",
+    "/imgs/ourwork_6.png",
+    "/imgs/ourwork_7.png",
 ];
 
 const digitalBenefits = [
